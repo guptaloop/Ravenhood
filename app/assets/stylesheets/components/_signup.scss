@@ -1,0 +1,75 @@
+.signup {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	height: 100vh;
+	width: 100%;
+}
+
+		.signup-left {
+			display: flex;
+			width: 50%;
+			height: 100%;
+		}
+		
+				.signup-img {
+					display: flex;
+					width: 100%;
+					height: 100%;
+				}
+
+		.signup-right {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			// background-color: midnightblue;
+			width: 50%;
+		}
+
+				.welcome-to {
+					font-family: sans-serif;
+					font-size: 26px;
+					font-weight: bold;
+					margin-left: 52px;
+					margin-bottom: 10px;
+				}
+
+				.input {
+					font-family: sans-serif;
+					font-size: 13px;
+					margin-left: 52px;
+					margin-bottom: 8px;
+				}
+
+				.text-box {
+					background: whitesmoke;
+					height: 48px;
+					width: 250px;
+					margin-left: 52px;
+				}
+
+
+				.signup-errors {
+					font-family: sans-serif;
+					font-size: 13px;
+					margin-top: 20px;
+					margin-left: 52px;
+					font-weight: bold;
+				}
+
+.sess-err-logo {
+	height: 15px;
+	width: 15px;
+	margin-right: 8px;
+}
+
+.login-page-buttons {
+	display: flex;
+	flex-direction: row;
+}
+
+.error-li {
+	display: flex;
+	flex-direction: row;
+}

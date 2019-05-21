@@ -1,0 +1,80 @@
+.nav-bar-1 {
+	height: 48px;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 55px;
+}
+
+.nav-bar-2 {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+		.nav-bar-left {
+			display: flex;
+			align-items: center;
+			width: 150px;
+			margin-left: 23px;
+		}
+
+				.nav-home-link {
+					color: rgb(0, 0, 0);
+					fill: rgb(0, 0, 0);
+					font-family: sans-serif;
+					font-size: 20.25px;
+					letter-spacing: -0.5px;
+					margin-left: 8px;
+				}
+
+				.nav-home-link:hover {
+					color: rgb(33, 206, 153);
+				}
+
+		.nav-bar-right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-direction: row;
+			width: 300px;
+			margin-left: 20px;
+		}
+
+				.nav-link {
+					color: rgb(0, 0, 0);
+					fill: rgb(0, 0, 0);
+					font-family: sans-serif;
+					font-size: 16.5px;
+					font-weight: bold;
+					margin-right: 30px;
+					letter-spacing: -1px;
+				}
+			
+				.nav-link:hover {
+					color: rgb(33, 206, 153);
+				}
+
+/// specifically for the nav when signed in
+
+		.search-bar {
+			display: flex;
+			border: lightgrey;
+			width: 478px;
+			height: 36px;
+			background: whitesmoke
+		}
+
+		.nav-demo-link {
+			color: rgb(0, 0, 0);
+			fill: rgb(0, 0, 0);
+			font-family: sans-serif;
+			font-size: 13px;
+			font-weight: bold;
+			margin-right: 30px;
+			letter-spacing: 0.25px;
+		}
+
+		.nav-demo-link:hover {
+					color: rgb(33, 206, 153);
+				}

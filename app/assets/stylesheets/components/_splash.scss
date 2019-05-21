@@ -1,0 +1,51 @@
+.splash {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 100px;
+	height: 100vh;
+	width: 100vw;
+}
+
+		.splash-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 80%;
+			width: 35%;
+		}
+
+				.splash-title {
+					display: flex;
+					width: 340px;
+					margin-bottom: 34px;
+					font-family: sans-serif;
+					font-weight: bold;
+					font-size: 46px;
+					letter-spacing: -1.6px;
+				}
+
+				.splash-body {
+					display: flex;
+					width: 300px;
+					margin-bottom: 34px;
+					font-family: sans-serif;
+					font-size: 15px;
+					font-weight: lighter;
+					line-height: 26px;
+				}
+
+				.spacing-div {
+					display: flex;
+					height: 270px;
+				}
+
+		.splash-right {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+				.throne-img {
+					height: 560px;
+					width: 385px;
+				}

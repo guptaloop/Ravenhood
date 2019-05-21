@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	window.images = {
+		// logos & icons
+		raven_logo: "<%= image_url('nav-raven-logo.jpg')%>",
+		sess_err_logo: "<%= image_url('session-error-!-icon.png')%>",
+		// session
+		beach: "<%= image_url('beach-bev.jpg')%>",
+		bridge: "<%= image_url('signup-bridge.jpg')%>",
+		castle: "<%= image_url('signup-castle.jpg')%>",
+		fog_castle_1: "<%= image_url('fog-castle-1.jpg')%>",
+		fog_castle_2: "<%= image_url('fog-castle-2.jpg')%>",
+		mountain_bev: "<%= image_url('mountain-bev.jpg')%>",
+		mountain_clouds: "<%= image_url('mountain-clouds.jpg')%>",
+		mountain_snow_bev: "<%= image_url('mountain-snow-bev.jpg')%>",
+		mountain_snow: "<%= image_url('mountain-snow.jpg')%>",
+		// splash
+		iron_throne: "<%= image_url('splash-iron-throne.jpg')%>",
+		iron_thronea: "<%= image_url('throne1.jpg')%>"
+	}
+</script>
+
+<% if logged_in? %>
+	<script id="bootstrap-current-user" type="text/javascript">
+		window.currentUser = <%= render("api/users/user.json.jbuilder",
+			user: current_user).html_safe %>
+	</script>
+<% end %>
+
+<div id="root">
+</div>
