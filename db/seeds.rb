@@ -9,7 +9,7 @@ ActiveRecord::Base.transaction do
 		
 	demo_user = User.create({ 
 			username: 'Lord Petyr Baelish',
-			password: 'makeitrain' 
+			password: 'makeitrain'
 		})
 
 	lion_stock = Stock.create({

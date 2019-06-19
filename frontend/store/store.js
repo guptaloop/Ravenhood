@@ -9,8 +9,6 @@ const configureStore = (preloadedState = {}) => (
 
 export default configureStore;
 
-
-
 // //// Sophisticated way to remove logger from prod (so you don't have to remove it before every heroku push)
 
 // const configureStore = (preloadedState = {}) => {

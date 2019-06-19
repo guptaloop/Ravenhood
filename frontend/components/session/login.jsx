@@ -24,7 +24,7 @@ class LogInForm extends React.Component {
 	}
 
 	handleDemoLogin() {
-		const user = { username: 'Lord Petyr Baelish', password: 'makeitrain'	}
+		const user = { username: 'Lord Petyr Baelish', password: 'makeitrain'	};
 		this.props.login(user);
 	}
 

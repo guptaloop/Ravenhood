@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { login, receiveErrors } from '../../actions/session_actions';
 import LogInForm from './login';
