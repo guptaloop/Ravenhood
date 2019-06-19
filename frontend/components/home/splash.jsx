@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBarContainer from '../nav_bar/nav_bar_container'
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
 const Splash = () => {
 	return(
