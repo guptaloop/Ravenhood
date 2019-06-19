@@ -4,7 +4,7 @@ export const fetchStock = symbol => (
 	$.ajax({
 		url: `/api/stocks/${symbol}`,
 		method: 'GET',
-		data: { stock }
+		data: { symbol }
 	})
 );
 
