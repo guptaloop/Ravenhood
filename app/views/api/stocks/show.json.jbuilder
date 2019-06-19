@@ -1,13 +1,1 @@
-json.extract! @stock,
-	:id,
-	:symbol,
-	:name,
-	:about,
-	:c_suite,
-	:founded,
-	:hq,
-	:industry,
-	:exchange,
-	:products,
-	:employees,
-	:valuation
+json.partial! "api/stocks/stock", stock: @stock

@@ -1,0 +1,13 @@
+json.extract! stock,
+	:id,
+	:symbol,
+	:name,
+	:about,
+	:c_suite,
+	:founded,
+	:hq,
+	:industry,
+	:exchange,
+	:products,
+	:employees,
+	:valuation
