@@ -1,5 +1,5 @@
 {
-  "name": "robynhood",
+  "name": "ravenhood",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.3.4",
@@ -36,13 +36,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guptaloop/Robynhood.git"
+    "url": "git+https://github.com/guptaloop/Ravenhood.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/guptaloop/Robynhood/issues"
+    "url": "https://github.com/guptaloop/Ravenhood/issues"
   },
-  "homepage": "https://github.com/guptaloop/Robynhood#readme"
+  "homepage": "https://github.com/guptaloop/Ravenhood#readme"
 }

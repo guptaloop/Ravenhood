@@ -59,7 +59,7 @@ class LogInForm extends React.Component {
 
 				<div className="signup-right">
 
-					<h2 className="welcome-to">Welcome to Robynhood</h2>
+					<h2 className="welcome-to">Welcome to Ravenhood</h2>
 					<br />
 
 					<form>

@@ -26,7 +26,7 @@ const NavBar = ({ currentUserId, logout }) => {
 
 			<div className="nav-bar-left">
 				<img className="raven-logo" src={window.images.raven_logo}/>
-				<Link className="nav-home-link" to="/">robynhood</Link>
+					<Link className="nav-home-link" to="/">ravenhood</Link>
 			</div>
 				
 			<div className="nav-bar-right">
