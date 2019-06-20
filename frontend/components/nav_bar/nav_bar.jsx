@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from './search';
 
 const NavBar = ({ currentUserId, logout }) => {
 	
@@ -9,11 +10,7 @@ const NavBar = ({ currentUserId, logout }) => {
 			
 			<div className="nav-bar-2">
 				<img className="raven-logo" src={window.images.raven_logo} />
-				<input 
-					type="text"
-					className="search-bar"
-					placeholder="search [coming soon]"
-					/>
+				<Search/>
 
 				<div className="nav-bar-right">
 					<Link className="nav-demo-link" to="/dashboard">Home</Link>
