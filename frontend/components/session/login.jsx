@@ -90,7 +90,7 @@ class LogInForm extends React.Component {
 						<br />
 
 					<div className="login-page-buttons">
-						<button className="signup-signup-button" onClick={this.handleSubmit}>Sign In</button>
+						<button className="signup-signup-button" onClick={this.handleSubmit}>Log In</button>
 
 						<button className="demo-login-button" onClick={this.handleDemoLogin}>Demo</button>
 					</div>
