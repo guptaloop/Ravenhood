@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import Search from './search';
 
 const mSP = state => ({
-	currentUserId: state.session.currentUserId,
-	currentUsers: state.entities.users
+	
 });
 
 const mDP = dispatch => ({

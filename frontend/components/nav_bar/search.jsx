@@ -7,14 +7,9 @@ class Search extends React.Component {
 	
 	render() {
 		return (
-			<input
-				type="text"
-				className="search-bar"
-				placeholder="search [coming soon]"
-			/>
+			<input type="text" className="search-bar"	placeholder="Search"/>
 		)
 	}
-	
 }
 
 export default Search;
