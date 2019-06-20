@@ -16,7 +16,7 @@ const NavBar = ({ currentUserId, logout }) => {
 					/>
 
 				<div className="nav-bar-right">
-					<Link className="nav-demo-link" to="">Home</Link>
+					<Link className="nav-demo-link" to="/dashboard">Home</Link>
 					<button className="nav-demo-link" onClick={logout}>Log Out</button>
 				</div>
 			</div>
