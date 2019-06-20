@@ -12,8 +12,14 @@ class Dashboard extends React.Component {
 			<>
 				<NavBarContainer />
 
-				<div>
-					<h1> DASHBOARD </h1>
+				<div className="dashboard">
+					<div className="dashboard-left">
+						<h1> PORTFOLIO VALUE CHART </h1>
+						<h1> NEWS FEED </h1>
+					</div>
+					<div className="dashboard-right">
+						<h1> WATCH LIST </h1> 
+					</div>
 				</div>
 			</>
 		)
