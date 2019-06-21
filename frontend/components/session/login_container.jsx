@@ -11,8 +11,8 @@ const mSP = ({ errors }) => ({
 
 const mDP = dispatch => ({
 	login: user => dispatch(login(user)),
-	// demoLogin: user => dispatch(login(user)),
 	receiveErrors: errors => dispatch(receiveErrors(errors))
+	// demoLogin: user => dispatch(login(user)),
 });
 
 
