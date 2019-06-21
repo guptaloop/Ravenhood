@@ -1,4 +1,4 @@
-import { searchStock } from "../util/search_api_util";
+import { searchStock } from "../util/search_bar_api_util";
 
 export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 
