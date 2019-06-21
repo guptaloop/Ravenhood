@@ -1,24 +1,25 @@
 import React from 'react';
 
-class Search extends React.Component {
+class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			symbol: ''
 		};
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
 
-	handleInput(type) {
-		return (e) => {
-			this.setState({ [type]: e.target.value });
-		};
+	handleChange(e) {
+		this.setState({
+			search: e.target.value,
+			results: this.props.searchStocks(e.target.value)
+		});
 	}
 
-	handleSubmit(e) {
-		e.preventDefault();
-		const symbol = Object.assign({}, this.state);
-		this.props.search(symbol);
+	handleKeyPress(e) {
+		if (e.key == 'Enter') {
+			this.props.history.push(`/stocks/${this.state.results[0].symbol}`);
+		}
 	}
 
 	render() {
@@ -27,11 +28,12 @@ class Search extends React.Component {
 				type="text"
 				className="search-bar"
 				placeholder="Search"
-				value={this.state.symbol}
-				onChange={this.handleInput('symbol')}
+				value={this.state.search}
+				onChange={e => this.handleChange(e)}
+				onKeyPress={this.handleKeyPress}
 			/>
 		)
 	}
 }
 
-export default Search;
+export default SearchBar;

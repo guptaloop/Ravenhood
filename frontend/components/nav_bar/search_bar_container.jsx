@@ -1,13 +1,9 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import Search from './search_bar';
+import { withRouter } from 'react-router-dom';
+import SearchBar from './search_bar';
 
 const mSP = state => ({
-	
+	stocks: state.entities.search
 });
 
-const mDP = dispatch => ({
-	search: symbol => dispatch(search(symbol))
-});
-
-export default connect(mSP, mDP)(Search);
+export default withRouter(connect(mSP, null)(SearchBar));

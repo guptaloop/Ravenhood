@@ -1,4 +1,4 @@
-import { RECEIVE_STOCK } from '../actions/stock_actions';
+import { RECEIVE_STOCK } from '../../actions/stock_actions';
 
 const stocksReducer = (state = {}, action) => {
 	Object.freeze(state);
