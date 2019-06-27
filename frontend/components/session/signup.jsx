@@ -67,6 +67,7 @@ class SignUpForm extends React.Component {
 								onChange={this.handleInput('username')}
 							/>
 						</label>
+						
 						<br/>
 						<br/>
 
@@ -84,11 +85,14 @@ class SignUpForm extends React.Component {
 						<br/>
 						<br/>
 						
-						<button className="signup-signup-button" onClick={this.handleSubmit}>Sign Up</button>
+						<button 
+							className="signup-signup-button" 
+							onClick={this.handleSubmit}
+							>Sign Up
+						</button>
 					
 					</form>
 				</div>
-
 
 			</div>
 		);
