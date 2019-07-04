@@ -5,14 +5,14 @@ import LogInForm from './login';
 
 const mSP = ({ errors }) => ({
 	formType: 'login',
-	errors: errors.sessionErrors
+	errors: errors.sessionErrors,
 });
 
 
 const mDP = dispatch => ({
 	login: user => dispatch(login(user)),
-	receiveErrors: errors => dispatch(receiveErrors(errors))
-	// demoLogin: user => dispatch(login(user)),
+	receiveErrors: errors => dispatch(receiveErrors(errors)),
+	// demoLogin: user => dispatch(login(user))
 });
 
 
