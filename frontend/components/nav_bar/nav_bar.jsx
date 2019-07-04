@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../search_bar/search_bar';
 
 
 // functional component -- do I need state or lifecycle methods?
@@ -9,6 +10,7 @@ const NavBar = ({ currentUserId, logout }) => {
 		<nav className="nav-bar-1">			
 			<div className="nav-bar-2">
 				<img className="raven-logo" src={window.images.raven_logo} />
+				<SearchBar />
 				<div className="nav-bar-right">
 					<Link className="nav-demo-link" to="/dashboard">Home</Link>
 					<button className="nav-demo-link" onClick={logout}>Log Out</button>
