@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 
+// functional component -- do I need state or lifecycle methods?
 const Splash = () => {
 	return(
 		<>
@@ -15,8 +16,7 @@ const Splash = () => {
 					<span className="splash-body">Claim the iron throne by investing in the Realm's most prosperous companies. 
 					<br/>It's as easy as sending a raven.</span>
 			
-					<Link className="signup-button"
-						to="/signup">Sign Up</Link>
+					<Link className="signup-button" to="/signup">Sign Up</Link>
 					<div className="spacing-div"></div>
 				</div>
 

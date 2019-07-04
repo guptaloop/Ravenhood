@@ -7,6 +7,7 @@ class SignUpForm extends React.Component {
 			username: '',
 			password: ''
 		};
+		// binding #handleSubmit here so that we don't have to do it every time we use this callback within #render, or elsewehere in the component
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 

@@ -1,14 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
-import Splash from './splash';
+// import { connect } from 'react-redux';
+// import { logout } from '../../actions/session_actions';
+// import Splash from './splash';
 
-const mSP = state => ({
-	currentUser: state.session.currentUser
-});
+// const mSP = state => ({
+// 	currentUser: state.session.currentUser
+// });
 
-const mDP = dispatch => ({
-	logout: () => dispatch(logout())
-});
+// const mDP = dispatch => ({
+// 	logout: () => dispatch(logout())
+// });
 
-export default connect(mSP, mDP)(Splash);
+// export default connect(mSP, mDP)(Splash);
