@@ -15,8 +15,8 @@ class SearchBar extends React.Component {
 
 	handleKeyPress(e) {
 		if (e.key == 'Enter') {
-			// this.props.history.push(`/stocks/${this.state.search}`);
-			this.props.history.push(`/stocks/LION`);
+			this.props.history.push(`/stocks/${this.state.search}`);
+			// this.props.history.push(`/stocks/LION`);
 		}
 	}
 
