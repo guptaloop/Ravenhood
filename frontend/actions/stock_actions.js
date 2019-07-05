@@ -8,6 +8,6 @@ export const receiveStock = stock => ({
 	stock
 });
 
-export const fetchStock = (symbol) => dispatch => (
+export const fetchStock = symbol => dispatch => (
 	StockApiUtil.fetchStock(symbol).then(stock => dispatch(receiveStock(stock)))
 );

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 
-// functional component -- do I need state or lifecycle methods?
 const Splash = () => {
 	return(
 		<>

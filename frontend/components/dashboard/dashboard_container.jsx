@@ -1,13 +1,14 @@
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 
 
 const mSP = (state) => ({
-	currentUser: state.session.currentUser
+	currentUser: state.session.currentUserId
 });
 
 const mDP = dispatch => ({
 	logout: () => dispatch(logout())
 });
 
-export default connect(mSP, mDP)(Dashboard);
+export default withRouter(connect(mSP, mDP)(Dashboard));

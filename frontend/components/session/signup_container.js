@@ -1,3 +1,4 @@
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signup, receiveErrors } from '../../actions/session_actions';
 import SignUpForm from './signup';
@@ -15,5 +16,5 @@ const mDP = dispatch => ({
 });
 
 
-export default connect(mSP, mDP)(SignUpForm);
+export default withRouter(connect(mSP, mDP)(SignUpForm));
 // SignUpForm will receive 'formType', 'errors', 'signup', and 'receiveErrors' as props

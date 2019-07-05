@@ -3,10 +3,7 @@ import React from 'react';
 class LogInForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			username: '',
-			password: ''
-		};
+		this.state = { username: '', password: ''};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleDemoLogin = this.handleDemoLogin.bind(this);
 	}
@@ -91,7 +88,10 @@ class LogInForm extends React.Component {
 						<br />
 
 					<div className="login-page-buttons">
-						<button className="signup-signup-button" onClick={this.handleSubmit}>Log In</button>
+						<button 
+							className="signup-signup-button" 
+							onClick={this.handleSubmit}
+						>Log In</button>
 
 						<button className="demo-login-button" onClick={this.handleDemoLogin}>Demo</button>
 					</div>

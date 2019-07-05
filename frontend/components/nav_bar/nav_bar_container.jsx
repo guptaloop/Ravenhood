@@ -1,4 +1,4 @@
-import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
 
@@ -14,4 +14,4 @@ const mDP = dispatch => ({
 	logout: () => dispatch(logout())
 });
 
-export default connect(mSP, mDP)(NavBar);
+export default withRouter(connect(mSP, mDP)(NavBar));

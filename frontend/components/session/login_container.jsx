@@ -1,6 +1,7 @@
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { login, receiveErrors } from '../../actions/session_actions';
 import LogInForm from './login';
+import { login, receiveErrors } from '../../actions/session_actions';
 
 
 const mSP = ({ errors }) => ({
@@ -15,4 +16,4 @@ const mDP = dispatch => ({
 });
 
 
-export default connect(mSP, mDP)(LogInForm);
+export default withRouter(connect(mSP, mDP)(LogInForm));
