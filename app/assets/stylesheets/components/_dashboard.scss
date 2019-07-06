@@ -1,19 +1,26 @@
 .dashboard {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	flex-direction: column;
 	align-content: center;
 	height: 100vh;
 	width: 100vw;
 }
 
-.dashboard-left {
+.dashboard-main {
 	display: flex;
-	flex-direction: column;
-	margin-right: 100px;
+	flex-direction: row;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
 }
 
-.dashboard-right {
-	display: flex;
-	margin-left: 100px;
-}
+		.dashboard-left {
+			display: flex;
+			flex-direction: column;
+			margin-right: 100px;
+		}
+
+		.dashboard-right {
+			display: flex;
+			margin-left: 100px;
+		}
