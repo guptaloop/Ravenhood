@@ -17,16 +17,5 @@
  // CSS Reset
  @import "base/reset.scss";
 
-// .app-jsx-flex {
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// }
-
-.raven-logo {
-	height: 45px;
-	width: 30px;
-}
-
  // Components
  @import "components/*";
