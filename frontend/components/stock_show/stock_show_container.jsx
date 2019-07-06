@@ -4,8 +4,8 @@ import StockShowPage from './stock_show';
 
 
 const mSP = (state) => ({
-	currentUser: state.session.id,
-	stock: Object.values(state.entities.stocks)
+	// currentUser: state.session.id,
+	// stock: Object.values(state.entities.stocks)
 });
 
 const mDP = dispatch => ({

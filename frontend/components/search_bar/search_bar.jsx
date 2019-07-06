@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
 
 	handleKeyPress(e) {
 		if (e.key == 'Enter') {
-			const symbol = this.state.search;
+			const symbol = this.state.search.toUpperCase();
 			this.props.fetchStock(symbol);
 			this.props.history.push(`/stocks/${symbol}`);
 		}

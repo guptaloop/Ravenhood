@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_utils';
+import { AuthRoute } from '../util/route_utils';
 import SignUpPage from './session/signup_container';
 import LoginPage from './session/login_container';
 import Dashboard from './dashboard/dashboard_container';
-import StockShow from './stocks/stock_show_container';
+import StockShow from './stock_show/stock_show_container';
 import Splash from './splash/splash';
 
 const App = props => {
