@@ -1,10 +1,12 @@
 import React from 'react';
+import { LoadingBar } from '../loading_bar';
 
 class StockInfoSection extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
+	// auto-invoked after the render (which shows the LOADING element), then will auto-render the component once the fetchStock dispatch completes.
 	componentDidMount() {
 		const symbol = this.props.match.params.symbol;
 		this.props.fetchStock(symbol);
@@ -12,7 +14,7 @@ class StockInfoSection extends React.Component {
 
 	render() {
 		if (!this.props.stock) {
-			return (<h3 className="about-header">LOADING</h3>)
+			return (<LoadingBar />)
 		};
 
 		return (

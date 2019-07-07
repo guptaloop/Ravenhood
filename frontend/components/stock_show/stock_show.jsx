@@ -9,22 +9,16 @@ class StockShowPage extends React.Component {
 		super(props);
 	}
 
-	// auto-invoked after the render (which shows the LOADING element), then will auto-render the component once the fetchStock dispatch completes.
-	// componentDidMount() {
-	// 	const symbol = this.props.match.params.symbol;
-	// 	this.props.fetchStock(symbol);
-	// }
+	
 
 	render() {
-		// if (!this.props.stock) {
-		// 	return (<h3 className="about-header">LOADING</h3>)
-		// };
-
 		return (
 			<div className="stock-show">
 				<NavBarContainer />
-				<StockPriceChartContainer />
-				<StockOrderFormContainer />
+				<div className="stock-show-chart-and-order">
+					<StockPriceChartContainer />
+					<StockOrderFormContainer />
+				</div>
 				<StockInfoContainer />
 			</div>
 	);
