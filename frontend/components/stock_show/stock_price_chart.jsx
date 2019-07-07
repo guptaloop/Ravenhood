@@ -1,14 +1,26 @@
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import StockPriceChart from './stock_price_chart_container';
+import React from 'react';
 
+class StockPriceChart extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 
-const mSP = ({ entities }) => ({
+	render() {
+		return (
+			<div className="chart-order-about-div">
 
-});
+				<div className="chart-order-div">
+					<div className="price-chart">
+						<input
+							type="text"
+							className="price-chart-box"
+							placeholder="Price Chart [coming soon]"
+						/>
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
 
-const mDP = dispatch => ({
-	
-});
-
-export default withRouter(connect(mSP, mDP)(StockPriceChart));
+export default StockPriceChart;

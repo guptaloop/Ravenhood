@@ -6,11 +6,11 @@ import { fetchStock } from '../../actions/stock_actions';
 
 const mSP = ({ entities }) => ({
 	// stockId: entities.search,
-	stock: entities.stocks[entities.search]
+	// stock: entities.stocks[entities.search]
 });
 
 const mDP = dispatch => ({
-	fetchStock: symbol => dispatch(fetchStock(symbol))
+	// fetchStock: symbol => dispatch(fetchStock(symbol))
 });
 
 export default withRouter(connect(mSP, mDP)(StockShowPage));
