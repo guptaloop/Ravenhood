@@ -8,7 +8,6 @@ export const fetchStock = symbol => (
 	})
 );
 
-
 ///// creating shell for index 
 //
 // export const fetchAllStocks = stocks => (

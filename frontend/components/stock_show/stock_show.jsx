@@ -4,18 +4,25 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 class StockShowPage extends React.Component {
 	constructor(props) {
 		super(props);
-		// this.state = {
-		// 	currentUser,
-		// 	stock
-		// 	};
-		}
-		
-		
+		console.log(this.props);
+	}
+
+	componentDidMount() {
+		const symbol = this.props.match.params.symbol;
+		this.props.fetchStock(symbol);
+	}
+
+
 	render() {
+		if (!this.props.stock) {
+			return (<h3 className="about-header">LOADING</h3>);
+		};
+
 		return (
 			<div className="stock-show">
 				<NavBarContainer />
-			
+				
+				{/* create a PriceChart component */}
 				<div className="chart-order-about-div">
 
 					<div className="chart-order-div">
@@ -26,7 +33,8 @@ class StockShowPage extends React.Component {
 								placeholder="Price Chart [coming soon]"
 							/>
 						</div>
-					
+
+						{/* create an OrderForm component */}
 						<div className="order-form">
 							<form>
 								<label className="input">Shares
@@ -43,7 +51,7 @@ class StockShowPage extends React.Component {
 					<div className="stock-info-div">
 						<div className="about-div">
 							<h3 className="about-header">About</h3><br />
-							<p className="about-p">Lannister Enterprises has recently become the largest company the Realm has ever seen. Stockholders question the firm's ethics & stability after a slew of recent scandals and betrayals</p>
+							<h3 className="about-p">{this.props.stock.about}</h3>
 						<div className="stock-info-div-div">
 							<div className="row-1">
 								<div className="row-1-headers">

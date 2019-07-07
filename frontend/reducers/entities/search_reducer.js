@@ -1,11 +1,13 @@
 import { RECEIVE_STOCK } from "../../actions/stock_actions";
 
-const searchReducer = (state = {}, action) => {
+const _nullStockId = Object.freeze({ id: null });
+
+const searchReducer = (state = _nullStockId, action) => {
 	Object.freeze(state);
 	
 	switch (action.type) {
 		case RECEIVE_STOCK:
-			return Object.assign({}, state, {currentStockId: action.stock.id});
+			return action.stock.id;
 		default:
 			return state;
 	}

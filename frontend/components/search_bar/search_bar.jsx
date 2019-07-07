@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
 					placeholder="search ..."
 					value={this.state.search}
 					onChange={e => this.handleChange(e)}
-					onKeyPress={this.handleKeyPress} />
+					onKeyPress={e => this.handleKeyPress(e)} />
 			</div>
 		);
 	}
