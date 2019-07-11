@@ -5,7 +5,7 @@ import { fetchStock } from '../../actions/stock_actions';
 
 
 const mSP = ({ entities }) => ({
-	stock: entities.stocks[entities.search]
+	stock: entities.stocks[entities.search],
 });
 
 const mDP = dispatch => ({
