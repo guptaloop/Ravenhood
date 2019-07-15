@@ -12,34 +12,41 @@
 					font-size: 26px;
 					letter-spacing: -0.5px;
 					font-weight: 500;
-					height: 30px;
-					width: 68px;
+					margin: 0px;
+					padding-top: 24px;
+					padding-bottom: 12px;
+					border-bottom-width: 1px;
+					border-bottom-color: rgb(244, 244, 245);
+					border-bottom-style: solid;
 				}
 
 				.about-p {
 					font-size: 16px;
-					font-weight: 100px;
+					font-weight: 400;
 					letter-spacing: 0.25px;
-					max-width: 570px;
+					max-width: 600px;
+					margin: 0px;
+					padding-bottom: 30px;
 					// line-height: 19px;
 				}
 
-						.row-1 {
-							display: flex;
-							width: 400px;
-							flex-direction: column;
+		.stock-info-div-div {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+				.row-item {
+					display: flex;
+					flex-direction: column;
+					width: 25%;
+					padding-bottom: 8px;
+				}
+
+						.info-header {
+							font-size: 13px;
+							font-weight: bolder;
 						}
 
-								.row-1-headers {
-									display: flex;
-									width: 400px;
-									justify-content: space-evenly;
-								}
-								
-								.info-text {
-									font-size: 12px;
-								}
-
-						.row-2 {
-							display: flex;
+						.info-text {
+							font-size: 13px;
 						}

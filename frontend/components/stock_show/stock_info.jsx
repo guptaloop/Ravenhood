@@ -19,27 +19,47 @@ class StockInfoSection extends React.Component {
 
 		return (
 			<div className="stock-info-div">
+				
 				<div className="about-div">
 					<h3 className="about-header">About</h3><br />
 					<h3 className="about-p">{this.props.stock.about}</h3>
-					<div className="stock-info-div-div">
-						<div className="row-1">
-							<div className="row-1-headers">
-								<h1>CEO</h1>
-								<h1>Founded</h1>
-								<h1>HQ</h1>
-								<h1>Industry</h1>
-							</div>
+				</div>
+
+				<div className="stock-info-div-div">
+						<div className="row-item">
+							<h1 className="info-header">CEO</h1>
 							<p className="info-text">{this.props.stock.ceo}</p>
+						</div>
+						<div className="row-item">
+							<h1 className="info-header">Founded</h1>
 							<p className="info-text">{this.props.stock.founded}</p>
+						</div>
+						<div className="row-item">
+							<h1 className="info-header">HQ</h1>
 							<p className="info-text">{this.props.stock.hq}</p>
+						</div>
+						<div className="row-item">
+							<h1 className="info-header">Industry</h1>
 							<p className="info-text">{this.props.stock.industry}</p>
 						</div>
-						<div className="row-2">
-							<h1></h1>
+						<div className="row-item">
+							<h1 className="info-header">Exchange</h1>
+							<p className="info-text">{this.props.stock.exchange}</p>
 						</div>
-					</div>
+						<div className="row-item">
+							<h1 className="info-header">Products</h1>
+							<p className="info-text">{this.props.stock.products}</p>
+						</div>
+						<div className="row-item">
+							<h1 className="info-header">Employees</h1>
+							<p className="info-text">{this.props.stock.employees}</p>
+						</div>
+						<div className="row-item">
+							<h1 className="info-header">Valuation</h1>
+							<p className="info-text">{this.props.stock.valuation}</p>
+						</div>
 				</div>
+					
 			</div>
 		);
 	}
