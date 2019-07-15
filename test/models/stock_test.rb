@@ -6,7 +6,7 @@
 #  symbol     :string           not null
 #  name       :string           not null
 #  about      :text             not null
-#  c_suite    :string           not null
+#  ceo        :string           not null
 #  founded    :string           not null
 #  hq         :string           not null
 #  industry   :string           not null
