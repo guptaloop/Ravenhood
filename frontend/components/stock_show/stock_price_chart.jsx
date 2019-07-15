@@ -6,18 +6,13 @@ class StockPriceChart extends React.Component {
 	}
 
 	render() {
-		return (
-			<div className="chart-order-about-div">
-
-				<div className="chart-order-div">
-					<div className="price-chart">
-						<input
-							type="text"
-							className="price-chart-box"
-							placeholder="Price Chart [coming soon]"
-						/>
-					</div>
-				</div>
+		return (	
+			<div className="price-chart">
+				<input
+					type="text"
+					className="price-chart-box"
+					placeholder="Price Chart [coming soon]"
+				/>
 			</div>
 		);
 	}

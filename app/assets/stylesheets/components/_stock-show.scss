@@ -4,9 +4,22 @@
 	align-items: center;
 }
 
-		.stock-show-chart-and-order {
+		.stock-show-main-div {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			width: 100vw;
 		}
+
+				.stock-show-left-column {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 700px;
+				}
+
+				.stock-show-right-column {
+					display: flex;
+					justify-content: center;
+					height: 100vh;
+				}

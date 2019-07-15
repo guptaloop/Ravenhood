@@ -15,11 +15,16 @@ class StockShowPage extends React.Component {
 		return (
 			<div className="stock-show">
 				<NavBarContainer />
-				<div className="stock-show-chart-and-order">
-					<StockPriceChartContainer />
-					<StockOrderFormContainer />
+				<div className="stock-show-main-div">
+					<div className="stock-show-left-column">
+						<StockPriceChartContainer />
+						<StockInfoContainer />
+						{/* <News Feed Container /> */}
+					</div>
+					<div className="stock-show-right-column">
+						<StockOrderFormContainer />
+					</div>
 				</div>
-				<StockInfoContainer />
 			</div>
 	);
 	}
