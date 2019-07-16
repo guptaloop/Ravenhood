@@ -10,13 +10,11 @@ class StockShowPage extends React.Component {
 		super(props);
 	}
 
-
 	// auto-invoked after the render (which shows the LOADING element), then will auto-render the component once the fetchStock dispatch completes.
 	componentDidMount() {
 		const symbol = this.props.match.params.symbol;
 		this.props.fetchStock(symbol);
 	}
-	
 
 	render() {
 		if (!this.props.stock) {

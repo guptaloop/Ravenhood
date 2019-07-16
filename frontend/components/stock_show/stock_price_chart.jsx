@@ -5,7 +5,7 @@ class StockPriceChart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
-			period: 5,
+			period: 5.0,
 			prices: []
 		};
 		this.getHistoricalPrices = this.getHistoricalPrices.bind(this);
@@ -28,7 +28,7 @@ class StockPriceChart extends React.Component {
 
 			prices.unshift(priceObj);
 			year--;
-			period--;
+			period -= 0.5;
 		}
 		return prices;
 	}
@@ -36,8 +36,8 @@ class StockPriceChart extends React.Component {
 	render() {
 		const priceChart = (
 			<div className="price-chart-div">
-				<header className="price-chart-header">{this.props.stock.name}</header>
-				<h2 className="price-chart-cur-price">$400</h2>
+				<header className="price-chart-text">{this.props.stock.name}</header>
+				<h2 className="price-chart-text">{this.state.prices.slice(-1)[0].price}</h2>
 				<LineChart width={600} height={400} data={this.state.prices}>
 					<XAxis dataKey="date" hide={true} />
 					<YAxis dataKey="price" hide={true} />
@@ -51,5 +51,3 @@ class StockPriceChart extends React.Component {
 }
 
 export default StockPriceChart;
-
-// { this.state.prices[-1].price }
