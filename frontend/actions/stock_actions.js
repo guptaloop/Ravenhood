@@ -26,6 +26,7 @@ export const storePrices = period => dispatch => (
 // custom method to generate random prices for stockShow page
 const genPrices = period => {
 	let year = 298;
+	const range = period;
 	let prices = [];
 
 	while (period > 0) {
@@ -35,8 +36,23 @@ const genPrices = period => {
 		};
 
 		prices.unshift(priceObj);
-		year--;
-		period -= 0.4;
+
+		if (range === 10) {
+			period -= 1;
+			year -= 1;
+		} else if (range === 50) {
+			period -= 4;
+			year -= 4;
+		} else if (range === 250) {
+			period -= 20;
+			year -= 20;
+		} else if (range === 1000) {
+			period -= 80;
+			year -= 80;
+		} else if (range === 10000) {
+			period -= 750;
+			year -= 750;
+		}
 	}
 	return prices;
 };

@@ -3,7 +3,7 @@ import React from 'react';
 class SearchBar extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {search: ''};
+		this.state = { search: '' };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}

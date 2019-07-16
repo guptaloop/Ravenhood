@@ -29,12 +29,10 @@ class StockOrderForm extends React.Component {
 	}
 
 	render() {
-		const symbol = this.props.match.params.symbol;
-
 		return (
 				<form className="order-form">
 					<div className="heading-div">
-						<h2 className="heading-symbol">{symbol}</h2>
+						<h2 className="heading-symbol">{this.props.stock.symbol}</h2>
 						{/* will need an eventHandler on this */}
 						<button className="heading-order-type-tog">Buy / Sell</button>
 					</div>

@@ -4,11 +4,12 @@ import StockOrderForm from './stock_order_form';
 
 
 const mSP = ({ entities }) => ({
-	// stock: entities.stock[entities.search]
+	stock: entities.stocks[entities.search],
+	priceArr: entities.prices,
 });
 
 const mDP = dispatch => ({
 	// will need to dispatch buy and sell transactions
 });
 
-export default withRouter(connect(null, null)(StockOrderForm));
+export default withRouter(connect(mSP, null)(StockOrderForm));

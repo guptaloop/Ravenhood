@@ -1,10 +1,24 @@
 .price-chart-div {
 	display: flex;
 	flex-direction: column;
-	width: 600px;
+	width: 100%;
 	border: black;
 }
 
 		.price-chart-text {
-			font-size: 36px;
+			font-size: 32px;
+			font-weight: 600;
+			letter-spacing: -0.50px;
+			line-height: 42px;
 		}
+
+		.chart-buttons-row {
+			display: flex;
+
+		}
+
+				.chart-button {
+					padding-right: 12px;
+					font-size: 14px;
+					font-weight: 500;
+				}
