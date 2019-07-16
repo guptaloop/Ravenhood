@@ -4,7 +4,7 @@ import StockPriceChart from './stock_price_chart';
 
 
 const mSP = ({ entities }) => ({
-
+	stock: entities.stocks[entities.search],
 });
 
 const mDP = dispatch => ({

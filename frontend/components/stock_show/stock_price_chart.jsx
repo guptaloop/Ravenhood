@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, YAxis } from 'recharts';
 
 class StockPriceChart extends React.Component {
 	constructor(props) {
@@ -35,12 +35,15 @@ class StockPriceChart extends React.Component {
 
 	render() {
 		const priceChart = (
-			// <div className="price-chart"></div>
+			<div className="price-chart-div">
+				<header className="price-chart-header">{this.props.stock.name}</header>
+				<h2 className="price-chart-cur-price">$400</h2>
 				<LineChart width={600} height={400} data={this.state.prices}>
 					<XAxis dataKey="date" hide={true} />
 					<YAxis dataKey="price" hide={true} />
-					<Line type="monotone" dataKey="price" stroke="#8884d8" />
+					<Line type="monotone" dataKey="price" stroke="#f45531" dot={false} />
 				</LineChart>
+			</div>
 		);
 
 		return (priceChart);
@@ -48,3 +51,5 @@ class StockPriceChart extends React.Component {
 }
 
 export default StockPriceChart;
+
+// { this.state.prices[-1].price }

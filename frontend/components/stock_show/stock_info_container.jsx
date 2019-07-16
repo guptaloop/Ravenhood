@@ -9,7 +9,7 @@ const mSP = ({ entities }) => ({
 });
 
 const mDP = dispatch => ({
-	fetchStock: symbol => dispatch(fetchStock(symbol))
+
 });
 
-export default withRouter(connect(mSP, mDP)(StockInfoSection));
+export default withRouter(connect(mSP, null)(StockInfoSection));
