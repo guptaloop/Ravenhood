@@ -16,4 +16,4 @@ export const fetchStock = symbol => (
 // 		method: 'GET',
 // 		data: { stocks }
 // 	})
-// );
+// )
