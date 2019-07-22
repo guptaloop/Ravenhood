@@ -1,5 +1,6 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import CustomTooltip from './custom_tooltip';
+import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 
 class StockPriceChart extends React.Component {
 	constructor(props) {
@@ -21,7 +22,17 @@ class StockPriceChart extends React.Component {
 				<LineChart width={600} height={400} data={prices}>
 					<XAxis dataKey="date" hide={true} />
 					<YAxis dataKey="price" hide={true} />
-					<Line type="monotone" dataKey="price" stroke="#f45531" dot={false} />
+					<Tooltip
+						wrapperStyle={{ visibility: 'visible' }}
+						position={{ x: 0, y: -8 }} 
+						content={<CustomTooltip />} />
+					<Line
+						type="monotone"
+						activeDot ={{r: 6}}
+						dataKey="price"
+						stroke="#f45531"
+						strokeWidth={2}
+						dot={false} />
 				</LineChart>
 		);
 		

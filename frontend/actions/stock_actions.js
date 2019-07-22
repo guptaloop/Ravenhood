@@ -23,7 +23,7 @@ export const storePrices = period => dispatch => (
 	dispatch(receivePrices(genPrices(period)))
 );
 
-// custom method to generate random prices for stockShow page
+// custom function to generate random prices for stockShow page
 const genPrices = period => {
 	let year = 298;
 	const range = period;
