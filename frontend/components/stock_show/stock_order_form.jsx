@@ -4,31 +4,24 @@ class StockOrderForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			price: 0,
-			shares: 0,
+			shares: 0
 			// order_type: "buy" or buy: false,
 		};
 		this.getCost = this.getCost.bind(this);
 	}
 
-	componentWillMount() {
-		// randomly generate price before component renders
-		this.state.price = (((Math.random() + 0.005) * 1000)).toFixed(2);
-	}
-
 	handleInput(type) {
 		return(e) => {
-			this.setState({ [type]: e.target.value });
+			console.log(this.state);
+			this.setState({ [type]: parseInt(e.target.value) });
 		};
 	}
 
-	getCost() {
-		const price = this.state.price;
-		const shares = this.state.shares;
-		return (price * shares).toFixed(2);
-	}
+	getCost(mktPrice) { (mktPrice * this.state.shares).toFixed(2);	}
 
 	render() {
+		const mktPrice = this.props.stock.mktPrice;
+		
 		return (
 				<form className="order-form">
 					<div className="heading-div">
@@ -42,19 +35,18 @@ class StockOrderForm extends React.Component {
 							<label className="row-shares">Shares</label>
 							<input
 								type="text"
-								
 								className="shares-input"
 								value={this.state.shares}
 								onChange={this.handleInput('shares')}/>
 						</div>
 						<div className="row">
 							<label className="row-price">Market Price</label>
-							<output className="row-output">{this.state.price}</output>
+							<output className="row-output">{mktPrice}</output>
 						</div>
 						<div className="price-border"></div>
 						<div className="row">
 							<label className="row-value">Total Value</label>
-							<output className="row-output">{this.getCost()}</output>
+							<output className="row-output">{this.getCost(mktPrice)}</output>
 						</div>
 					</div>
 					
@@ -63,7 +55,8 @@ class StockOrderForm extends React.Component {
 					</div>
 
 					<div className="avail-gold-div">
-						<h5 className="avail-gold">{this.state.price} Gold Available</h5>
+						{/* need to pull avail gold from users */}
+						<h5 className="avail-gold">5000 Gold Available</h5>
 					</div>
 				</form>
 		);

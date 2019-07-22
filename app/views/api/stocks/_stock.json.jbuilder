@@ -10,4 +10,5 @@ json.extract! stock,
 	:exchange,
 	:products,
 	:employees,
-	:valuation
+	:valuation,
+	:mkt_price

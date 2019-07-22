@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomTooltip from './custom_tooltip';
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
+import { LoadingBar } from '../loading_bar';
 
 class StockPriceChart extends React.Component {
 	constructor(props) {
@@ -18,14 +19,17 @@ class StockPriceChart extends React.Component {
 
 	render() {
 		let prices = this.props.prices;
-		const priceChart = (
+		const priceChart = prices ? (
 				<LineChart width={600} height={400} data={prices}>
 					<XAxis dataKey="date" hide={true} />
 					<YAxis dataKey="price" hide={true} />
 					<Tooltip
 						wrapperStyle={{ visibility: 'visible' }}
-						position={{ x: 0, y: -8 }} 
-						content={<CustomTooltip />} />
+						position={{ x: 0, y: -84 }} 
+						content={<CustomTooltip 
+											value={this.props.stock.mktPrice}
+										/>} 
+					/>
 					<Line
 						type="monotone"
 						activeDot ={{r: 6}}
@@ -33,14 +37,12 @@ class StockPriceChart extends React.Component {
 						stroke="#f45531"
 						strokeWidth={2}
 						dot={false} />
-				</LineChart>
-		);
+				</LineChart> ) : <LoadingBar /> ;
 		
 		return (
 			<div className="price-chart-div">
 				<header className="price-chart-text">{this.props.stock.name}</header>
-				{/* <h2 className="price-chart-text">{prices.slice(-1)[0].price}</h2> */}
-				{priceChart}
+				<div>{priceChart}</div>
 				<div className="chart-buttons-row">
 					{['10Y', '50Y', '250Y', '1000Y', '10000Y'].map(period => {
 						return (<button 

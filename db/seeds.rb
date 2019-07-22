@@ -23,7 +23,8 @@ ActiveRecord::Base.transaction do
 		exchange: "Seven Kingdoms Exchange",
 		products: "barley, millet, heavy weaponry, armor, wildfire",
 		employees: 1000000,
-		valuation: 20000000
+		valuation: 20000000,
+		mkt_price: 3048.12
 	})
 
 	free_stock = Stock.create({
@@ -37,7 +38,8 @@ ActiveRecord::Base.transaction do
 		exchange: "unlisted",
 		products: "snowshoes, wall-climbing gear, light weaponry, siege weaponry",
 		employees: 10000,
-		valuation: 100000
+		valuation: 100000,
+		mkt_price: 439.65
 	})
 
 	# stock template
@@ -52,8 +54,9 @@ ActiveRecord::Base.transaction do
 		# industry: '',
 		# exchange: '',
 		# products: '',
-		# employees: '',
-		# valuation: ''
+		# employees: ,
+		# valuation: ,
+		# mkt_price: 
 	# })
 
 end
