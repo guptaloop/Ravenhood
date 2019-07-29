@@ -10,7 +10,7 @@ const mSP = ({ entities }) => ({
 });
 
 const mDP = dispatch => ({
-	setPrices: period => dispatch(storePrices(period)),
+	setPrices: arr => dispatch(storePrices(arr)),
 });
 
 export default withRouter(connect(mSP, mDP)(StockPriceChart));

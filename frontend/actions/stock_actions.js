@@ -19,40 +19,45 @@ export const fetchStock = symbol => dispatch => (
 		stock => dispatch(receiveStock(stock)))
 );
 
-export const storePrices = period => dispatch => (
-	dispatch(receivePrices(genPrices(period)))
+export const storePrices = arr => dispatch => (
+	dispatch(receivePrices(genPrices(arr)))
 );
 
 // custom function to generate random prices for stockShow page
-const genPrices = period => {
+const genPrices = arr => {
 	let year = 298;
-	const range = period;
+	let period = arr[0];
 	let prices = [];
 
 	while (period > 0) {
-		let priceObj = {
-			date: year,
-			price: (((Math.random() + 0.005) * 1000)).toFixed(2)
-		};
+		if (year === 298) {
+			let priceObj = { date: year, price: arr[1] };
+			prices.unshift(priceObj);
+		} else {
+			let priceObj = {
+				date: year,
+				price: parseFloat((((Math.random() + 0.005) * 1000)).toFixed(2))
+			};
+			prices.unshift(priceObj);
+		}
 
-		prices.unshift(priceObj);
-
-		if (range === 10) {
+		if (arr[0] === 10) {
 			period -= 1;
 			year -= 1;
-		} else if (range === 50) {
+		} else if (arr[0] === 50) {
 			period -= 4;
 			year -= 4;
-		} else if (range === 250) {
+		} else if (arr[0] === 250) {
 			period -= 20;
 			year -= 20;
-		} else if (range === 1000) {
+		} else if (arr[0] === 1000) {
 			period -= 80;
 			year -= 80;
-		} else if (range === 10000) {
+		} else if (arr[0] === 10000) {
 			period -= 750;
 			year -= 750;
 		}
 	}
+
 	return prices;
 };

@@ -9,7 +9,9 @@ class StockPriceChart extends React.Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	componentWillMount() { this.props.setPrices(10); }
+	componentWillMount() { 
+		this.props.setPrices([10, this.props.stock.mktPrice]); 
+	}
 
 	handleClick(e) {
 		e.preventDefault();
@@ -19,6 +21,8 @@ class StockPriceChart extends React.Component {
 
 	render() {
 		let prices = this.props.prices;
+		let stock = this.props.stock;
+
 		const priceChart = prices ? (
 				<LineChart width={600} height={400} data={prices}>
 					<XAxis dataKey="date" hide={true} />
@@ -27,7 +31,7 @@ class StockPriceChart extends React.Component {
 						wrapperStyle={{ visibility: 'visible' }}
 						position={{ x: 0, y: -84 }} 
 						content={<CustomTooltip 
-											value={this.props.stock.mktPrice}
+											value={stock.mktPrice}
 										/>} 
 					/>
 					<Line
@@ -41,7 +45,8 @@ class StockPriceChart extends React.Component {
 		
 		return (
 			<div className="price-chart-div">
-				<header className="price-chart-text">{this.props.stock.name}</header>
+				<header className="price-chart-text">{stock.name}</header>
+				<span className="chart-label">{stock.mktPrice}</span>
 				<div>{priceChart}</div>
 				<div className="chart-buttons-row">
 					{['10Y', '50Y', '250Y', '1000Y', '10000Y'].map(period => {
