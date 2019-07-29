@@ -24,7 +24,7 @@ ActiveRecord::Base.transaction do
 		products: "barley, millet, heavy weaponry, armor, wildfire",
 		employees: 1000000,
 		valuation: 20000000,
-		mkt_price: 3048.12
+		mkt_price: 1848.12
 	})
 
 	free_stock = Stock.create({
@@ -39,7 +39,7 @@ ActiveRecord::Base.transaction do
 		products: "snowshoes, wall-climbing gear, light weaponry, siege weaponry",
 		employees: 10000,
 		valuation: 100000,
-		mkt_price: 439.65
+		mkt_price: 49.65
 	})
 
 	# stock template
@@ -57,6 +57,7 @@ ActiveRecord::Base.transaction do
 		# employees: ,
 		# valuation: ,
 		# mkt_price: 
+			# must be between 0 - 1000
 	# })
 
 end
