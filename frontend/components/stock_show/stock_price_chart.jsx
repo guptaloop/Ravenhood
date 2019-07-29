@@ -31,8 +31,9 @@ class StockPriceChart extends React.Component {
 						wrapperStyle={{ visibility: 'visible' }}
 						position={{ x: 0, y: -84 }} 
 						content={<CustomTooltip 
-											value={prices}
-										/>} 
+											prices={prices} 
+											mktPrice={stock.mktPrice}
+										/>}
 					/>
 					<Line
 						type="monotone"

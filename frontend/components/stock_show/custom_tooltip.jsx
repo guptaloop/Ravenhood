@@ -1,14 +1,13 @@
 import React from 'react';
 
-const CustomTooltip = ({active, payload, label, coordinate, value}) => {
-	let priceDiff;
-	let pctDiff;
-	let year;
-	const prices = value;
+const CustomTooltip = (
+	{active, payload, label, coordinate, prices, mktPrice}) => {
+	let priceDiff, pctDiff, year, base;
 	
 	if (active && payload && payload[0]) {
 		const basePrice = prices[0].price;
-		priceDiff = (payload[0].value - basePrice).toFixed(2);
+		// probably need to stringify and append the '+'
+		priceDiff = (payload[0].value - basePrice).toFixed(2);	
 		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
 		
 		if (label < 0) {
@@ -16,24 +15,25 @@ const CustomTooltip = ({active, payload, label, coordinate, value}) => {
 		} else {
 			year = label.toString() + ' AC';
 		}
+	} else {
+		// how can I get the basePrice here?
+		priceDiff = (mktPrice - 5).toFixed(2);
 	}
 
-	if (active) {
-		return (
-			<div>	
-				<span className="chart-price-change"/>
-					{`${priceDiff} (${pctDiff}%)`}
-				<span/>
-					
-				{/* displays year when hovering over line chart */}
-				<div className="chart-year" style={{ left: coordinate.x - 32 }}>
-					<span>{`${year}`}</span>
-				</div>
+
+	return (
+		<div>	
+
+			<span className="chart-price-changes"/>
+				{`${priceDiff ? priceDiff : mktPrice} (${pctDiff ? pctDiff : 0}%)`}
+			<span/>
+			
+			<div className="chart-year" style={{ left: coordinate.x - 32 }}>
+				<span>{`${year ? year : ''}`}</span>
 			</div>
-		);
-	}
-
-	return null;
+			
+		</div>
+	);
 }
 
 export default CustomTooltip;
