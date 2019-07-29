@@ -5,17 +5,23 @@
 	border: black;
 }
 
-		.price-chart-text {
+		.chart-company {
 			font-size: 32px;
 			font-weight: 600;
 			letter-spacing: -0.50px;
-			line-height: 42px;
-			padding-bottom: 50px;
+			padding-bottom: 5px;
 		}
+		
+		.chart-price {
+			font-size: 32px;
+			font-weight: 100;
+			letter-spacing: -0.50px;
+			padding-bottom: 90px;
+		}
+		
 
 		.chart-buttons-row {
 			display: flex;
-
 		}
 
 				.chart-button {
@@ -24,23 +30,7 @@
 					font-weight: 500;
 				}
 
-
-				.chart-label-div {
-					margin-top: 28px;
-					// width: 100px;
-					background-color: blue;
-				}
-
-						.chart-label{
-							font-size: 36px;
-						}
-
-				// .chart-price-label {
-				// 	font-size: 12px;
-				// 	color: yellow;
-				// }
-
-
+				// year that displays when hovering
 				.chart-year {
 					top: 65px;
 					width: 80px;

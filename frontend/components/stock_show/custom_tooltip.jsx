@@ -1,11 +1,16 @@
 import React from 'react';
 
-const CustomTooltip = ({active, payload, label, coordinate}) => {
-	// let price;
+const CustomTooltip = ({active, payload, label, coordinate, value}) => {
+	let priceDiff;
+	let pctDiff;
 	let year;
-
+	const prices = value;
+	
 	if (active && payload && payload[0]) {
-		// price = payload[0].value;
+		const basePrice = prices[0].price;
+		priceDiff = (payload[0].value - basePrice).toFixed(2);
+		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
+		
 		if (label < 0) {
 			year = (label * -1).toString() + ' BC';
 		} else {
@@ -15,11 +20,10 @@ const CustomTooltip = ({active, payload, label, coordinate}) => {
 
 	if (active) {
 		return (
-			<div>
-				{/* code for having the stock price display within this component */}
-				{/* <div className="chart-label-div" style={{ top: coordinate.y - 50 }}>
-					<span className="chart-label">{`${price}`}</span>
-				</div> */}
+			<div>	
+				<span className="chart-price-change"/>
+					{`${priceDiff} (${pctDiff}%)`}
+				<span/>
 					
 				{/* displays year when hovering over line chart */}
 				<div className="chart-year" style={{ left: coordinate.x - 32 }}>

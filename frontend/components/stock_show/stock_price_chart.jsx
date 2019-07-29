@@ -31,7 +31,7 @@ class StockPriceChart extends React.Component {
 						wrapperStyle={{ visibility: 'visible' }}
 						position={{ x: 0, y: -84 }} 
 						content={<CustomTooltip 
-											value={stock.mktPrice}
+											value={prices}
 										/>} 
 					/>
 					<Line
@@ -45,8 +45,8 @@ class StockPriceChart extends React.Component {
 		
 		return (
 			<div className="price-chart-div">
-				<header className="price-chart-text">{stock.name}</header>
-				<span className="chart-label">{stock.mktPrice}</span>
+				<header className="chart-company">{stock.name}</header>
+				<span className="chart-price">{stock.mktPrice}</span>
 				<div>{priceChart}</div>
 				<div className="chart-buttons-row">
 					{['10Y', '50Y', '250Y', '1000Y', '10000Y'].map(period => {
