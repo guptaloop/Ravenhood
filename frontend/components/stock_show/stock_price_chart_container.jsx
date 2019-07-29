@@ -5,6 +5,7 @@ import { storePrices } from '../../actions/stock_actions';
 
 
 const mSP = ({ entities }) => ({
+	stocks: entities.stocks,
 	stock: entities.stocks[entities.search],
 	prices: entities.prices,
 });

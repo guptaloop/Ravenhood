@@ -16,12 +16,12 @@ class StockPriceChart extends React.Component {
 	handleClick(e) {
 		e.preventDefault();
 		const period = parseInt(e.target.textContent, 10);
-		this.props.setPrices(period);
+		this.props.setPrices([period, this.props.stock.mktPrice]);
 	}
 
-	render() {
-		let prices = this.props.prices;
+	render() {	
 		let stock = this.props.stock;
+		let prices = this.props.prices;
 
 		const priceChart = prices ? (
 				<LineChart width={600} height={400} data={prices}>
