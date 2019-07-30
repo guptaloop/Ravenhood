@@ -6,23 +6,18 @@ import { LoadingBar } from '../loading_bar';
 class StockPriceChart extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { currPeriod: '10Y' };
-		this.handleClick = this.handleClick.bind(this);
+		this.state = { currPeriod: '' };
 		this.genChart = this.genChart.bind(this);
-	}
-
-	genChart(period) {
-		let formattedPeriod = parseInt(period, 10);
-		this.props.setPrices([formattedPeriod, this.props.stock.mktPrice]);
-	}
-
-	handleClick(period) {
-		this.setState({ currPeriod: period });
-		this.genChart(period);
 	}
 
 	componentWillMount() {
 		this.genChart('10Y');
+	}
+
+	genChart(period) {
+		this.setState({ currPeriod: period });
+		let formattedPeriod = parseInt(period, 10);
+		this.props.setPrices([formattedPeriod, this.props.stock.mktPrice]);
 	}
 
 	render() {	
@@ -55,14 +50,13 @@ class StockPriceChart extends React.Component {
 				<header className="chart-company">{stock.name}</header>
 				<div>{priceChart}</div>
 				<div id="chart-buttons">
-					{['10Y', '50Y', '250Y', '1000Y', '10000Y'].map(period => {
-						return (
+					{['10Y', '50Y', '250Y', '1000Y', '10000Y'].map(period => (
 						<button 
-							key={period} 
-							className={this.state.currPeriod === period ? 'selected' : '' }
-							onClick={() => this.handleClick(period)}
-						>{period}</button>
-					)})}
+							key = {period} 
+							className = {this.state.currPeriod === period ? 'selected' : ''}
+							onClick = {() => this.genChart(period)}>
+						{period}</button>
+					))}
 				</div>
 			</div>
 		);
