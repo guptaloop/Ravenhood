@@ -28,32 +28,40 @@
 					font-weight: 600;
 					letter-spacing: -0.50px;
 				}
-
-		.chart-buttons-row {
-			display: flex;
-			margin: 0px;
-			padding-top: 24px;
-			padding-bottom: 12px;
-			border-bottom-width: 1px;
-			border-bottom-color: rgb(244, 244, 245);
-			border-bottom-style: solid;
+		
+		// year that displays when hovering
+		.chart-year {
+			top: 80px;
+			width: 80px;
+			padding-left: 8px;
+			position: absolute;
 		}
-
-				.chart-button {
-					padding-right: 12px;
-					font-size: 14px;
-					font-weight: bold;
-				}
-
-				// year that displays when hovering
-				.chart-year {
-					top: 80px;
-					width: 80px;
-					padding-left: 8px;
-					position: absolute;
-				}
-				
+		
 				.chart-year-year {
 					font-size: 14px;
 					color: lightgrey;
 				}
+
+		#chart-buttons{
+			margin: 24px 0 12px;
+			border-bottom: 1px solid rgb(244, 244, 245);
+			height: 35.5px;
+			button{
+				padding: 0 0 14px;
+				margin: 0 12px;
+				font-size: 13px;
+				font-weight: 750;
+			}
+			button:first-child{
+				margin-left: 0;
+			}
+			button:hover{
+				color: #f45531;
+				cursor: pointer;
+			}
+			button.selected{
+				color: #f45531;
+				border-bottom: 2px solid #f45531;
+				padding-top: 2px;
+			}
+		}

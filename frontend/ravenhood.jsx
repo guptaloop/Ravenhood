@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		preLoadedState = {
 			session: { currentUserId: window.currentUser.id	},
 			entities: { users: { [window.currentUser.id]: window.currentUser } },
-			// search: { currentStockId: window.}
 		};
 	}
 	
