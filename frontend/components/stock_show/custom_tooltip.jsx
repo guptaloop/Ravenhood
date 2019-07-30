@@ -10,6 +10,10 @@ const CustomTooltip = (
 		priceDiff = (payload[0].value - basePrice).toFixed(2);	
 		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
 		
+		if (priceDiff > 0) {
+			priceDiff = '+' + priceDiff.toString();
+		}
+
 		if (label < 0) {
 			year = (label * -1).toString() + ' BC';
 		} else {
@@ -18,6 +22,10 @@ const CustomTooltip = (
 	} else {
 		// how can I get the basePrice here?
 		priceDiff = (mktPrice - 5).toFixed(2);
+
+		if (priceDiff > 0) {
+			priceDiff = '+' + priceDiff.toString();
+		}
 	}
 
 
@@ -25,13 +33,13 @@ const CustomTooltip = (
 		<div>
 			<div className="chart-numbers">
 				<span className="chart-price">{active ? payload[0].value : mktPrice}</span>
-				<span className="chart-price-changes"/>
+				<span className="chart-price-changes">
 					{`${priceDiff ? priceDiff : mktPrice} (${pctDiff ? pctDiff : 0}%)`}
-				<span/>
+				</span>
 			</div>
 			
 			<div className="chart-year" style={{ left: coordinate.x - 32 }}>
-				<span>{`${year ? year : ''}`}</span>
+				<span className="chart-year-year">{`${year ? year : ''}`}</span>
 			</div>
 			
 		</div>

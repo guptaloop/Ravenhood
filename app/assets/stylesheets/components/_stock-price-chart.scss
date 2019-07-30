@@ -6,44 +6,54 @@
 }
 
 		.chart-company {
-			font-size: 32px;
+			font-size: 34px;
 			font-weight: 600;
 			letter-spacing: -0.50px;
-			// padding-bottom: 5px;
 		}
 		
 		.chart-numbers {
 			display: flex;
 			flex-direction: column;
-			padding-top: -50px;
 		}
 
+				// exact same as chart-company above
 				.chart-price {
-					font-size: 32px;
-					font-weight: 100;
+					font-size: 34px;
+					font-weight: 600;
 					letter-spacing: -0.50px;
 				}
 
 				.chart-price-changes {
-					font-size: 12px;
-					font-weight: bold;
-					letter-spacing: -0.70px;
+					font-size: 14px;
+					font-weight: 600;
+					letter-spacing: -0.50px;
 				}
 
 		.chart-buttons-row {
 			display: flex;
+			margin: 0px;
+			padding-top: 24px;
+			padding-bottom: 12px;
+			border-bottom-width: 1px;
+			border-bottom-color: rgb(244, 244, 245);
+			border-bottom-style: solid;
 		}
 
 				.chart-button {
 					padding-right: 12px;
 					font-size: 14px;
-					font-weight: 500;
+					font-weight: bold;
 				}
 
 				// year that displays when hovering
 				.chart-year {
-					top: 65px;
+					top: 80px;
 					width: 80px;
+					padding-left: 8px;
 					position: absolute;
+				}
+				
+				.chart-year-year {
+					font-size: 14px;
 					color: lightgrey;
 				}

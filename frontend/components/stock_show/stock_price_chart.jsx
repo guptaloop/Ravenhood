@@ -24,7 +24,7 @@ class StockPriceChart extends React.Component {
 		let prices = this.props.prices;
 
 		const priceChart = prices ? (
-				<LineChart width={600} height={400} margin={{top: 100}} data={prices}>
+				<LineChart width={700} height={200} margin={{top: 100}} data={prices}>
 					<XAxis dataKey="date" hide={true} />
 					<YAxis dataKey="price" hide={true} />
 					<Tooltip
