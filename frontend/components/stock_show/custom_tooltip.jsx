@@ -2,7 +2,7 @@ import React from 'react';
 
 const CustomTooltip = (
 	{active, payload, label, coordinate, prices, mktPrice}) => {
-	let priceDiff, pctDiff, year, base;
+	let priceDiff, pctDiff, year;
 	
 	if (active && payload && payload[0]) {
 		const basePrice = prices[0].price;
@@ -22,11 +22,13 @@ const CustomTooltip = (
 
 
 	return (
-		<div>	
-
-			<span className="chart-price-changes"/>
-				{`${priceDiff ? priceDiff : mktPrice} (${pctDiff ? pctDiff : 0}%)`}
-			<span/>
+		<div>
+			<div className="chart-numbers">
+				<span className="chart-price">{active ? payload[0].value : mktPrice}</span>
+				<span className="chart-price-changes"/>
+					{`${priceDiff ? priceDiff : mktPrice} (${pctDiff ? pctDiff : 0}%)`}
+				<span/>
+			</div>
 			
 			<div className="chart-year" style={{ left: coordinate.x - 32 }}>
 				<span>{`${year ? year : ''}`}</span>

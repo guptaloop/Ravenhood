@@ -9,21 +9,26 @@
 			font-size: 32px;
 			font-weight: 600;
 			letter-spacing: -0.50px;
-			padding-bottom: 5px;
+			// padding-bottom: 5px;
 		}
 		
-		.chart-price {
-			font-size: 32px;
-			font-weight: 100;
-			letter-spacing: -0.50px;
-			padding-bottom: 90px;
+		.chart-numbers {
+			display: flex;
+			flex-direction: column;
+			padding-top: -50px;
 		}
 
-		.chart-price-changes {
-			font-size: 12px;
-			font-weight: bold;
-			letter-spacing: -0.70px;
-		}
+				.chart-price {
+					font-size: 32px;
+					font-weight: 100;
+					letter-spacing: -0.50px;
+				}
+
+				.chart-price-changes {
+					font-size: 12px;
+					font-weight: bold;
+					letter-spacing: -0.70px;
+				}
 
 		.chart-buttons-row {
 			display: flex;
