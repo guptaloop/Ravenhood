@@ -5,7 +5,6 @@ import { fetchStock } from '../../actions/stock_actions';
 
 
 const mSP = ({ entities }) => ({
-	// stockId: entities.search,
 	stock: entities.stocks[entities.search]
 });
 
