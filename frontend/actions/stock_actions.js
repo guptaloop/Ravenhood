@@ -3,6 +3,7 @@ import * as StockApiUtil from '../util/stock_api_util';
 export const RECEIVE_STOCK = "RECEIVE_STOCK";
 // export const RECEIVE_STOCKS = "RECEIVE_STOCKS";
 export const RECEIVE_PRICES = "RECEIVE_PRICES";
+export const RECEIVE_NEWS = "RECEIVE_NEWS";
 
 export const receiveStock = stock => ({
 	type: RECEIVE_STOCK,
@@ -14,6 +15,11 @@ export const receivePrices = prices => ({
 	prices
 });
 
+// export const receiveNews = news => ({
+// 	type: RECEIVE_NEWS,
+// 	news
+// });
+
 export const fetchStock = symbol => dispatch => (
 	StockApiUtil.fetchStock(symbol).then(
 		stock => dispatch(receiveStock(stock)))
@@ -23,8 +29,14 @@ export const storePrices = arr => dispatch => (
 	dispatch(receivePrices(genPrices(arr)))
 );
 
+// export const fetchNews = symbol => dispatch => (
+// 	StockApiUtil.fetchNews(symbol).then(
+// 		news => dispatch(receiveNews(news)))
+// );
+
 // custom function to generate random prices for stockShow page
 const genPrices = arr => {
+	// arr = [period, mktPrice] => [250, 360.43]
 	let year = 298;
 	let period = arr[0];
 	let prices = [];
@@ -41,23 +53,11 @@ const genPrices = arr => {
 			prices.unshift(priceObj);
 		}
 
-		if (arr[0] === 10) {
-			period -= 1;
-			year -= 1;
-		} else if (arr[0] === 50) {
-			period -= 4;
-			year -= 4;
-		} else if (arr[0] === 250) {
-			period -= 20;
-			year -= 20;
-		} else if (arr[0] === 1000) {
-			period -= 80;
-			year -= 80;
-		} else if (arr[0] === 10000) {
-			period -= 750;
-			year -= 750;
-		}
+		if (arr[0] === 10) { period -= 1;	year -= 1; }
+		else if (arr[0] === 50) {	period -= 4; year -= 4;	}
+		else if (arr[0] === 250) { period -= 20; year -= 20; }
+		else if (arr[0] === 1000) {	period -= 80;	year -= 80;	}
+		else if (arr[0] === 10000) { period -= 750; year -= 750; }
 	}
-
 	return prices;
 };

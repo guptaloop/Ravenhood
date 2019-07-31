@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const NewsFeed = () => {
-
+	
 	// call the fetchNews action from the StockShow container
 	// => pass 'news' in as a prop in StockShow
 	// => add 'news' as deconstructed prop above
