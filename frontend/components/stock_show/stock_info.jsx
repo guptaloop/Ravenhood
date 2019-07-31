@@ -1,7 +1,6 @@
 import React from 'react';
-import { LoadingBar } from '../loading_bar';
 
-const StockInfoSection = ({ stock }) => (
+export const StockInfo = ({ stock }) => (
 	<div className="stock-info-div">
 		
 		<div className="about-div">
@@ -46,6 +45,3 @@ const StockInfoSection = ({ stock }) => (
 			
 	</div>
 );
-
-
-export default StockInfoSection;
