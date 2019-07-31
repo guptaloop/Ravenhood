@@ -25,25 +25,25 @@ class StockPriceChart extends React.Component {
 		let prices = this.props.prices;
 
 		const priceChart = prices ? (
-				<LineChart width={700} height={200} margin={{top: 100}} data={prices}>
-					<XAxis dataKey="date" hide={true} />
-					<YAxis dataKey="price" hide={true} />
-					<Tooltip
-						wrapperStyle={{ visibility: 'visible' }}
-						position={{ x: 0, y: 0 }} 
-						content={<CustomTooltip 
-											prices={prices} 
-											mktPrice={stock.mktPrice}
-										/>}
-					/>
-					<Line
-						type="monotone"
-						activeDot ={{r: 6}}
-						dataKey="price"
-						stroke="#f45531"
-						strokeWidth={2}
-						dot={false} />
-				</LineChart> ) : <LoadingBar /> ;
+			<LineChart width={700} height={200} margin={{top: 100}} data={prices}>
+				<XAxis dataKey="date" hide={true} />
+				<YAxis dataKey="price" hide={true} />
+				<Tooltip
+					wrapperStyle={{ visibility: 'visible' }}
+					position={{ x: 0, y: 0 }} 
+					content={<CustomTooltip 
+										prices={prices} 
+										mktPrice={stock.mktPrice}
+									/>}
+				/>
+				<Line
+					type="monotone"
+					activeDot ={{r: 6}}
+					dataKey="price"
+					stroke="#f45531"
+					strokeWidth={2}
+					dot={false} />
+			</LineChart> ) : <LoadingBar />
 		
 		return (
 			<div className="price-chart-div">
