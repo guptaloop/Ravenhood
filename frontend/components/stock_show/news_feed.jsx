@@ -1,5 +1,4 @@
 import React from 'react';
-import { isMainThread } from 'worker_threads';
 
 export const NewsFeed = () => {
 
