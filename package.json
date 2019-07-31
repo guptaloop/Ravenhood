@@ -6,6 +6,8 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "browserslist": "^4.6.6",
+    "caniuse-lite": "^1.0.30000988",
     "currency-symbol": "^1.0.6",
     "emotion": "^10.0.14",
     "history": "^4.9.0",
