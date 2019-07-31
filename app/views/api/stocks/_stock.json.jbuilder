@@ -11,4 +11,5 @@ json.extract! stock,
 	:products,
 	:employees,
 	:valuation,
-	:mkt_price
+	:mkt_price,
+	:youtube_query
