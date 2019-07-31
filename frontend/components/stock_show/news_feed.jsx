@@ -6,6 +6,7 @@ export const NewsFeed = () => {
 	// => pass 'news' in as a prop in StockShow
 	// => add 'news' as deconstructed prop above
 	// => map over it and grab the necessary bits below
+	// => add 'attribution link' -- powered by News org ...
 
 	return (
 		<div className="news-feed-div">
