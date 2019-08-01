@@ -7,7 +7,8 @@ class NewsFeed extends React.Component {
 	}
 
 	componentWillMount() {
-		this.props.fetchNewsVideos(this.props.stock.youtubeQuery);
+		const query = this.props.stock ? this.props.stock.youtubeQuery : 'Westeros';
+		this.props.fetchNewsVideos(query);
 	}
 
 	render() {
