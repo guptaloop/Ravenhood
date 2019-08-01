@@ -17,7 +17,7 @@ class StockPriceChart extends React.Component {
 	genChart(period) {
 		this.setState({ currPeriod: period });
 		let formattedPeriod = parseInt(period, 10);
-		this.props.setPrices([formattedPeriod, this.props.stock.mktPrice]);
+		this.props.fetchPrices([formattedPeriod, this.props.stock.mktPrice]);
 	}
 
 	render() {	

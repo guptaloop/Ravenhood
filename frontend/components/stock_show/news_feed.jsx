@@ -1,9 +1,9 @@
 import React from 'react';
+import { formatDate } from '../../util/utils';
 
 class NewsFeed extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
 	}
 
 	componentWillMount() {
@@ -16,9 +16,13 @@ class NewsFeed extends React.Component {
 		);
 
 		const displayVideos = this.props.videos.map((video, index) => (
-			<a key={video.etag} href={urls[index]} className="news-article">
+			<a href={urls[index]} className="news-article" key={video.etag}>
 				<div className="article-text">
-					<h5>{video.snippet.channelTitle} {video.snippet.publishedAt}</h5>
+					<div className="video-title-days-div">
+						<h4 className="video-title">{video.snippet.channelTitle}</h4>
+						<h6 className="video-days">
+							{formatDate(video.snippet.publishedAt)}d</h6>
+					</div>
 					<h2>{video.snippet.title}</h2>
 					{/* need to fix this below */}
 					<h5>PLACEHOLDER</h5>

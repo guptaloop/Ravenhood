@@ -1,7 +1,7 @@
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import StockPriceChart from './stock_price_chart';
-import { storePrices } from '../../actions/stock_actions';
+import { fetchPrices } from '../../actions/stock_actions';
 
 
 const mSP = ({ entities }) => ({
@@ -9,7 +9,7 @@ const mSP = ({ entities }) => ({
 });
 
 const mDP = dispatch => ({
-	setPrices: arr => dispatch(storePrices(arr)),
+	fetchPrices: arr => dispatch(fetchPrices(arr)),
 });
 
 export default withRouter(connect(mSP, mDP)(StockPriceChart));

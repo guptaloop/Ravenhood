@@ -25,7 +25,7 @@ export const fetchStock = symbol => dispatch => (
 		stock => dispatch(receiveStock(stock)))
 );
 
-export const storePrices = arr => dispatch => (
+export const fetchPrices = arr => dispatch => (
 	dispatch(receivePrices(genPrices(arr)))
 );
 

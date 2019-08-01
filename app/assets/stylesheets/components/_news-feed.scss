@@ -28,6 +28,28 @@
 					padding-left: 12px;
 				}
 
+						.video-title-days-div {
+							display: flex;
+							flex-direction: row;
+						}
+
+						.video-title {
+							font-size: 13px;
+							font-weight: 500;
+							letter-spacing: 0.25px;
+							margin: 0;
+							padding-right: 6px;
+						}
+
+						.video-days {
+							font-size: 13px;
+							font-weight: 200;
+							letter-spacing: 0.25px;
+							color: rgb(203, 203, 205);
+							margin: 0;
+							width: 80px;
+						}
+
 				.news-img {
 					width: 196px;
 					height: 134px;
