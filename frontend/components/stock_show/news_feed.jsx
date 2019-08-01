@@ -7,7 +7,13 @@ class NewsFeed extends React.Component {
 	}
 
 	componentWillMount() {
-		const query = this.props.stock ? this.props.stock.youtubeQuery : 'Westeros';
+		const dashQueries = [
+			'Westeros', 'George RR Martin', 'Kingslayer', 'Drogon', 'Khal Drogo', 'Beric Dondarrion', 'Myrcella', 'Pyat Pree', 'Ygritte', 'Lady Brienne'
+		];
+		
+		const query = this.props.stock ?
+			this.props.stock.youtubeQuery : 
+			dashQueries[ Math.floor(Math.random() * dashQueries.length) ];
 		this.props.fetchNewsVideos(query);
 	}
 
