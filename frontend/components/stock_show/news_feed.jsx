@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatDate } from '../../util/utils';
+import { formatDate, formatTitle, getViewCount } from '../../util/utils';
 
 class NewsFeed extends React.Component {
 	constructor(props) {
@@ -16,24 +16,33 @@ class NewsFeed extends React.Component {
 		);
 
 		const displayVideos = this.props.videos.map((video, index) => (
-			<a href={urls[index]} className="news-article" key={video.etag}>
-				<div className="article-text">
-					<div className="video-title-days-div">
-						<h4 className="video-title">{video.snippet.channelTitle}</h4>
-						<h6 className="video-days">
-							{formatDate(video.snippet.publishedAt)}d</h6>
+			
+			<a href={urls[index]} className="news-video" key={video.etag} >
+				
+				<div className="video-text">
+					<div>
+						<div className="video-channel-days-div">
+							<h4 className="video-channel">{video.snippet.channelTitle}</h4>
+							<h6 className="video-days">
+								{formatDate(video.snippet.publishedAt)}d</h6>
+						</div>
+						<div>
+							<h2 className="video-title">{formatTitle(video.snippet.title)}</h2>
+						</div>
 					</div>
-					<h2>{video.snippet.title}</h2>
-					{/* need to fix this below */}
-					<h5>PLACEHOLDER</h5>
+					<div className="views-div">
+						<img src={window.images.view_icon} className="view-icon"></img>
+						<h5 className="view-count">{getViewCount()}</h5>
+					</div>
 				</div>
+
 				<img className="news-img" src={video.snippet.thumbnails.high.url} />
 			</a>
 		));
 
 		return (
-			<div className="news-feed-div">
-				<h1 className="news-header">News</h1>
+			<div className="video-feed-div">
+				<h1 className="video-header">News</h1>
 				<div>{displayVideos}</div>
 			</div>
 		);

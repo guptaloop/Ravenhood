@@ -1,10 +1,10 @@
-.news-feed-div {
+.video-feed-div {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
 
-		.news-header {
+		.video-header {
 			font-size: 26px;
 			letter-spacing: -0.5px;
 			font-weight: 500;
@@ -14,41 +14,76 @@
 			border-bottom: 1px solid rgb(244, 244, 245);
 		}
 
-		.news-article {
+		.news-video {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			height: 194px;
+			padding: 24px 12px 24px 12px;
+		}
+		.news-video:hover{
+			background-color:  rgba(0, 0, 0, 0.035);
 		}
 
-		.news-article:hover{
-			background-color:  rgba(0, 0, 0, 0.05);
-		}
-
-				.article-text {
+				.video-text {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					height: 100%;
 					padding-left: 12px;
 				}
 
-						.video-title-days-div {
+						.video-channel-days-div {
 							display: flex;
 							flex-direction: row;
+							padding-bottom: 6px;
+							width: 300px;
 						}
 
-						.video-title {
-							font-size: 13px;
-							font-weight: 500;
-							letter-spacing: 0.25px;
-							margin: 0;
-							padding-right: 6px;
+								.video-channel {
+									font-size: 12px;
+									font-weight: 800;
+									letter-spacing: 0.25px;
+									margin: 0;
+									padding-right: 6px;
+								}
+
+								.video-days {
+									font-size: 11px;
+									font-weight: 500;
+									letter-spacing: 0.25px;
+									color: rgb(203, 203, 205);
+									margin: 0;
+									width: 80px;
+								}
+
+								.video-title {
+									font-size: 13px;
+									font-weight: bold;
+									letter-spacing: 0.25px;
+									margin: 0;
+								}
+
+						.views-div {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
 						}
 
-						.video-days {
-							font-size: 13px;
-							font-weight: 200;
-							letter-spacing: 0.25px;
-							color: rgb(203, 203, 205);
-							margin: 0;
-							width: 80px;
-						}
+								.view-icon {
+									width: 18px;
+									height: 14px;
+									color: #8c8c8e;
+									fill: #8c8c8e;
+									padding-right: 4px;
+								}
+
+								.view-count {
+									font-size: 11px;
+									font-weight: 500;
+									letter-spacing: 0.25px;
+									color: rgb(203, 203, 205);
+								}
 
 				.news-img {
 					width: 196px;

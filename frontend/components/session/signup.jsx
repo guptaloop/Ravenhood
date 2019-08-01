@@ -35,7 +35,7 @@ class SignUpForm extends React.Component {
 						className="error-li"
 						key={`error-${i}`}>
 						<img
-							src={window.images.sess_err_logo}
+							src={window.images.sess_err_icon}
 							className="sess-err-logo"
 						/> {error}
 					</li>
