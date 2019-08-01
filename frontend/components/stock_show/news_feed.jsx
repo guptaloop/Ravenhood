@@ -16,9 +16,8 @@ class NewsFeed extends React.Component {
 		);
 
 		const displayVideos = this.props.videos.map((video, index) => (
-			
-			<a href={urls[index]} className="news-video" key={video.etag} >
-				
+			<a href={urls[index]} target="_blank"
+				 className="news-video" key={video.etag}	>
 				<div className="video-text">
 					<div>
 						<div className="video-channel-days-div">
@@ -27,7 +26,8 @@ class NewsFeed extends React.Component {
 								{formatDate(video.snippet.publishedAt)}d</h6>
 						</div>
 						<div>
-							<h2 className="video-title">{formatTitle(video.snippet.title)}</h2>
+							<h2 className="video-title">
+								{formatTitle(video.snippet.title)}</h2>
 						</div>
 					</div>
 					<div className="views-div">
@@ -35,7 +35,6 @@ class NewsFeed extends React.Component {
 						<h5 className="view-count">{getViewCount()}</h5>
 					</div>
 				</div>
-
 				<img className="news-img" src={video.snippet.thumbnails.high.url} />
 			</a>
 		));
