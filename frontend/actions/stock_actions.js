@@ -3,7 +3,7 @@ import * as StockApiUtil from '../util/stock_api_util';
 export const RECEIVE_STOCK = "RECEIVE_STOCK";
 // export const RECEIVE_STOCKS = "RECEIVE_STOCKS";
 export const RECEIVE_PRICES = "RECEIVE_PRICES";
-export const RECEIVE_NEWS = "RECEIVE_NEWS";
+export const RECEIVE_NEWS_VIDEOS = "RECEIVE_NEWS_VIDEOS";
 
 export const receiveStock = stock => ({
 	type: RECEIVE_STOCK,
@@ -15,10 +15,10 @@ export const receivePrices = prices => ({
 	prices
 });
 
-// export const receiveNews = news => ({
-// 	type: RECEIVE_NEWS,
-// 	news
-// });
+export const receiveNewsVideos = videos => ({
+	type: RECEIVE_NEWS_VIDEOS,
+	videos
+});
 
 export const fetchStock = symbol => dispatch => (
 	StockApiUtil.fetchStock(symbol).then(
@@ -29,10 +29,10 @@ export const storePrices = arr => dispatch => (
 	dispatch(receivePrices(genPrices(arr)))
 );
 
-// export const fetchNews = symbol => dispatch => (
-// 	StockApiUtil.fetchNews(symbol).then(
-// 		news => dispatch(receiveNews(news)))
-// );
+export const fetchNewsVideos = query => dispatch => (
+	StockApiUtil.fetchNewsVideos(query).then(
+		videos => dispatch(receiveNewsVideos(videos)))
+);
 
 // custom function to generate random prices for stockShow page
 const genPrices = arr => {

@@ -8,12 +8,11 @@ export const fetchStock = symbol => (
 	})
 );
 
-export const fetchNews = (symbol) => (
+export const fetchNewsVideos = (query) => (
 	$.ajax({
-		url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=house%20lannister&safeSearch=strict&key=AIzaSyCcuBtun7iUjt3z1uH98ZykfsHQVkm81Mo',
-		// https://www.youtube.com/watch?v=${videoId}
+		url: `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=5&q=${query}&safeSearch=strict&key=AIzaSyCcuBtun7iUjt3z1uH98ZykfsHQVkm81Mo`,
 		method: 'GET',
-		data: { symbol }
+		// data: { query }
 	})
 );
 
