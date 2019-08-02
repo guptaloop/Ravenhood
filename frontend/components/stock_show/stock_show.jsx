@@ -18,9 +18,7 @@ export default class StockShowPage extends React.Component {
 	}
 
 	render() {
-		if (!this.props.stock) { return (<LoadingBar />) }
-
-		return (
+		const display = !this.props.stock ? <LoadingBar /> : (
 			<div className="stock-show">
 				<NavBarContainer />
 				<div className="stock-show-main-div">
@@ -35,5 +33,7 @@ export default class StockShowPage extends React.Component {
 				</div>
 			</div>
 		);
+		
+		return (<div>{display}</div>);
 	}
 };
