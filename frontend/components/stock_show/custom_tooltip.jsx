@@ -1,40 +1,31 @@
 import React from 'react';
 
 const CustomTooltip = (
-	{active, payload, label, coordinate, prices, mktPrice}) => {
-	let priceDiff, pctDiff, year;
+	{ active, payload, label, coordinate, basePrice, mktPrice }) => {
 	
+	let priceDiff, pctDiff, year;
+
 	if (active && payload && payload[0]) {
-		const basePrice = prices[0].price;
-		// probably need to stringify and append the '+'
+		// this code runs when user hovers over the chart
 		priceDiff = (payload[0].value - basePrice).toFixed(2);	
 		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
-		
-		if (priceDiff > 0) {
-			priceDiff = '+' + priceDiff.toString();
-		}
-
-		if (label < 0) {
-			year = (label * -1).toString() + ' BC';
-		} else {
-			year = label.toString() + ' AC';
-		}
+		if (priceDiff > 0) { priceDiff = '+' + priceDiff.toString(); }
+		year = label < 0 ? (label*-1).toString() + ' BC' : label.toString() + ' AC';
 	} else {
-		// how can I get the basePrice here?
-		priceDiff = (mktPrice - 5).toFixed(2);
-
-		if (priceDiff > 0) {
-			priceDiff = '+' + priceDiff.toString();
-		}
+		// this code runs when the chart is not hovered on
+		priceDiff = (mktPrice - basePrice).toFixed(2);
+		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
+		if (priceDiff > 0) { priceDiff = '+' + priceDiff.toString(); }
 	}
-
 
 	return (
 		<div>
 			<div className="chart-numbers">
-				<span className="chart-price">{active ? payload[0].value : mktPrice}</span>
+				<span className="chart-price">
+					{active ? payload[0].value : mktPrice}
+				</span>
 				<span className="chart-price-changes">
-					{`${priceDiff ? priceDiff : mktPrice} (${pctDiff ? pctDiff : 0}%)`}
+					{`${priceDiff} (${pctDiff}%)`}
 				</span>
 			</div>
 			

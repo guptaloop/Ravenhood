@@ -1,12 +1,12 @@
 import React from 'react';
 import { LoadingBar } from '../loading_bar';
 import NavBarContainer from '../nav_bar/nav_bar_container';
-import StockPriceChartContainer from './stock_price_chart_container';
+import StockPriceChart from './stock_price_chart';
 import { StockInfo } from './stock_info';
 import NewsFeedContainer from './news_feed_container';
 import StockOrderFormContainer from './stock_order_form_container';
 
-class StockShowPage extends React.Component {
+export default class StockShowPage extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -25,7 +25,7 @@ class StockShowPage extends React.Component {
 				<NavBarContainer />
 				<div className="stock-show-main-div">
 					<div className="stock-show-left-column">
-						<StockPriceChartContainer stock={this.props.stock} />
+						<StockPriceChart stock={this.props.stock} />
 						<StockInfo stock={this.props.stock} />
 						<NewsFeedContainer stock={this.props.stock} />
 					</div>
@@ -37,5 +37,3 @@ class StockShowPage extends React.Component {
 		);
 	}
 };
-
-export default StockShowPage;

@@ -2,11 +2,15 @@ import React from 'react';
 import CustomTooltip from './custom_tooltip';
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import { LoadingBar } from '../loading_bar';
+import { genPrices } from '../../util/custom_utils';
 
-class StockPriceChart extends React.Component {
+export default class StockPriceChart extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { currPeriod: '' };
+		this.state = { 
+			currPeriod: '', 
+			prices: [],
+		};
 		this.genChart = this.genChart.bind(this);
 	}
 
@@ -16,13 +20,14 @@ class StockPriceChart extends React.Component {
 
 	genChart(period) {
 		this.setState({ currPeriod: period });
-		let formattedPeriod = parseInt(period, 10);
-		this.props.fetchPrices([formattedPeriod, this.props.stock.mktPrice]);
+		const formattedPeriod = parseInt(period, 10);
+		const newPrices = genPrices([formattedPeriod, this.props.stock.mktPrice]);
+		this.setState({	prices: newPrices });
 	}
 
 	render() {	
 		let stock = this.props.stock;
-		let prices = this.props.prices;
+		let prices = this.state.prices;
 
 		const priceChart = prices ? (
 			<LineChart width={700} height={200} margin={{top: 100}} data={prices} >
@@ -31,7 +36,7 @@ class StockPriceChart extends React.Component {
 				<Tooltip
 					wrapperStyle={{ visibility: 'visible' }}
 					position={{ x: 0, y: 0 }} 
-					content={<CustomTooltip prices={prices} mktPrice={stock.mktPrice} />}
+					content={<CustomTooltip basePrice={prices[0].price} mktPrice={stock.mktPrice} />}
 				/>
 				<Line type="monotone" stroke="#f45531" activeDot ={{r: 6}}
 							dataKey="price"	strokeWidth={2}  dot={false} />
@@ -54,5 +59,3 @@ class StockPriceChart extends React.Component {
 		);
 	}
 }
-
-export default StockPriceChart;

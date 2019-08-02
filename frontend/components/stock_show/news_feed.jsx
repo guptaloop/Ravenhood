@@ -1,7 +1,7 @@
 import React from 'react';
-import { formatDate, formatTitle, getViewCount } from '../../util/utils';
+import { formatDate, formatTitle, getViewCount } from '../../util/custom_utils';
 
-class NewsFeed extends React.Component {
+export default class NewsFeed extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -54,5 +54,3 @@ class NewsFeed extends React.Component {
 		);
 	};
 };
-
-export default NewsFeed;
