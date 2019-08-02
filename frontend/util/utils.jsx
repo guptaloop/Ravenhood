@@ -5,8 +5,15 @@ export const formatDate = (str) => {
 	return diff;
 };
 
-export const formatTitle = (title, lim=50) => (
-	title.length > lim ? title.slice(0, lim) + '...' : title.slice(0, lim)
-);
+export const formatTitle = (title, lim=50) => {
+	title = title.replace('&#39;', `'`);
+	title = title.replace('&amp;', '&');
+	while (title.includes('&quot;')) { 
+		title = title.replace('&quot;', `"`); 
+	}
+	return (
+		title.length > lim ? title.slice(0, lim) + '...' : title.slice(0, lim)
+	);
+};
 
 export const getViewCount = () => (	Math.floor((Math.random() * 1000)) );
