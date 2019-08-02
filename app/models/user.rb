@@ -17,8 +17,13 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
- # associations go here
+  has_many :watchlist_items,
+    foreign_key: :stock_id
 
+  has_many :watched_stocks,
+    through: :watchlist_items,
+    source: :stock
+  
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.valid_password?(password) ? user : nil

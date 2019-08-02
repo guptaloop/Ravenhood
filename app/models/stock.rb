@@ -16,7 +16,9 @@
 #  valuation  :integer          not null
 
 class Stock < ApplicationRecord
- ## no validations needed at model level, all data for this table will be seeded from seeds.rb and validated via db constraints.
+	## no validations needed at model level, all data for this table will be seeded from seeds.rb and validated via db constraints.
 
- 
+	has_many :watchlist_items,
+		foreign_key: :stock_id
+
 end

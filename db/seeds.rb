@@ -11,6 +11,11 @@ ActiveRecord::Base.transaction do
 			username: 'Lord Petyr Baelish',
 			password: 'makeitrain'
 		})
+	
+	demo_user_watched_stocks = WatchlistItem.create({
+		user_id: 1,
+		stock_id: 2
+	})
 
 	lion_stock = Stock.create({
 		symbol: 'LION',
