@@ -35,10 +35,10 @@ export default class StockPriceChart extends React.Component {
 				<YAxis dataKey="price" hide={true} />
 				<Tooltip
 					wrapperStyle={{ visibility: 'visible' }}
-					position={{ x: 0, y: 0 }} 
+					position={{ x: 0, y: -10 }} 
 					content={<CustomTooltip basePrice={prices[0].price} mktPrice={stock.mktPrice} />}
 				/>
-				<Line type="monotone" stroke="#f45531" activeDot ={{r: 6}}
+				<Line type="monotone" stroke="#21ce99" activeDot ={{r: 6}}
 							dataKey="price"	strokeWidth={2}  dot={false} />
 			</LineChart> ) : <LoadingBar />
 		

@@ -9,6 +9,7 @@
 			font-size: 34px;
 			font-weight: 600;
 			letter-spacing: -0.50px;
+			padding-bottom: 6px;
 		}
 		
 		.chart-numbers {
@@ -56,12 +57,12 @@
 				margin-left: 0;
 			}
 			button:hover{
-				color: #f45531;
+				color: #21ce99;
 				cursor: pointer;
 			}
 			button.selected{
-				color: #f45531;
-				border-bottom: 2px solid #f45531;
+				color: #21ce99;
+				border-bottom: 2px solid #21ce99;
 				padding-top: 2px;
 			}
 		}
