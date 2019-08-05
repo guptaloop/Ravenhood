@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_222714) do
+ActiveRecord::Schema.define(version: 2019_08_05_192133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_02_222714) do
     t.integer "stock_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["stock_id"], name: "index_watchlist_items_on_stock_id", unique: true
-    t.index ["user_id"], name: "index_watchlist_items_on_user_id", unique: true
+    t.index ["stock_id", "user_id"], name: "index_watchlist_items_on_stock_id_and_user_id", unique: true
   end
 
 end
