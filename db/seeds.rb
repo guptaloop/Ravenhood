@@ -4,18 +4,14 @@
 
 
 ActiveRecord::Base.transaction do 
-  User.destroy_all
+	User.destroy_all
+	WatchlistItem.destroy_all
 	Stock.destroy_all
 		
 	demo_user = User.create({ 
 			username: 'Lord Petyr Baelish',
 			password: 'makeitrain'
 		})
-	
-	demo_user_watched_stocks = WatchlistItem.create({
-		user_id: 1,
-		stock_id: 2
-	})
 
 	lion_stock = Stock.create({
 		symbol: 'LION',
@@ -67,5 +63,10 @@ ActiveRecord::Base.transaction do
 			# must be between 0 - 1000
 		# youtube_query: ''
 	# })
+
+	demo_user_watched_stocks = WatchlistItem.create({
+		user_id: 1,
+		stock_id: 2
+	})
 
 end

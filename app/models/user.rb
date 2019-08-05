@@ -2,13 +2,13 @@
 #
 # Table name: users
 #
-#  id              :bigint(8)        not null, primary key
+#  id              :bigint           not null, primary key
 #  username        :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
+#  gold            :integer          default(500000)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  gold            :integer          default(500000)
 
 class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :watchlist_items,
-    foreign_key: :stock_id
+    foreign_key: :user_id
 
   has_many :watched_stocks,
     through: :watchlist_items,
