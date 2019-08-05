@@ -1,5 +1,17 @@
 class Api::WatchlistItemsController < ApplicationController
 
+	def show
+		# show all for one user
+		@watched_stock = WatchlistItem.find_by(
+			user_id: params[:user_id], stock_id: params[:stock_id])
+
+		if @watched_stock
+			render json: "success! #{@watched_stock.id}"
+		else
+			render json: "unable to retrieve watched stock"
+		end
+	end
+
 	def create
 		@watchlist_item = WatchlistItem.new(watchlist_item_params)
 		
