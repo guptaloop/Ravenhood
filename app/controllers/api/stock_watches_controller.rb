@@ -1,7 +1,7 @@
 class Api::StockWatchesController < ApplicationController
 	
 	def index
-		@watched_stocks = StockWatch.user
+		@watched_stocks = StockWatch.all
 
 		if @watched_stocks
 			render :show
