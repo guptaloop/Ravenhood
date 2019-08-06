@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.store = store;
 	delete window.currentUser;
 
-	window.fetchWatchlist = fetchWatchlist(1, 2);
+	window.fetchWatchlist = fetchWatchlist();
 	
 	ReactDOM.render(<Root store={store}/>, root);
 });

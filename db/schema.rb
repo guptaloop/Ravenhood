@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_05_192133) do
+ActiveRecord::Schema.define(version: 2019_08_06_224608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stock_watches", force: :cascade do |t|
+    t.string "symbol", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["symbol", "user_id"], name: "index_stock_watches_on_symbol_and_user_id", unique: true
+  end
 
   create_table "stocks", force: :cascade do |t|
     t.string "symbol", null: false
@@ -43,14 +51,6 @@ ActiveRecord::Schema.define(version: 2019_08_05_192133) do
     t.integer "gold", default: 500000
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
-  end
-
-  create_table "watchlist_items", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "stock_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["stock_id", "user_id"], name: "index_watchlist_items_on_stock_id_and_user_id", unique: true
   end
 
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::WatchlistItemsControllerTest < ActionDispatch::IntegrationTest
+class Api::StockWatchesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

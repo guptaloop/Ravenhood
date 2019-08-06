@@ -21,9 +21,6 @@
 
 
 class Stock < ApplicationRecord
-	## no validations needed at model level, all data for this table will be seeded from seeds.rb and validated via db constraints.
-
-	has_many :watchers,
-		foreign_key: :stock_id
+	## no validations needed at model level, all data for this table will be seeded from seeds.rb and confirmed via db constraints.
 
 end
