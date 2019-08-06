@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-// import { fetchVideos } from './util/stock_api_util';
+import { fetchWatchlist } from './util/stock_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const root = document.getElementById('root');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.store = store;
 	delete window.currentUser;
 
-	// window.fetchVideos = fetchVideos();
+	window.fetchWatchlist = fetchWatchlist(1, 2);
 	
 	ReactDOM.render(<Root store={store}/>, root);
 });

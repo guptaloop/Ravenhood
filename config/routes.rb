@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
-    resource :users, only: [:create]
+    resources :users, only: [:create]
     resource :session, only: [:new, :create, :destroy]
-    resource :watchlist_item, only: [:create, :destroy, :show]
-    # resources :stocks, only: [:index]
-    get '/stocks/:symbol', to: 'stocks#show'
+    resources :stocks, only: [:index, :show]
+    resources :watchlist_items, only: [:create, :destroy, :index]
   end
-
 end

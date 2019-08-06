@@ -1,22 +1,21 @@
 class Api::WatchlistItemsController < ApplicationController
 
-	def show
-		# show all for one user
-		@watched_stock = WatchlistItem.find_by(
-			user_id: params[:user_id], stock_id: params[:stock_id])
+	def index
+		@watched_stocks = WatchlistItem.all
 
-		if @watched_stock
-			render json: "success! #{@watched_stock.id}"
+		if @watched_stocks
+			render :show
+			# send all the watched_stocks up, filter on the front end
 		else
-			render json: "unable to retrieve watched stock"
+			render json: "unable to retrieve watched stocks"
 		end
 	end
 
 	def create
 		@watchlist_item = WatchlistItem.new(watchlist_item_params)
 		
-		if @watchlist_item.save!
-			render json: "stock successfully added to watchlist!"
+		if @watchlist_item.save
+			render json: "stock added to watchlist!"
 		else
 			render json: @watchlist_item.errors.full_messages
 		end
@@ -27,7 +26,7 @@ class Api::WatchlistItemsController < ApplicationController
 			user_id: params[:user_id], stock_id: params[:stock_id])
 
 		if @watchlist_item.delete
-			render json: "stock successfully removed from watchlist!"
+			render json: "stock removed from watchlist!"
 		else
 			render json: @watchlist_item.errors.full_messages
 		end
@@ -35,6 +34,6 @@ class Api::WatchlistItemsController < ApplicationController
 	
 	private
 	def watchlist_item_params
-		params.permit(:user_id, :stock_id)
+		params.require(:watchlist_item).permit(:id, :user_id, :stock_id)
 	end
 end

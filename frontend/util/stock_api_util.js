@@ -17,6 +17,14 @@ export const fetchNewsVideos = (query) => (
 	})
 );
 
+export const fetchWatchlist = (user_id, stock_id) => (
+	$.ajax ({
+		url: `/api/watchlist_items/`,
+		method: 'GET',
+		data: { user_id, stock_id }
+	})
+);
+
 
 ///// creating shell for index 
 //
