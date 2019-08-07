@@ -1,13 +1,12 @@
 class Api::StockWatchesController < ApplicationController
 	
-	def index
-		@watched_stocks = StockWatch.all
+	def list
+		@user = User.find_by(id: params[:user_id])
 
-		if @watched_stocks
+		if @user
 			render :show
-			# send all the watched_stocks up, filter on the front end
 		else
-			render json: "unable to retrieve watched stocks"
+			render json: "unable to retrieve user's watchlist"
 		end
 	end
 

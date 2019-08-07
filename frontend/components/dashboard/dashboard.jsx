@@ -8,6 +8,10 @@ class Dashboard extends React.Component {
 		super(props);
 	}
 
+	componentDidMount() {
+		this.props.fetchWatchlist(this.props.currentUser);
+	}
+
 	render() {
 		return (
 			<div className="dashboard">
@@ -19,7 +23,7 @@ class Dashboard extends React.Component {
 						<NewsFeedContainer />
 					</div>
 					<div className="dashboard-right">
-						<h1> PORTFOLIO / WATCH LIST </h1>
+						<h1>WATCHLIST / PORTFOLIO</h1>
 					</div>
 				</div>
 			</div>

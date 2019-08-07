@@ -1,14 +1,17 @@
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
+import { fetchWatchlist } from '../../actions/stock_actions';
 
 
 const mSP = (state) => ({
-	currentUser: state.session.currentUserId
+	currentUser: state.session.currentUserId,
+	watchlist: state.entities.watchlist,
 });
 
 const mDP = dispatch => ({
-	logout: () => dispatch(logout())
+	logout: () => dispatch(logout()),
+	fetchWatchlist: user_id => dispatch(fetchWatchlist(user_id)),
 });
 
 export default withRouter(connect(mSP, mDP)(Dashboard));

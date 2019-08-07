@@ -11,3 +11,4 @@ things to fix:
 - refactor Component structure
 - fix the Stock Page when not logged in -- nav bar and order form
 - add a currency symbol to any displayed price
+- how do I get my controller to return only the watched-stocks for 1 user?

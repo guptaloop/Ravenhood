@@ -17,9 +17,9 @@ export const fetchNewsVideos = (query) => (
 	})
 );
 
-export const fetchWatchlist = () => (
+export const fetchWatchlist = (user_id) => (
 	$.ajax ({
-		url: `/api/stock_watches/`,
+		url: `/api/stock_watches/${user_id}`,
 		method: 'GET'
 	})
 );
