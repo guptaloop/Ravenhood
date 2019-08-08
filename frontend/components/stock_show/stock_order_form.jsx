@@ -21,8 +21,10 @@ export default class StockOrderForm extends React.Component {
 
 	render() {
 		const mktPrice = this.props.stock.mktPrice;
+		// const watchlistButton = <button ></button>
 		
 		return (
+			<div className="order-form-watchlist-button">
 				<form className="order-form">
 					<div className="heading-div">
 						<h2 className="heading-symbol">{this.props.stock.symbol}</h2>
@@ -51,7 +53,7 @@ export default class StockOrderForm extends React.Component {
 					</div>
 					
 					<div className="submit-order-button-div">
-						<button className="submit-order-button">Submit Order</button>
+						<button className="sidebar-button">Submit Order</button>
 					</div>
 
 					<div className="avail-gold-div">
@@ -59,6 +61,8 @@ export default class StockOrderForm extends React.Component {
 						<h5 className="avail-gold">5000 Gold Available</h5>
 					</div>
 				</form>
+				{/* <div className="watchlist-button-div">{watchlistButton}</div> */}
+			</div>
 		);
 	}
 }

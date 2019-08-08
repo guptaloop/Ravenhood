@@ -1,3 +1,8 @@
+.order-form-watchlist-button {
+	display: flex;
+	flex-direction: column;
+}
+
 .order-form {
 	display: flex;
 	flex-direction: column;
@@ -113,7 +118,7 @@
 			padding-bottom: 24px;
 		}
 
-				.submit-order-button {
+				.sidebar-button {
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -129,7 +134,7 @@
 					border-radius: 4px;
 				}
 
-				.submit-order-button:hover {
+				.sidebar-button:hover {
 					color: black;
 				}
 
@@ -152,3 +157,8 @@
 					height: 32px;
 					margin: 0px;
 				}
+
+		.watchlist-button-div {
+			padding: 0px 24px 12px 24px;
+			margin-top: 24px;
+		}

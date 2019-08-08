@@ -24,10 +24,7 @@ export const fetchWatchlist = (user_id) => (
 	})
 );
 
-
-///// creating shell for index 
-//
-// export const fetchAllStocks = stocks => (
+// export const fetchAllStocks = () => (
 // 	$.ajax({
 // 		url: '/api/stocks/:symbol',
 // 		method: 'GET',

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import NewsFeedContainer from '../stock_show/news_feed_container';
+import Watchlist from './watchlist';
 
 
 class Dashboard extends React.Component {
@@ -19,11 +20,11 @@ class Dashboard extends React.Component {
 
 				<div className="dashboard-main">
 					<div className="dashboard-left">
-						<h1>PORTFOLIO VALUE / STOCK PRICE CHART</h1>
+						<div>PORTFOLIO VALUE CHART</div>
 						<NewsFeedContainer />
 					</div>
 					<div className="dashboard-right">
-						<h1>WATCHLIST / PORTFOLIO</h1>
+						<Watchlist watchlist={this.props.watchlist}/>
 					</div>
 				</div>
 			</div>
