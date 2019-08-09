@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :stocks, only: [:index, :show]
     resources :stock_watches, only: [:create, :destroy]
     get 'stock_watches/:user_id', to: 'stock_watches#list'
-    resources :holdings, only: [:create, ]
+    resources :holdings, only: [:index, :show, :create, :update, :destroy]
+    # use PATCH for #update >> PUT requires all fields to be passed down
   end
 end
