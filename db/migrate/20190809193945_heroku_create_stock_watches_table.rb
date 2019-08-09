@@ -1,6 +1,5 @@
-class CreateStockWatches < ActiveRecord::Migration[5.2]
+class HerokuCreateStockWatchesTable < ActiveRecord::Migration[5.2]
   def change
-    drop_table :stock_watches
     create_table :stock_watches do |t|
       t.string :symbol, null: false
       t.integer :user_id, null: false
