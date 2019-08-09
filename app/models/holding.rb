@@ -12,5 +12,7 @@
 #
 
 class Holding < ApplicationRecord
-	
+	validates :user_id, :symbol, :shares, :price, presence: true
+
+	# associations?
 end
