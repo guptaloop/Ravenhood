@@ -1,4 +1,4 @@
-class HerokuCreateStockWatchesTable < ActiveRecord::Migration[5.2]
+class CreateStockWatches < ActiveRecord::Migration[5.2]
   def change
     create_table :stock_watches do |t|
       t.string :symbol, null: false
