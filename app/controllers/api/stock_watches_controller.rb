@@ -33,10 +33,5 @@ class Api::StockWatchesController < ApplicationController
 			render json: @stock_watch.errors.full_messages
 		end
 	end
-	
-	# private
-	# def stock_watch_params
-	# 	params.require(:stock_watch).permit(:user_id, :symbol)
-	# end
-	
+		
 end

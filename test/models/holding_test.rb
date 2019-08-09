@@ -6,7 +6,7 @@
 #  user_id    :integer          not null
 #  symbol     :string           not null
 #  shares     :integer          not null
-#  price      :integer          not null
+#  price      :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
