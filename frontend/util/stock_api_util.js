@@ -26,17 +26,15 @@ export const fetchWatchlist = (user_id) => (
 
 export const addToWatchlist = (user_id, symbol) => (
 	$.ajax ({
-		url: `/api/stock_watches`,
+		url: `/api/stock_watches?user_id=${user_id}&symbol=${symbol}`,
 		method: 'POST',
-		data: { user_id, symbol }
 	})
 );
 
-export const removeFromWatchlist = (watchlistId, userId) => (
+export const removeFromWatchlist = (watchlistId, user_id) => (
 	$.ajax ({
-		url: `/api/stock_watches/${watchlistId}`,
+		url: `/api/stock_watches/${watchlistId}?user_id=${user_id}`,
 		method: 'DELETE',
-		data: { userId }
 	})
 );
 

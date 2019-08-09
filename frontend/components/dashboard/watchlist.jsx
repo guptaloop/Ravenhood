@@ -1,13 +1,15 @@
 import React from 'react';
 import { WatchlistChart } from './watchlist_chart';
-import { genPrices } from '../../util/custom_utils';
+import { Link } from 'react-router-dom';
 
 const Watchlist = ({ watchlist }) => {
 	const displayWatchlist = watchlist.map(item => (
-		<div className="watchlist-item" key={item.symbol}>
-			<h4 className="item-text">{item.symbol}</h4>
-			<WatchlistChart />
-		</div>
+		<Link to={`/stocks/${item.symbol}`} key={item.symbol} >
+			<div className="watchlist-item">
+				<h4 className="item-text">{item.symbol}</h4>
+				<WatchlistChart />
+			</div>
+		</Link>
 	));
 	
 	return (
