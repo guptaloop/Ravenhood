@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
     resources :stocks, only: [:index, :show]
     resources :stock_watches, only: [:create, :destroy]
-
     get 'stock_watches/:user_id', to: 'stock_watches#list'
+    resources :holdings, only: [:create, ]
   end
 end

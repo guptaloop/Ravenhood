@@ -20,6 +20,11 @@ class User < ApplicationRecord
   has_many :watched_stocks,
     foreign_key: :user_id,
     class_name: 'StockWatch'
+
+  has_many :holdings,
+    foreign_key: :user_id,
+    class_name: 'Holding'
+
   
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

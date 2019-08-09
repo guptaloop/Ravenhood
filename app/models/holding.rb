@@ -14,5 +14,8 @@
 class Holding < ApplicationRecord
 	validates :user_id, :symbol, :shares, :price, presence: true
 
-	# associations?
+	belongs_to :user,
+		foreign_key: :user_id,
+		class_name: 'User'
+		
 end
