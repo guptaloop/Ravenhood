@@ -6,7 +6,7 @@ const Watchlist = ({ watchlist }) => {
 	const displayWatchlist = watchlist.map(item => (
 		<div className="watchlist-item" key={item.symbol}>
 			<h4 className="item-text">{item.symbol}</h4>
-			<WatchlistChart prices={genPrices([10, 300])}/>
+			<WatchlistChart />
 		</div>
 	));
 	

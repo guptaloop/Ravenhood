@@ -11,24 +11,27 @@ export default class StockShowPage extends React.Component {
 		super(props);
 	}
 
-	// auto-invoked after the render (which shows the LOADING element), then will auto-render the component once the fetchStock dispatch completes.
 	componentDidMount() {
+		const userId = (Object.keys(this.props.userId))[0];
+		this.props.fetchWatchlist(userId);
 		const symbol = this.props.match.params.symbol;
 		this.props.fetchStock(symbol);
 	}
 
 	render() {
-		const display = !this.props.stock ? <LoadingBar /> : (
+		const currStock = this.props.stock;
+
+		const display = !currStock ? <LoadingBar /> : (
 			<div className="stock-show">
 				<NavBarContainer />
 				<div className="stock-show-main-div">
 					<div className="stock-show-left-column">
-						<StockPriceChart stock={this.props.stock} />
-						<StockInfo stock={this.props.stock} />
-						<NewsFeedContainer stock={this.props.stock} />
+						<StockPriceChart stock={currStock} />
+						<StockInfo stock={currStock} />
+						<NewsFeedContainer stock={currStock} />
 					</div>
 					<div className="stock-show-right-column">
-						<StockOrderFormContainer />
+						<StockOrderFormContainer stock={currStock}/>
 					</div>
 				</div>
 			</div>

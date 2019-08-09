@@ -31,15 +31,16 @@
 				.item-text {
 					display: flex;
 					align-items: center;
-					font-size: 13px;
+					font-size: 14px;
 					font-weight: 600;
+					padding-bottom: 2px;
 					margin: 0px 0px 0px 0px;
 				}
 
 				.watchlist-chart {
 					display: flex;
 					flex-direction: row;
-					align-content: space-evenly;
+					align-items: center;
 					padding-left: 24px;
 				}
 
@@ -47,8 +48,27 @@
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
+					align-items: flex-end;
 					font-weight: 300;
 					height: 48px;
 					padding-left: 24px;
 					margin: 0 0 0 0;
 				}
+
+						.pct-change-pos {
+							display: flex;
+							align-items: center;
+							font-size: 13px;
+							color: #21CE99;
+							font-weight: 400;
+							margin: 0px 0px 0px 0px;
+						}
+
+						.pct-change-neg {
+							display: flex;
+							align-items: center;
+							font-size: 13px;
+							color: #F45531;
+							font-weight: 400;
+							margin: 0px 0px 0px 0px;
+						}

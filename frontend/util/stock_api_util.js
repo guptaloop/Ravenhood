@@ -24,6 +24,22 @@ export const fetchWatchlist = (user_id) => (
 	})
 );
 
+export const addToWatchlist = (user_id, symbol) => (
+	$.ajax ({
+		url: `/api/stock_watches`,
+		method: 'POST',
+		data: { user_id, symbol }
+	})
+);
+
+export const removeFromWatchlist = (watchlistId, userId) => (
+	$.ajax ({
+		url: `/api/stock_watches/${watchlistId}`,
+		method: 'DELETE',
+		data: { userId }
+	})
+);
+
 // export const fetchAllStocks = () => (
 // 	$.ajax({
 // 		url: '/api/stocks/:symbol',

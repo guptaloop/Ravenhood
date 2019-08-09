@@ -11,29 +11,32 @@ class Api::StockWatchesController < ApplicationController
 	end
 
 	def create
-		@stock_watch = StockWatch.new(stock_watch_params)
+		@user = User.find_by(id: params[:user_id])
+		@stock_watch = StockWatch.new(
+			user_id: params[:user_id], symbol: params[:symbol])
 		
 		if @stock_watch.save
-			render json: "stock added to watchlist!"
+			render :show
 		else
 			render json: @stock_watch.errors.full_messages
 		end
 	end
 
 	def destroy
+		@user = User.find_by(id: params[:user_id])
 		@stock_watch = StockWatch.find(params[:id])
 
 		if @stock_watch
 			@stock_watch.delete
-			render json: "stock removed from watchlist!"
+			render :show
 		else
 			render json: @stock_watch.errors.full_messages
 		end
 	end
 	
-	private
-	def stock_watch_params
-		params.require(:stock_watch).permit(:user_id, :symbol)
-	end
+	# private
+	# def stock_watch_params
+	# 	params.require(:stock_watch).permit(:user_id, :symbol)
+	# end
 	
 end

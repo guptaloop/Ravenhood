@@ -19,17 +19,13 @@ export default class StockPriceChart extends React.Component {
 	}
 	
 	componentWillUpdate(nextProps) {
-		if (nextProps.stock.id !== this.props.stock.id) {
-			// console.log('yay');
-			this.genChart('10Y');
-		}
+		if (nextProps.stock.id !== this.props.stock.id) { this.genChart('10Y'); }
 	}
 
 	genChart(period) {
 		this.setState({ currPeriod: period });
 		const formattedPeriod = parseInt(period, 10);
 		const newPrices = genPrices([formattedPeriod, this.props.stock.mktPrice]);
-		console.log(newPrices);
 		this.setState({	prices: newPrices });
 	}
 

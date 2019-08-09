@@ -10,7 +10,6 @@ const mSP = (state) => ({
 });
 
 const mDP = dispatch => ({
-	logout: () => dispatch(logout()),
 	fetchWatchlist: user_id => dispatch(fetchWatchlist(user_id)),
 });
 

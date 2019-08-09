@@ -32,5 +32,15 @@ export const fetchNewsVideos = query => dispatch => (
 
 export const fetchWatchlist = (user_id) => dispatch => (
 	StockApiUtil.fetchWatchlist(user_id).then(
-	watchlist => dispatch(receiveWatchlist(watchlist)))
+		watchlist => dispatch(receiveWatchlist(watchlist)))
+);
+
+export const addToWatchlist = (user_id, symbol) => dispatch => (
+	StockApiUtil.addToWatchlist(user_id, symbol).then(
+		watchlist => dispatch(receiveWatchlist(watchlist)))
+);
+
+export const removeFromWatchlist = (watchlistId, user_id) => dispatch => (
+	StockApiUtil.removeFromWatchlist(watchlistId, user_id).then(
+		watchlist => dispatch(receiveWatchlist(watchlist)))
 );

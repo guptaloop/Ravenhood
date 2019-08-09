@@ -1,27 +1,44 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import { genPrices } from '../../util/custom_utils';
 
 
-export const WatchlistChart = ({ prices }) => {
-	// const curPrice = prices[10].price;
-	const curPrice = 55;
-	// const basePrice = prices[0].price;
-	const basePrice = 400;
+export const WatchlistChart = () => {
+	const prices = genPrices([10, (Math.random()*1000).toFixed(2)]);
+	const curPrice = prices.slice(-1)[0].price;
+	const basePrice = prices[0].price;
 	const pctChange = (((curPrice - basePrice) / basePrice) * 100).toFixed(2);
 
-	return (
+	// displays either green or red chart / numbers
+	const display = pctChange > 0 ? (
 		<div className="watchlist-chart">
 			<div>
 				<LineChart width={80} height={30} data={prices} >
 					<XAxis dataKey="date" hide={true} />
 					<YAxis dataKey="price" hide={true} />
-					<Line type="monotone" stroke="#21ce99" dataKey="price" strokeWidth={1} 				dot={false}/>
+					<Line type="monotone" stroke="#21CE99" dataKey="price" strokeWidth={1} dot={false} />
 				</LineChart>
 			</div>
 			<div className="item-numbers">
-				<h4 className="item-text">{curPrice}</h4>
-				<h4 className="item-text">{pctChange}%</h4>
+				<h4 className="item-text">${curPrice}</h4>
+				<h4 className="pct-change-pos">{pctChange}%</h4>
+			</div>
+		</div>
+	) : (
+		<div className="watchlist-chart">
+			<div>
+				<LineChart width={80} height={30} data={prices} >
+					<XAxis dataKey="date" hide={true} />
+					<YAxis dataKey="price" hide={true} />
+					<Line type="monotone" stroke="#F44531" dataKey="price" strokeWidth={1} dot={false} />
+				</LineChart>
+			</div>
+			<div className="item-numbers">
+				<h4 className="item-text">${curPrice}</h4>
+				<h4 className="pct-change-neg">{pctChange}%</h4>
 			</div>
 		</div>
 	);
+
+	return (<div>{display}</div>);
 };
