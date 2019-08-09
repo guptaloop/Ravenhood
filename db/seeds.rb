@@ -64,9 +64,16 @@ ActiveRecord::Base.transaction do
 		# youtube_query: ''
 	# })
 
-	demo_user_watchlist = StockWatch.create({
+	demo_watchlist = StockWatch.create({
 		user_id: 1,
 		symbol: 'LION'
+	})
+
+	demo_holding = Holding.create({
+		user_id: 1,
+		symbol: 'FREE',
+		shares: 100,
+		price: 49.65
 	})
 
 end
