@@ -10,10 +10,27 @@ export default class StockOrderForm extends React.Component {
 			// order_type: "buy" or buy: false,
 		};
 		this.getCost = this.getCost.bind(this);
+		this.handleOrder = this.handleOrder.bind(this);
+	}
+
+	componentWillMount() {
+		const userId = (Object.keys(this.props.userId))[0];
+		this.props.fetchHoldings(userId);
 	}
 
 	handleInput(type) {
 		return(e) => { this.setState({ [type]: parseInt(e.target.value) });	};
+	}
+
+	handleOrder(user_id, symbol, shares, price) {
+		const ownedStocks = this.props.holdings.map(holding => holding.symbol);
+		if (ownedStocks.includes(symbol)) {
+			const index = ownedStocks.indexOf(symbol);
+			const holding_id = this.props.holdings[index].id;
+			this.props.updateHolding(holding_id, user_id, shares);
+		} else {
+			this.props.buyStock(user_id, symbol, shares, price);
+		}
 	}
 
 	getCost(mktPrice) { (mktPrice * this.state.shares).toFixed(2); }
@@ -76,7 +93,10 @@ export default class StockOrderForm extends React.Component {
 					</div>
 					
 					<div className="submit-order-button-div">
-						<button className="sidebar-button">Submit Order</button>
+						<button className="sidebar-button"
+							onClick = {() => this.handleOrder(userId, symbol, this.state.shares, mktPrice)}
+							>Submit Order
+						</button>
 					</div>
 
 					<div className="avail-gold-div">

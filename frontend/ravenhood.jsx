@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import { fetchHoldings, updateHolding, createHolding, destroyHolding } from './util/stock_api_util';
+import { fetchHoldings } from './actions/holding_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const root = document.getElementById('root');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.store = store;
 	delete window.currentUser;
 
-	window.destroyHolding = destroyHolding(3, 1);
+	window.fetchHoldings = fetchHoldings(1);
 	
 	ReactDOM.render(<Root store={store}/>, root);
 });
