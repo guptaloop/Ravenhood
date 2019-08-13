@@ -15,7 +15,7 @@ export default class StockPriceChart extends React.Component {
 	}
 
 	componentWillMount() {
-		this.genChart('10Y');
+		this.genChart('20Y');
 	}
 	
 	componentWillUpdate(nextProps) {
@@ -51,7 +51,7 @@ export default class StockPriceChart extends React.Component {
 				<header className="chart-company">{stock.name}</header>
 				<div>{priceChart}</div>
 				<div id="chart-buttons">
-					{['10Y', '50Y', '250Y', '1000Y', '10000Y'].map(period => (
+					{['20Y', '100Y', '500Y', '2500Y'].map(period => (
 						<button 
 							key = {period} 
 							className = {this.state.currPeriod === period ? 'selected' : ''}

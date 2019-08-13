@@ -24,7 +24,7 @@ ActiveRecord::Base.transaction do
 		exchange: "Seven Kingdoms Exchange",
 		industry: "defense, finance",
 		products: "wildfire, gold",
-		market_cap: "$932.84B",
+		house_words: "Hear Me Roar!",
 		mkt_price: 1848.42,
 		youtube_query: 'house lannister'
 	})
@@ -40,7 +40,7 @@ ActiveRecord::Base.transaction do
 		exchange: "unlisted",
 		industry: "outdoor goods",
 		products: "snowshoes, rope, parkas",
-		market_cap: "$12.6B",
+		house_words: "We Don't Kneel",
 		mkt_price: 4.65,
 		youtube_query: 'wildlings'
 	})
@@ -56,7 +56,7 @@ ActiveRecord::Base.transaction do
 		exchange: "Seven Kingdoms Exchange",
 		industry: "defense, agriculture",
 		products: "swords, armor, grain",
-		market_cap: "$351.56B",
+		house_words: "Winter Is Coming",
 		mkt_price: 222.84,
 		youtube_query: 'wildlings'
 	})
@@ -72,7 +72,7 @@ ActiveRecord::Base.transaction do
 		exchange: "Free Cities Exchange",
 		industry: "magic",
 		products: "dragon eggs",
-		market_cap: "$145.6M",
+		house_words: "Fire & Blood",
 		mkt_price: 1.88,
 		youtube_query: 'targaryen'
 	})
@@ -88,7 +88,7 @@ ActiveRecord::Base.transaction do
 		exchange: "Seven Kingdoms Exchange",
 		industry: "defense, prisons",
 		products: "moon gates, sky cells",
-		market_cap: "$231.58B",
+		house_words: "As High As Honor",
 		mkt_price: 165.15,
 		youtube_query: 'house arryn'
 	})
@@ -106,7 +106,7 @@ ActiveRecord::Base.transaction do
 		# exchange: "",
 		# industry: "",
 		# products: "",
-		# market_cap: "",
+		# house_words: "",
 		# mkt_price: 
 			# should be between 0 - 1000
 		# youtube_query: ''
