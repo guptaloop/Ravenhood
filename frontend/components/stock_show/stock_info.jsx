@@ -3,8 +3,8 @@ import React from 'react';
 export const StockInfo = ({ stock }) => {
 	const infoHeaders = [
 		["CEO", "ceo"], ["HQ", "hq"], ["Founder", "founder"], 
-		["Founded", "founded"], ["Exchange", "exchange"],	["Industry", "industry"],
-		 ["Products", "products"], ["Market Cap", "marketCap"]
+		["Founded", "founded"], ["Words", "houseWords"],	["Industry", "industry"],
+		["Products", "products"], ["Exchange", "exchange"]
 	];
 
 	const displayInfo = infoHeaders.map(header => 

@@ -10,6 +10,6 @@ json.extract! stock,
 	:exchange,
 	:products,
 	:founder,
-	:market_cap,
+	:house_words,
 	:mkt_price,
 	:youtube_query

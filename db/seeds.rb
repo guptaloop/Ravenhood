@@ -36,7 +36,7 @@ ActiveRecord::Base.transaction do
 		ceo: "Mance Rayder",
 		hq: "Hardhome",
 		founder: "unknown",
-		founded: "First Men",
+		founded: "Era of the First Men",
 		exchange: "unlisted",
 		industry: "outdoor goods",
 		products: "snowshoes, rope, parkas",
