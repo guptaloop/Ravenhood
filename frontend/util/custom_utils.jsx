@@ -1,12 +1,12 @@
 // custom PriceChart utils
 export const genPrices = arr => {
 	// arr = [period, mktPrice] =>  [250, 360.43]
-	let year = 298;
+	let year = 300;
 	let period = arr[0];
 	let prices = [];
 
 	while (period > 0) {
-		if (year === 298) {
+		if (year === 300) {
 			let priceObj = { date: year, price: arr[1] };
 			prices.unshift(priceObj);
 		} else {
@@ -17,11 +17,10 @@ export const genPrices = arr => {
 			prices.unshift(priceObj);
 		}
 
-		if (arr[0] === 10) { period -= 1; year -= 1; }
-		else if (arr[0] === 50) { period -= 4; year -= 4; }
-		else if (arr[0] === 250) { period -= 20; year -= 20; }
-		else if (arr[0] === 1000) { period -= 80; year -= 80; }
-		else if (arr[0] === 10000) { period -= 750; year -= 750; }
+		if (arr[0] === 20) { period -= 1; year -= 1; }
+		else if (arr[0] === 100) { period -= 4; year -= 4; }
+		else if (arr[0] === 500) { period -= 20; year -= 20; }
+		else if (arr[0] === 2500) { period -= 100; year -= 100; }
 	}
 	return prices;
 };
