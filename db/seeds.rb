@@ -21,20 +21,12 @@ ActiveRecord::Base.transaction do
 		ceo: "Tywin Lannister",
 		hq: "Casterly Rock",
 		founder: "Lann the Clever",
-<<<<<<< HEAD
-		founded: "era of the First Men",
-=======
 		founded: "Age of Heroes",
->>>>>>> b59d3f096cfa25f2e4083c78d1552a4f4c1695de
 		exchange: "Seven Kingdoms Exchange",
 		industry: "Defense, Finance",
 		products: "Wildfire, Gold",
 		house_words: "Hear Me Roar",
-<<<<<<< HEAD
-		mkt_price: 1848.12,
-=======
 		mkt_price: 1848.42,
->>>>>>> b59d3f096cfa25f2e4083c78d1552a4f4c1695de
 		youtube_query: 'house lannister'
 	})
 
@@ -51,7 +43,6 @@ ActiveRecord::Base.transaction do
 		products: "Snowshoes, Rope, Parkas",
 		house_words: "We Don't Kneel",
 		mkt_price: 4.65,
-<<<<<<< HEAD
 		youtube_query: 'wildlings'
 	})
 
@@ -71,27 +62,6 @@ ActiveRecord::Base.transaction do
 		youtube_query: 'wildlings'
 	})
 
-=======
-		youtube_query: 'wildlings'
-	})
-
-	wntr_stock = Stock.create({
-		symbol: "WNTR",
-		name: "Stark Company",
-		about: "The Stark Company has built its successful business on the humble principles of trust and loyalty. The Starks remain conservative, despite the recent economic boom in Westeros.",
-		ceo: "Eddard 'Ned' Stark",
-		hq: "Winterfell",
-		founder: "Bran the Builder",
-		founded: "Age of Heroes",
-		exchange: "Seven Kingdoms Exchange",
-		industry: "Defense, Agriculture",
-		products: "Swords, Armor, Grain",
-		house_words: "Winter Is Coming",
-		mkt_price: 222.84,
-		youtube_query: 'wildlings'
-	})
-
->>>>>>> b59d3f096cfa25f2e4083c78d1552a4f4c1695de
 	fire_stock = Stock.create({
 		symbol: "FIRE",
 		name: "Targaryen Holdings",
