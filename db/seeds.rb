@@ -204,47 +204,12 @@ ActiveRecord::Base.transaction do
 		user_id: 1,
 		symbol: 'FIRE'
 	})
-<<<<<<< HEAD
-=======
-	demo_watchlist_5 = StockWatch.create({
-		user_id: 1,
-		symbol: 'VALE'
-	})
->>>>>>> b59d3f096cfa25f2e4083c78d1552a4f4c1695de
 
 	demo_holding_1 = Holding.create({
 		user_id: 1,
 		symbol: 'LION',
 		shares: 100,
-<<<<<<< HEAD
 		price: 1848.12,
-=======
-		price: 4.65
-	})
-	demo_holding_2 = Holding.create({
-		user_id: 1,
-		symbol: 'ROSE',
-		shares: 100,
-		price: 498.14
-	})
-	demo_holding_3 = Holding.create({
-		user_id: 1,
-		symbol: 'RVRN',
-		shares: 100,
-		price: 218.14
-	})
-	demo_holding_4 = Holding.create({
-		user_id: 1,
-		symbol: 'STAG',
-		shares: 100,
-		price: 765.98
-	})
-	demo_holding_5 = Holding.create({
-		user_id: 1,
-		symbol: 'SAND',
-		shares: 100,
-		price: 365.45
->>>>>>> b59d3f096cfa25f2e4083c78d1552a4f4c1695de
 	})
 
 end
