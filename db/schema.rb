@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_08_15_225017) do
-=======
-ActiveRecord::Schema.define(version: 2019_08_13_181149) do
->>>>>>> b59d3f096cfa25f2e4083c78d1552a4f4c1695de
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +43,10 @@ ActiveRecord::Schema.define(version: 2019_08_13_181149) do
     t.string "industry", null: false
     t.string "exchange", null: false
     t.string "products", null: false
-    t.float "mkt_price", null: false
-    t.string "youtube_query", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "mkt_price"
+    t.string "youtube_query"
     t.string "house_words", null: false
     t.string "founder", null: false
     t.index ["symbol"], name: "index_stocks_on_symbol", unique: true

@@ -4,7 +4,7 @@ import { genPrices } from '../../util/custom_utils';
 
 
 export const WatchlistChart = () => {
-	const prices = genPrices([10, (Math.random()*1000).toFixed(2)]);
+	const prices = genPrices([20, (Math.random()*1000).toFixed(2)]);
 	const curPrice = prices.slice(-1)[0].price;
 	const basePrice = prices[0].price;
 	const pctChange = (((curPrice - basePrice) / basePrice) * 100).toFixed(2);
