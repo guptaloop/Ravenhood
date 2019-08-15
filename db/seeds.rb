@@ -22,9 +22,9 @@ ActiveRecord::Base.transaction do
 		founder: "Lann the Clever",
 		founded: "Age of Heroes",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "defense, finance",
-		products: "wildfire, gold",
-		house_words: "Hear Me Roar!",
+		industry: "Defense, Finance",
+		products: "Wildfire, Gold",
+		house_words: "Hear Me Roar",
 		mkt_price: 1848.42,
 		youtube_query: 'house lannister'
 	})
@@ -38,8 +38,8 @@ ActiveRecord::Base.transaction do
 		founder: "unknown",
 		founded: "Era of the First Men",
 		exchange: "unlisted",
-		industry: "outdoor goods",
-		products: "snowshoes, rope, parkas",
+		industry: "Outdoor Goods",
+		products: "Snowshoes, Rope, Parkas",
 		house_words: "We Don't Kneel",
 		mkt_price: 4.65,
 		youtube_query: 'wildlings'
@@ -54,8 +54,8 @@ ActiveRecord::Base.transaction do
 		founder: "Bran the Builder",
 		founded: "Age of Heroes",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "defense, agriculture",
-		products: "swords, armor, grain",
+		industry: "Defense, Agriculture",
+		products: "Swords, Armor, Grain",
 		house_words: "Winter Is Coming",
 		mkt_price: 222.84,
 		youtube_query: 'wildlings'
@@ -70,8 +70,8 @@ ActiveRecord::Base.transaction do
 		founder: "Aegon the Conqueror",
 		founded: "1 AC",
 		exchange: "Free Cities Exchange",
-		industry: "magic",
-		products: "dragon eggs",
+		industry: "Magic",
+		products: "Dragon Eggs",
 		house_words: "Fire & Blood",
 		mkt_price: 1.88,
 		youtube_query: 'targaryen'
@@ -86,8 +86,8 @@ ActiveRecord::Base.transaction do
 		founder: "Ser Artys Arryn",
 		founded: "Andal Invasion",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "defense, prisons",
-		products: "moon gates, sky cells",
+		industry: "Defense, Prisons",
+		products: "Moongate, Skycell",
 		house_words: "As High As Honor",
 		mkt_price: 165.15,
 		youtube_query: 'house arryn'
@@ -102,8 +102,8 @@ ActiveRecord::Base.transaction do
 		founder: "Ser Alester Tyrell",
 		founded: "Age of Heroes",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "consumer staples",
-		products: "flowers, organic foods",
+		industry: "Consumer Staples",
+		products: "Flowers, Organic Foods",
 		house_words: "Growing Strong",
 		mkt_price: 498.14,
 		youtube_query: 'house tyrell'
@@ -118,8 +118,8 @@ ActiveRecord::Base.transaction do
 		founder: "Ser Edmure Tully",
 		founded: "Age of Heroes",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "real estate",
-		products: "riverfront property",
+		industry: "Real Estate",
+		products: "Riverfront Property",
 		house_words: "Family, Duty, Honor",
 		mkt_price: 218.14,
 		youtube_query: 'house tully'
@@ -128,14 +128,14 @@ ActiveRecord::Base.transaction do
 	stag_stock = Stock.create({
 		symbol: "STAG",
 		name: "Baratheon & Brothers",
-		about: "The Baratheon brothers have earned their reputation as a force to be reckoned with after defeating the Targaryens in the Rebellion of 282 AC. However, critics question the firm's long-term viability due to succession concerns.",
+		about: "The Baratheon brothers have earned their reputation as an unstoppable force after dethroning the Targaryens. However, critics question the firm's long-term viability due to succession concerns.",
 		ceo: "King Robert I Baratheon",
 		hq: "Storm's End",
 		founder: "Orys 'One-Hand' Baratheon",
 		founded: "1 AC",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "defense, alcohol",
-		products: "steel, ale",
+		industry: "Defense, Alcohol",
+		products: "Steel, Ale",
 		house_words: "Ours Is The Fury",
 		mkt_price: 765.98,
 		youtube_query: 'baratheon'
@@ -150,39 +150,63 @@ ActiveRecord::Base.transaction do
 		founder: "Morgan Martell",
 		founded: "Andal Invasion",
 		exchange: "Seven Kingdoms Exchange",
-		industry: "shipping, defense",
-		products: "anti-aircraft, poison",
+		industry: "Defense, Technology",
+		products: "Anti-aircraft, Poison",
 		house_words: "Unbowed, Unbent, Unbroken",
 		mkt_price: 365.45,
 		youtube_query: 'house martell'
 	})
 
-	demo_watchlist1 = StockWatch.create({
+	demo_watchlist_1 = StockWatch.create({
 		user_id: 1,
 		symbol: 'LION'
 	})
-	demo_watchlist2 = StockWatch.create({
+	demo_watchlist_2 = StockWatch.create({
 		user_id: 1,
 		symbol: 'FREE'
 	})
-	demo_watchlist3 = StockWatch.create({
+	demo_watchlist_3 = StockWatch.create({
 		user_id: 1,
 		symbol: 'WNTR'
 	})
-	demo_watchlist4 = StockWatch.create({
+	demo_watchlist_4 = StockWatch.create({
 		user_id: 1,
 		symbol: 'FIRE'
 	})
-	demo_watchlist5 = StockWatch.create({
+	demo_watchlist_5 = StockWatch.create({
 		user_id: 1,
 		symbol: 'VALE'
 	})
 
-	demo_holding = Holding.create({
+	demo_holding_1 = Holding.create({
 		user_id: 1,
 		symbol: 'FREE',
 		shares: 100,
 		price: 4.65
+	})
+	demo_holding_2 = Holding.create({
+		user_id: 1,
+		symbol: 'ROSE',
+		shares: 100,
+		price: 498.14
+	})
+	demo_holding_3 = Holding.create({
+		user_id: 1,
+		symbol: 'RVRN',
+		shares: 100,
+		price: 218.14
+	})
+	demo_holding_4 = Holding.create({
+		user_id: 1,
+		symbol: 'STAG',
+		shares: 100,
+		price: 765.98
+	})
+	demo_holding_5 = Holding.create({
+		user_id: 1,
+		symbol: 'SAND',
+		shares: 100,
+		price: 365.45
 	})
 
 end
