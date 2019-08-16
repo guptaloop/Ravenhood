@@ -13,7 +13,7 @@ ActiveRecord::Base.transaction do
 		username: 'Lord Petyr Baelish',
 		password: 'makeitrain'
 	})
-
+	
 	lion_stock = Stock.create({
 		symbol: 'LION',
 		name: 'Lannister Enterprises',
@@ -29,7 +29,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 1848.42,
 		youtube_query: 'house lannister'
 	})
-
 	free_stock = Stock.create({
 		symbol: "FREE",
 		name: "Free Folk, Inc.",
@@ -45,7 +44,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 4.65,
 		youtube_query: 'wildlings'
 	})
-
 	wntr_stock = Stock.create({
 		symbol: "WNTR",
 		name: "Stark Company",
@@ -61,7 +59,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 222.84,
 		youtube_query: 'wildlings'
 	})
-
 	fire_stock = Stock.create({
 		symbol: "FIRE",
 		name: "Targaryen Holdings",
@@ -77,7 +74,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 1.88,
 		youtube_query: 'targaryen'
 	})
-
 	vale_stock = Stock.create({
 		symbol: "VALE",
 		name: "Arryn Defense",
@@ -93,7 +89,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 165.15,
 		youtube_query: 'house arryn'
 	})
-
 	rose_stock = Stock.create({
 		symbol: "ROSE",
 		name: "Tyrell Foods",
@@ -109,7 +104,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 498.14,
 		youtube_query: 'house tyrell'
 	})
-
 	rvrn_stock = Stock.create({
 		symbol: "RVRN",
 		name: "Tully Group",
@@ -125,7 +119,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 218.14,
 		youtube_query: 'house tully'
 	})
-
 	stag_stock = Stock.create({
 		symbol: "STAG",
 		name: "Baratheon & Brothers",
@@ -141,7 +134,6 @@ ActiveRecord::Base.transaction do
 		mkt_price: 765.98,
 		youtube_query: 'baratheon'
 	})
-
 	sand_stock = Stock.create({
 		symbol: "SAND",
 		name: "Martell Technologies",

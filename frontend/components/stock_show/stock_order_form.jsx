@@ -7,7 +7,6 @@ export default class StockOrderForm extends React.Component {
 		super(props);
 		this.state = {
 			shares: 0
-			// order_type: "buy" or buy: false,
 		};
 		this.getCost = this.getCost.bind(this);
 		this.handleOrder = this.handleOrder.bind(this);
@@ -25,10 +24,12 @@ export default class StockOrderForm extends React.Component {
 	handleOrder(user_id, symbol, shares, price) {
 		const ownedStocks = this.props.holdings.map(holding => holding.symbol);
 		if (ownedStocks.includes(symbol)) {
+			// update an existing holding
 			const index = ownedStocks.indexOf(symbol);
 			const holding_id = this.props.holdings[index].id;
 			this.props.updateHolding(holding_id, user_id, shares);
 		} else {
+			// create a new Holding
 			this.props.buyStock(user_id, symbol, shares, price);
 		}
 	}
@@ -62,7 +63,7 @@ export default class StockOrderForm extends React.Component {
 				>Add to Watchlist
 			</button>
 		);
-		
+
 		return (
 			<div className="order-form-watchlist-button">
 				<form className="order-form">
