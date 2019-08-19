@@ -7,8 +7,8 @@ import { fetchHoldings, createHolding, updateHolding, destroyHolding } from '../
 
 
 const mSP = ({ entities }) => ({
+	currentUser: entities.currentUser,
 	watchlist: entities.watchlist,
-	userId: entities.currentUser,
 	holdings: entities.holdings,
 });
 

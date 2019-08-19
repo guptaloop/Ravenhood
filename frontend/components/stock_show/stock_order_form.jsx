@@ -9,7 +9,7 @@ export default class StockOrderForm extends React.Component {
 	}
 
 	componentWillMount() {
-		const userId = (Object.keys(this.props.userId))[0];
+		const userId = (Object.keys(this.props.currentUser))[0];
 		this.props.fetchHoldings(userId);
 	}
 
@@ -49,8 +49,9 @@ export default class StockOrderForm extends React.Component {
 		const symbol = this.props.stock.symbol;
 		const mktPrice = this.props.stock.mktPrice;
 		const watchlist = this.props.watchlist;
-		const userId = (Object.keys(this.props.userId))[0];
+		const userId = (Object.keys(this.props.currentUser))[0];
 		const orderType = this.state.orderType;
+		const gold = this.props.currentUser[userId].gold;
 		
 		// grabs the unique id to delete a 'stock_watch' from the db
 		watchlist.forEach(function(el){
@@ -124,8 +125,9 @@ export default class StockOrderForm extends React.Component {
 					</div>
 					<div>{displayForm}</div>
 					<div className="avail-gold-div">
-						{/* need to pull avail gold from users */}
-						<h5 className="avail-gold">5000 Gold Available</h5>
+						<h5 className="avail-gold">
+							${gold.toLocaleString()} Gold Available
+						</h5>
 					</div>
 				</form>
 				<div className="watchlist-button-div">{watchlistButton}</div>

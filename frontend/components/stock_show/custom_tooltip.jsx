@@ -9,20 +9,23 @@ const CustomTooltip = (
 		// this code runs when user hovers over the chart
 		priceDiff = (payload[0].value - basePrice).toFixed(2);	
 		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
-		if (priceDiff > 0) { priceDiff = '+' + priceDiff.toString(); }
+		priceDiff = priceDiff > 0 ? '+$' + priceDiff.toString() : 
+			'-$' + Math.abs(priceDiff).toString();
 		year = label < 0 ? (label*-1).toString() + ' BC' : label.toString() + ' AC';
 	} else {
 		// this code runs when the chart is not hovered on
 		priceDiff = (mktPrice - basePrice).toFixed(2);
 		pctDiff = ((priceDiff / basePrice) * 100).toFixed(2);
-		if (priceDiff > 0) { priceDiff = '+' + priceDiff.toString(); }
+		// if (priceDiff > 0) { priceDiff = '+$' + priceDiff.toString(); }
+		priceDiff = priceDiff > 0 ? '+$' + priceDiff.toString() :
+			'-$' + Math.abs(priceDiff).toString();
 	}
 
 	return (
 		<div>
 			<div className="chart-numbers">
 				<span className="chart-price">
-					{active ? payload[0].value : mktPrice}
+					{active ? '$' + payload[0].value : '$' + mktPrice}
 				</span>
 				<span className="chart-price-changes">
 					{`${priceDiff} (${pctDiff}%)`}
