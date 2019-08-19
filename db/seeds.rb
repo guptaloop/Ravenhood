@@ -11,7 +11,7 @@ ActiveRecord::Base.transaction do
 		
 	demo_user = User.create({ 
 		username: 'Lord Petyr Baelish',
-		password: 'makeitrain'
+		password: 'cha0s_issa_ladd3r'
 	})
 	
 	lion_stock = Stock.create({
@@ -116,7 +116,7 @@ ActiveRecord::Base.transaction do
 		industry: "Real Estate",
 		products: "Riverfront Property",
 		house_words: "Family, Duty, Honor",
-		mkt_price: 218.14,
+		mkt_price: 218.41,
 		youtube_query: 'house tully'
 	})
 	stag_stock = Stock.create({
@@ -169,9 +169,21 @@ ActiveRecord::Base.transaction do
 
 	demo_holding_1 = Holding.create({
 		user_id: 1,
-		symbol: 'LION',
+		symbol: 'VALE',
+		shares: 60,
+		price: 165.15,
+	})
+	demo_holding_2 = Holding.create({
+		user_id: 1,
+		symbol: 'ROSE',
 		shares: 100,
-		price: 1848.12,
+		price: 498.14,
+	})
+	demo_holding_3 = Holding.create({
+		user_id: 1,
+		symbol: 'RVRN',
+		shares: 250,
+		price: 218.41,
 	})
 
 end
