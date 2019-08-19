@@ -50,6 +50,7 @@ export default class StockOrderForm extends React.Component {
 		const mktPrice = this.props.stock.mktPrice;
 		const watchlist = this.props.watchlist;
 		const userId = (Object.keys(this.props.userId))[0];
+		const orderType = this.state.orderType;
 		
 		// grabs the unique id to delete a 'stock_watch' from the db
 		watchlist.forEach(function(el){
@@ -67,7 +68,7 @@ export default class StockOrderForm extends React.Component {
 		) : (
 			<button
 				className="sidebar-button"
-					onClick={() => this.props.addToWatchlist(userId, symbol)}
+				onClick={() => this.props.addToWatchlist(userId, symbol)}
 				>Add to Watchlist
 			</button>
 		);
@@ -75,41 +76,12 @@ export default class StockOrderForm extends React.Component {
 		const buyOrSell = ['Buy', 'Sell'].map(type => (
 			<button
 				key = {type}
-				className = {this.state.orderType === type ? 'selected' : '' }
+				className = {orderType === type ? 'selected' : '' }
 				onClick={() => this.setState({ orderType: type })}>
 			{type}</button>
 		));
 
-		const displayForm = this.state.orderType === 'Buy' ? (
-			<div>
-			<div className="order-atts-div">
-				<div className="row">
-					<label className="row-shares">Shares</label>
-					<input
-						type="text"
-						className="shares-input"
-						value={this.state.shares}
-						onChange={this.handleInput('shares')} />
-				</div>
-				<div className="row">
-					<label className="row-price">Market Price</label>
-					<output className="row-output">{mktPrice}</output>
-				</div>
-				<div className="price-border"></div>
-				<div className="row">
-					<label className="row-value">Total Cost</label>
-					<output className="row-output">{this.getValue(mktPrice)}</output>
-				</div>
-			</div>
-
-			<div className="submit-order-button-div">
-				<button className="sidebar-button"
-					onClick={() => this.handleOrder(userId, symbol, this.state.shares, mktPrice)}
-				>Submit Buy
-						</button>
-			</div>
-			</div>
-		) : (
+		const displayForm = (
 			<div>
 				<div className="order-atts-div">
 					<div className="row">
@@ -126,16 +98,19 @@ export default class StockOrderForm extends React.Component {
 					</div>
 					<div className="price-border"></div>
 					<div className="row">
-						<label className="row-value">Total Credit</label>
+						<label className="row-value">
+							{orderType === 'Buy' ? "Total Cost" : "Total Credit"}
+						</label>
 						<output className="row-output">{this.getValue(mktPrice)}</output>
 					</div>
 				</div>
 
 				<div className="submit-order-button-div">
 					<button className="sidebar-button"
-						onClick={() => this.handleOrder(userId, symbol, this.state.shares, mktPrice)}
-					>Submit Sell
-						</button>
+						onClick = { () => 
+							this.handleOrder(userId, symbol, this.state.shares, mktPrice) }
+						>{orderType === 'Buy' ? "Submit Buy" : "Submit Sell"}
+							</button>
 				</div>
 			</div>
 		);
@@ -145,7 +120,6 @@ export default class StockOrderForm extends React.Component {
 				<form className="order-form">
 					<div className="heading-div">
 						<h2 className="heading-symbol">{symbol}</h2>
-						{/* will need an eventHandler on this */}
 						<div id="chart-buttons">{buyOrSell}</div>
 					</div>
 					<div>{displayForm}</div>
