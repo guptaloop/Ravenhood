@@ -22,7 +22,10 @@ class LogInForm extends React.Component {
 
 	handleDemoLogin(e) {
 		e.preventDefault();
-		const user = { username: 'Lord Petyr Baelish', password: 'makeitrain'	};
+		const user = { 
+			username: 'Lord Petyr Baelish', 
+			password: 'ChAoS_iSSa_LaDdEr'	
+		};
 		this.props.login(user);
 	}
 
