@@ -21,3 +21,8 @@ export const createHolding = (user_id, symbol, shares, price) => dispatch => (
 	HoldingApiUtil.createHolding(user_id, symbol, shares, price).then(
 		holdings => dispatch(receiveHoldings(holdings)))
 );
+
+export const destroyHolding = (holding_id, user_id) => dispatch => (
+	HoldingApiUtil.destroyHolding(holding_id, user_id).then(
+		holdings => dispatch(receiveHoldings(holdings)))
+);

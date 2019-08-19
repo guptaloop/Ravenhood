@@ -3,7 +3,7 @@ import React from 'react';
 export default class StockOrderForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { shares: 0,	orderType: "buy" };
+		this.state = { shares: 0,	orderType: "Buy" };
 		this.getValue = this.getValue.bind(this);
 		this.handleOrder = this.handleOrder.bind(this);
 	}
@@ -20,22 +20,27 @@ export default class StockOrderForm extends React.Component {
 	getValue(mktPrice) { return (mktPrice * this.state.shares).toFixed(2); }
 
 	handleOrder(user_id, symbol, shares, price) {
+		let index, holding_id;
 		const ownedStocks = this.props.holdings.map(holding => holding.symbol);
+		const type = this.state.orderType;
+		const userOwnsStock = ownedStocks.includes(symbol);
+	
+		if (userOwnsStock) {
+			index = ownedStocks.indexOf(symbol);
+			holding_id = this.props.holdings[index].id;
+		}
 
-		if (this.state.orderType === 'sell' && ownedStocks.includes(symbol)) {
-			// update an existing holding -- SELL order
-			const index = ownedStocks.indexOf(symbol);
-			const holding_id = this.props.holdings[index].id;
+		if (type === 'Sell') {
 			const sellShares = (shares * -1);
-			this.props.updateHolding(holding_id, user_id, sellShares);
-		} else if (this.state.orderType === 'buy' && ownedStocks.includes(symbol)) {
-			// update an existing holding -- BUY order
-			const index = ownedStocks.indexOf(symbol);
-			const holding_id = this.props.holdings[index].id;
-			this.props.updateHolding(holding_id, user_id, shares);
-		} else if (!ownedStocks.includes(symbol)) {
-			// create a new Holding
-			this.props.buyStock(user_id, symbol, shares, price);
+			shares === this.props.holdings[index].shares ?
+				this.props.destroyHolding(holding_id, user_id) :
+				this.props.updateHolding(holding_id, user_id, sellShares);
+		}
+
+		if (type === 'Buy') {
+			userOwnsStock ?	
+				this.props.updateHolding(holding_id, user_id, shares):
+				this.props.buyStock(user_id, symbol, shares, price);
 		}
 	}
 
@@ -67,7 +72,7 @@ export default class StockOrderForm extends React.Component {
 			</button>
 		);
 
-		const buyOrSell = ['buy', 'sell'].map(type => (
+		const buyOrSell = ['Buy', 'Sell'].map(type => (
 			<button
 				key = {type}
 				className = {this.state.orderType === type ? 'selected' : '' }
@@ -75,7 +80,7 @@ export default class StockOrderForm extends React.Component {
 			{type}</button>
 		));
 
-		const displayForm = this.state.orderType === 'buy' ? (
+		const displayForm = this.state.orderType === 'Buy' ? (
 			<div>
 			<div className="order-atts-div">
 				<div className="row">
