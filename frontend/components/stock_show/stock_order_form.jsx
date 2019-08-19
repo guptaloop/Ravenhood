@@ -6,6 +6,7 @@ export default class StockOrderForm extends React.Component {
 		this.state = { shares: 0,	orderType: "Buy" };
 		this.getValue = this.getValue.bind(this);
 		this.handleOrder = this.handleOrder.bind(this);
+		this.sharesAvailable = this.sharesAvailable.bind(this);
 	}
 
 	componentWillMount() {
@@ -18,6 +19,16 @@ export default class StockOrderForm extends React.Component {
 	}
 
 	getValue(mktPrice) { return (mktPrice * this.state.shares).toFixed(2); }
+
+	sharesAvailable(holdings) {
+		const ownedStocks = holdings.map(holding => holding.symbol);
+		if (!ownedStocks.includes(this.props.stock.symbol)) {
+			return 0;
+		} else {
+			const index = ownedStocks.indexOf(this.props.stock.symbol);
+			return holdings[index].shares;
+		}
+	}
 
 	handleOrder(user_id, symbol, shares, price) {
 		let index, holding_id;
@@ -33,28 +44,30 @@ export default class StockOrderForm extends React.Component {
 		if (type === 'Sell') {
 			const sellShares = (shares * -1);
 			shares === this.props.holdings[index].shares ?
-				this.props.destroyHolding(holding_id, user_id) :
-				this.props.updateHolding(holding_id, user_id, sellShares);
+				this.props.destroyHolding(holding_id, user_id)
+				:	this.props.updateHolding(holding_id, user_id, sellShares);
 			this.props.updateGold(user_id, (sellShares * price));
+			this.setState({ shares: 0 });
 		}
 
 		if (type === 'Buy') {
 			userOwnsStock ?	
-				this.props.updateHolding(holding_id, user_id, shares):
-				this.props.buyStock(user_id, symbol, shares, price);
+				this.props.updateHolding(holding_id, user_id, shares)
+				:	this.props.buyStock(user_id, symbol, shares, price);
 			this.props.updateGold(user_id, (shares * price));
+			this.setState({ shares: 0 });
 		}
 	}
 
 	render() {
 		let watchlistId;
 		const symbol = this.props.stock.symbol;
-		const mktPrice = this.props.stock.mktPrice;
 		const watchlist = this.props.watchlist;
 		const userId = (Object.keys(this.props.currentUser))[0];
 		const orderType = this.state.orderType;
 		const gold = this.props.currentUser[userId].gold;
-		
+		const mktPrice = this.props.stock.mktPrice;
+
 		// grabs the unique id to delete a 'stock_watch' from the db
 		watchlist.forEach(function(el){
 			if (el.symbol === symbol) { watchlistId = el.id; }
@@ -128,7 +141,7 @@ export default class StockOrderForm extends React.Component {
 					<div>{displayForm}</div>
 					<div className="avail-gold-div">
 						<h5 className="avail-gold">
-							${gold.toLocaleString()} Gold Available
+							{orderType === 'Buy' ? `${gold.toLocaleString()} Gold Available` : `${this.sharesAvailable(this.props.holdings)} shares available`}
 						</h5>
 					</div>
 				</form>
