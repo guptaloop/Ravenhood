@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
     end
   end
 
- def destroy
+  def destroy
     @user = current_user
     if @user
       logout!
@@ -24,6 +24,18 @@ class Api::SessionsController < ApplicationController
     else
       render json: ["No user currently signed in"], status: 404
     end
+  end
+
+  def gold
+    @user = User.find_by(id: params[:user_id])
+
+    if @user
+      @gold = @user.gold - (params[:gold]).to_i
+      @user.update(gold: @gold)
+      render "api/users/show"
+    else
+      render json: 'no user was found :('
+    end   
   end
 
 end

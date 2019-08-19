@@ -35,12 +35,14 @@ export default class StockOrderForm extends React.Component {
 			shares === this.props.holdings[index].shares ?
 				this.props.destroyHolding(holding_id, user_id) :
 				this.props.updateHolding(holding_id, user_id, sellShares);
+			this.props.updateGold(user_id, (sellShares * price));
 		}
 
 		if (type === 'Buy') {
 			userOwnsStock ?	
 				this.props.updateHolding(holding_id, user_id, shares):
 				this.props.buyStock(user_id, symbol, shares, price);
+			this.props.updateGold(user_id, (shares * price));
 		}
 	}
 
@@ -111,7 +113,7 @@ export default class StockOrderForm extends React.Component {
 						onClick = { () => 
 							this.handleOrder(userId, symbol, this.state.shares, mktPrice) }
 						>{orderType === 'Buy' ? "Submit Buy" : "Submit Sell"}
-							</button>
+					</button>
 				</div>
 			</div>
 		);

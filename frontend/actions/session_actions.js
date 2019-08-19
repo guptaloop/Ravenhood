@@ -39,3 +39,8 @@ export const login = user => dispatch => (
 export const logout = () => dispatch => (
 	SessionUtil.logout().then(user => (dispatch(logoutCurrentUser())))
 );
+
+export const updateGold = (user_id, gold) => dispatch => (
+	SessionUtil.updateGold(user_id, gold).then(
+		user => dispatch(receiveCurrentUser(user)))
+);
