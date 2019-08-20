@@ -41,6 +41,10 @@ export const logout = () => dispatch => (
 );
 
 export const updateGold = (user_id, gold) => dispatch => (
-	SessionUtil.updateGold(user_id, gold).then(
-		user => dispatch(receiveCurrentUser(user)))
+	SessionUtil.updateGold(user_id, gold).then(user => (
+		dispatch(receiveCurrentUser(user))
+		), errors => (
+			dispatch(receiveErrors(errors.responseJSON))
+		)
+	)
 );

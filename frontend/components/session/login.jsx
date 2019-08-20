@@ -9,9 +9,7 @@ class LogInForm extends React.Component {
 	}
 
 	handleInput(type) {
-		return (e) => {
-			this.setState({ [type]: e.target.value });
-		};
+		return (e) => {	this.setState({ [type]: e.target.value }); };
 	}
 
 	handleSubmit(e) {
@@ -37,15 +35,9 @@ class LogInForm extends React.Component {
 		return (
 			<ul>
 				{this.props.errors.map((error, i) => (
-					<li 
-						className="error-li"
-						key={`error-${i}`}>	
-						<img
-							src={window.images.sess_err_icon}
-							className="sess-err-logo"
-						/> {error}
-					</li>
-				))}
+					<li className="error-li" key={`error-${i}`}>	
+						<img src={window.images.sess_err_icon} className="sess-err-logo" /> {error}
+					</li>))}
 			</ul>
 		);
 	}

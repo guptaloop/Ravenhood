@@ -3,7 +3,7 @@ import React from 'react';
 export default class StockOrderForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { shares: 0,	orderType: "Buy" };
+		this.state = { shares: "0",	orderType: "Buy" };
 		this.getValue = this.getValue.bind(this);
 		this.handleOrder = this.handleOrder.bind(this);
 		this.sharesAvailable = this.sharesAvailable.bind(this);
@@ -47,7 +47,7 @@ export default class StockOrderForm extends React.Component {
 				this.props.destroyHolding(holding_id, user_id)
 				:	this.props.updateHolding(holding_id, user_id, sellShares);
 			this.props.updateGold(user_id, (sellShares * price));
-			this.setState({ shares: 0 });
+			this.setState({ shares: "0" });
 		}
 
 		if (type === 'Buy') {
@@ -55,9 +55,20 @@ export default class StockOrderForm extends React.Component {
 				this.props.updateHolding(holding_id, user_id, shares)
 				:	this.props.buyStock(user_id, symbol, shares, price);
 			this.props.updateGold(user_id, (shares * price));
-			this.setState({ shares: 0 });
+			this.setState({ shares: "0" });
 		}
 	}
+
+	// renderErrors() {
+	// 	return (
+	// 		<ul>
+	// 			{this.props.errors.map((error, i) => (
+	// 				<li className="error-li" key={`error-${i}`}>
+	// 					<img src={window.images.sess_err_icon} className="sess-err-logo" /> {error}
+	// 				</li>))}
+	// 		</ul>
+	// 	);
+	// }
 
 	render() {
 		let watchlistId;
@@ -65,7 +76,7 @@ export default class StockOrderForm extends React.Component {
 		const watchlist = this.props.watchlist;
 		const userId = (Object.keys(this.props.currentUser))[0];
 		const orderType = this.state.orderType;
-		const gold = this.props.currentUser[userId].gold;
+		const gold = userId ? this.props.currentUser[userId].gold : "Log in to see";
 		const mktPrice = this.props.stock.mktPrice;
 
 		// grabs the unique id to delete a 'stock_watch' from the db
@@ -121,6 +132,8 @@ export default class StockOrderForm extends React.Component {
 					</div>
 				</div>
 
+				{/* <div className="signup-errors">{this.renderErrors()}</div> */}
+				
 				<div className="submit-order-button-div">
 					<button className="sidebar-button"
 						onClick = { () => 
@@ -141,7 +154,7 @@ export default class StockOrderForm extends React.Component {
 					<div>{displayForm}</div>
 					<div className="avail-gold-div">
 						<h5 className="avail-gold">
-							{orderType === 'Buy' ? `${gold.toLocaleString()} Gold Available` : `${this.sharesAvailable(this.props.holdings)} shares available`}
+							{orderType === 'Buy' ? `$${gold.toLocaleString()} Gold Available` : `${this.sharesAvailable(this.props.holdings)} shares available`}
 						</h5>
 					</div>
 				</form>

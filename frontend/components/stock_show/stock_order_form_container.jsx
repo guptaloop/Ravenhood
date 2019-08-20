@@ -7,10 +7,11 @@ import { fetchHoldings, createHolding, updateHolding, destroyHolding } from '../
 import { updateGold } from '../../actions/session_actions';
 
 
-const mSP = ({ entities }) => ({
-	currentUser: entities.currentUser,
-	watchlist: entities.watchlist,
-	holdings: entities.holdings,
+const mSP = (state) => ({
+	currentUser: state.entities.currentUser,
+	watchlist: state.entities.watchlist,
+	holdings: state.entities.holdings,
+	errors: state.errors.sessionErrors,
 });
 
 const mDP = dispatch => ({

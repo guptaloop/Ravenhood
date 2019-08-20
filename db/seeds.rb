@@ -107,7 +107,7 @@ ActiveRecord::Base.transaction do
 	rvrn_stock = Stock.create({
 		symbol: "RVRN",
 		name: "Tully Group",
-		about: "The Tully Group has owned some of the hottest real estate in Westeros for thousands of years. They are a stable company with good business relations across the continent.",
+		about: "The Tully Group has owned some of the hottest real estate in Westeros for thousands of years. They are a stable company with good business relations across most of The Seven Kingdoms.",
 		ceo: "Ser Brynden Tully",
 		hq: "Riverrun",
 		founder: "Ser Edmure Tully",
