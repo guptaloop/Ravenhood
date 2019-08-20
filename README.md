@@ -1,15 +1,20 @@
 # README
 
-Production README coming soon!
+## 0. Production README
 
-things to fix:
+## 1. CSS / Styling
+* get the DIN PRO font
+* re-style splash, login pages (buttons, font, etc)
+* line up price chart on stock show with the order form (about section below)
+* seed database with 20+ companies
 
-- refactor CSS - repetitive, a lot of code -- use vars?
-	-- get the DIN PRO font
-- re-style splash, login pages (buttons, font, etc)
-- refactor Component structure
-- the cursor over a watchlist item doesn't stay as 'pointer'
+## 2. UI Fixes
+* fix the Stock Page when not logged in -- nav bar and order form
+* routes / SPA -- reloading, lifecycle methods
+* set up a custom domain
+* fix the NaN issue when shares cell is empty in order form
+* the cursor over a watchlist item doesn't stay as 'pointer'
 
-- fix the Stock Page when not logged in -- nav bar and order form
-- line up price chart on stock show with the order form (about section below)
-- fix the NaN issue when shares cell is empty in order form
+## 3. Refactor
+* CSS - repetitive, a lot of code -- use vars?
+* refactor Component structure - price charts
