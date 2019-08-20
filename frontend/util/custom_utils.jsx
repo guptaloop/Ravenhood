@@ -1,11 +1,12 @@
 // custom PriceChart utils
-export const genPrices = arr => {
-	// arr = [period, mktPrice] =>  [250, 360.43]
+export const genPrices = (arr) => {
+	// arr = [chartPeriod, mktPrice] =>  [250, 360.43]
+	const validPeriods = [20, 100, 500, 2500];
 	let year = 300;
 	let period = arr[0];
 	let prices = [];
-
-	while (period > 0) {
+	
+	while (period > 0 && validPeriods.includes(arr[0])) {
 		if (year === 300) {
 			let priceObj = { date: year, price: arr[1] };
 			prices.unshift(priceObj);
