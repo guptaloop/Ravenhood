@@ -13,6 +13,7 @@
 
 class Holding < ApplicationRecord
 	validates :user_id, :symbol, :shares, :price, presence: true
+	validates :shares, numericality: { greater_than: 0 }
 
 	belongs_to :user,
 		foreign_key: :user_id,

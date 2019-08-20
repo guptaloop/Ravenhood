@@ -137,7 +137,7 @@ ActiveRecord::Base.transaction do
 	sand_stock = Stock.create({
 		symbol: "SAND",
 		name: "Martell Technologies",
-		about: "The Martell's have surprised investors throughout its long history. Their secrecy and ties to Essos has kept them ahead of their competitors.",
+		about: "The Martell's are notorious for being the only company in Westeros to outlast a corporate takeover by Targaryen Holdings - not once, but twice. Their secrecy and ties to Essos has kept them ahead of their competitors.",
 		ceo: "Doran Martell",
 		hq: "Sunspear",
 		founder: "Morgan Martell",
