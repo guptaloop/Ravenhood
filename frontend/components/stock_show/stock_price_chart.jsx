@@ -19,7 +19,7 @@ export default class StockPriceChart extends React.Component {
 	}
 	
 	componentWillUpdate(nextProps) {
-		if (nextProps.stock.id !== this.props.stock.id) { this.genChart('10Y'); }
+		if (nextProps.stock.id !== this.props.stock.id) { this.genChart('20Y'); }
 	}
 
 	genChart(period) {
