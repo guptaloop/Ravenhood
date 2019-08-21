@@ -1,12 +1,12 @@
 class Api::HoldingsController < ApplicationController
 
 	def list
-			@user = User.find_by(id: params[:user_id])
+		@user = User.find_by(id: params[:user_id])
 
 		if @user
 			render :show
 		else
-			render json: "unable to retrieve user's holdings"
+			render json: {}, status: :not_found
 		end
 	end
 
@@ -16,39 +16,52 @@ class Api::HoldingsController < ApplicationController
 			user_id: params[:user_id], symbol: params[:symbol],
 			shares: params[:shares], price: params[:price]	)
 		
-		@gold = @user.gold.to_i - (params[:shares] * params[:price])
+		@gold = @user.gold.to_i - (params[:shares].to_i * params[:price].to_i)
 
 		if @gold < 0
 			render json: ["Not enough gold available"], status: :unprocessable_entity
 		elsif @gold >= 0
 			@holding.save!
-			update_gold(params[:user_id], @gold)
+			update_gold(@user.id, @gold)
 			render :show
 		end
 	end
-
+	
 	def update
 		@user = User.find_by(id: params[:user_id])
 		@holding = Holding.find_by(id: params[:id])
-
-		if @holding && @user
-			@shares = @holding.shares + (params[:shares]).to_i
-			@holding.update(shares: @shares)
+		@paramsShares = params[:shares].to_i
+		@totalShares = @paramsShares + @holding.shares.to_i
+		@gold = @user.gold.to_i - (@paramsShares * @holding.price.to_i)
+		
+		if @paramsShares < 0 && @totalShares < 0
+			render json: ["Not enough shares"], status: :unprocessable_entity
+		elsif @paramsShares < 0 && @totalShares > 0
+			@holding.update(shares: @totalShares)
+			@holding.save!
+			update_gold(@user.id, @gold)
 			render :show
-		else
-			render json: "something went horribly wrong"
+		elsif @paramsShares > 0 && @gold < 0
+			render json: ["Not enough gold available"], status: :unprocessable_entity
+		elsif @paramsShares > 0 && @gold > 0
+			@holding.update(shares: @totalShares)
+			@holding.save!
+			update_gold(@user.id, @gold)
+			render :show
 		end
 	end
 	
 	def destroy
 		@user = User.find_by(id: params[:user_id])
 		@holding = Holding.find_by(id: params[:id])
-
-		if @holding
+		@gold = @holding.shares.to_i * @holding.price.to_i
+		
+		if !@holding
+			render json: {}, status: :not_found
+		elsif @holding && @user
 			@holding.delete
+			update_gold(@user.id, @gold)
 			render :show
-		else
-			render json: "cannot destroy a non-existent holding"
 		end
 	end
 
@@ -58,8 +71,9 @@ class Api::HoldingsController < ApplicationController
     @user = User.find_by(id: user_id)
 
     if @user
-      @user.update(gold: gold)
-      render :show
+			@user.update(gold: gold)
+			@user.save!
+			return
     else
       render json: {}, status: :unprocessable_entity
     end   

@@ -14,6 +14,10 @@ export default class StockOrderForm extends React.Component {
 		this.props.fetchHoldings(userId);
 	}
 
+	componentWillUpdate(nextProps) {
+		if (nextProps.holdings !== this.props.holdings) { this.render(); }
+	}
+
 	handleInput(type) {
 		return(e) => { this.setState({ [type]: parseInt(e.target.value) });	};
 	}
@@ -72,7 +76,9 @@ export default class StockOrderForm extends React.Component {
 		let watchlistId;
 		const orderType = this.state.orderType;
 		const userId = this.props.userId;
+		console.log(userId);
 		const user = this.props.currentUser[userId];
+		console.log(user);
 		const gold = user ? user.gold : "Log in to see";
 		const symbol = this.props.stock.symbol;
 		const mktPrice = this.props.stock.mktPrice;
