@@ -1,3 +1,6 @@
+// random number generator
+export const getRandomNum = () => (	(Math.random() + 0.005) * 1000 );
+
 // custom util for StockPriceChart and Watchlist Chart
 export const genPrices = (arr) => {
 	// arr = [chartPeriod, mktPrice] =>  [250, 360.43]
@@ -13,7 +16,7 @@ export const genPrices = (arr) => {
 		} else {
 			let priceObj = {
 				date: year,
-				price: parseFloat((((Math.random() + 0.005) * 1000)).toFixed(2))
+				price: parseFloat(getRandomNum().toFixed(2))
 			};
 			prices.unshift(priceObj);
 		}
@@ -29,10 +32,11 @@ export const genPrices = (arr) => {
 // custom PortfolioChart util
 export const genValues = (arr) => {
 	// arr = [chartPeriod, mktPrice] =>  [250, 360.43]
-	const validPeriods = [1, 5, 10, 20];
+	const validPeriods = [1, 5, 10, 25, 50];
 	let year = 300;
 	let period = arr[0];
 	let prices = [];
+	let multiplier = arr[1] / getRandomNum();
 	
 	while (period > 0 && validPeriods.includes(arr[0])) {
 	
@@ -42,7 +46,7 @@ export const genValues = (arr) => {
 		} else {
 			let priceObj = {
 				date: year,
-				price: parseFloat((((Math.random() + 0.005) * 1000)).toFixed(2))
+				price: (parseFloat(getRandomNum().toFixed(2))) * multiplier
 			};
 			prices.unshift(priceObj);
 		}
@@ -50,7 +54,8 @@ export const genValues = (arr) => {
 		if (arr[0] === 1) { period -= 0.05; year -= 0.05; }
 		else if (arr[0] === 5) { period -= 0.25; year -= 0.25; }
 		else if (arr[0] === 10) { period -= 1.25; year -= 1.25; }
-		else if (arr[0] === 20) { period -= 2.5; year -= 2.5; }
+		else if (arr[0] === 25) { period -= 2.5; year -= 2.5; }
+		else if (arr[0] === 50) { period -= 5; year -= 5; }
 	}
 	return prices;
 };

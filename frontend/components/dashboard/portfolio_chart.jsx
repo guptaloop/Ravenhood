@@ -45,7 +45,7 @@ export default class PortfolioChart extends React.Component {
 				{/* <header className="chart-company">{stock.name}</header> */}
 				<div>{valueChart}</div>
 				<div id="chart-buttons">
-					{['20Y', '100Y', '500Y', '2500Y'].map(period => (
+					{['1Y', '5Y', '10Y', '25Y'].map(period => (
 						<button
 							key={period}
 							className={this.state.currPeriod === period ? 'selected' : ''}
