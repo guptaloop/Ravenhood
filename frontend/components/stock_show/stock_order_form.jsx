@@ -46,7 +46,6 @@ export default class StockOrderForm extends React.Component {
 			shares === this.props.holdings[index].shares ?
 				this.props.destroyHolding(holding_id, user_id)
 				:	this.props.updateHolding(holding_id, user_id, sellShares);
-			this.props.updateGold(user_id, (sellShares * price));
 			this.setState({ shares: "0" });
 		}
 
@@ -54,7 +53,6 @@ export default class StockOrderForm extends React.Component {
 			userOwnsStock ?	
 				this.props.updateHolding(holding_id, user_id, shares)
 				:	this.props.buyStock(user_id, symbol, shares, price);
-			this.props.updateGold(user_id, (shares * price));
 			this.setState({ shares: "0" });
 		}
 	}

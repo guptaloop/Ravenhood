@@ -4,7 +4,6 @@ import StockOrderForm from './stock_order_form';
 import { fetchWatchlist, removeFromWatchlist, addToWatchlist }
 	from '../../actions/stock_actions';
 import { fetchHoldings, createHolding, updateHolding, destroyHolding } from '../../actions/holding_actions';
-import { updateGold } from '../../actions/session_actions';
 
 
 const mSP = (state) => ({
@@ -31,8 +30,6 @@ const mDP = dispatch => ({
 
 	destroyHolding: (holding_id, userId) => dispatch(
 		destroyHolding(holding_id, userId)),
-
-	updateGold: (user_id, gold) => dispatch(updateGold(user_id, gold)),
 
 	fetchWatchlist: userId => dispatch(fetchWatchlist(userId)),
 });

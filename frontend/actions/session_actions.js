@@ -18,11 +18,6 @@ export const receiveErrors = errors => ({
 	errors
 });
 
-export const receiveGoldErrors = errors => ({
-	type: RECEIVE_GOLD_ERRORS,
-	errors
-});
-
 export const signup = user => dispatch => (
 	SessionUtil.signup(user).then(
 		user => (dispatch(receiveCurrentUser(user))),
@@ -39,10 +34,4 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => (
 	SessionUtil.logout().then(() => (dispatch(logoutCurrentUser())))
-);
-
-export const updateGold = (user_id, gold) => dispatch => (
-	SessionUtil.updateGold(user_id, gold).then(
-		user => (dispatch(receiveCurrentUser(user)))
-	)
 );
