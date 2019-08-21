@@ -15,7 +15,10 @@ export default class StockOrderForm extends React.Component {
 	}
 
 	componentWillUpdate(nextProps) {
-		if (nextProps.holdings !== this.props.holdings) { this.render(); }
+		// refactor how state stores gold
+		if (nextProps.holdings !== this.props.holdings) { 
+			this.props.fetchUser(this.props.userId); 
+		}
 	}
 
 	handleInput(type) {
@@ -76,9 +79,7 @@ export default class StockOrderForm extends React.Component {
 		let watchlistId;
 		const orderType = this.state.orderType;
 		const userId = this.props.userId;
-		console.log(userId);
 		const user = this.props.currentUser[userId];
-		console.log(user);
 		const gold = user ? user.gold : "Log in to see";
 		const symbol = this.props.stock.symbol;
 		const mktPrice = this.props.stock.mktPrice;

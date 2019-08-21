@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:create]
+    ## refactor how state stores gold (remove :show from resources :users)
+    resources :users, only: [:create, :show]
     resource :session, only: [:new, :create, :destroy]
     resources :stocks, only: [:index, :show]
     resources :stock_watches, only: [:create, :destroy]

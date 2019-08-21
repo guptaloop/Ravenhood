@@ -21,3 +21,11 @@ export const logout = () => (
 		method: 'DELETE'
 	})
 );
+
+export const fetchUser = user_id => (
+	// refactor how state stores gold
+	$.ajax({
+		url: `/api/users/${user_id}`,
+		method: 'GET'
+	})
+);

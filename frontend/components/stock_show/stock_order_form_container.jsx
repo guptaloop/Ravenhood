@@ -4,6 +4,7 @@ import StockOrderForm from './stock_order_form';
 import { fetchWatchlist, removeFromWatchlist, addToWatchlist }
 	from '../../actions/stock_actions';
 import { fetchHoldings, createHolding, updateHolding, destroyHolding } from '../../actions/holding_actions';
+import { fetchUser } from '../../actions/session_actions';
 
 
 const mSP = (state) => ({
@@ -33,6 +34,11 @@ const mDP = dispatch => ({
 		destroyHolding(holding_id, userId)),
 
 	fetchWatchlist: userId => dispatch(fetchWatchlist(userId)),
+	
+	fetchUser: userId => dispatch(fetchUser(userId))
+	// refactor how state stores gold 
+	
+	
 });
 
 export default withRouter(connect(mSP, mDP)(StockOrderForm));

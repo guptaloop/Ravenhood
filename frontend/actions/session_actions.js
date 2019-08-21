@@ -18,6 +18,12 @@ export const receiveErrors = errors => ({
 	errors
 });
 
+export const fetchUser = user_id => dispatch => (
+	// refactor how state stores gold
+	SessionUtil.fetchUser(user_id).then(
+		user => dispatch(receiveCurrentUser(user)))
+);
+
 export const signup = user => dispatch => (
 	SessionUtil.signup(user).then(
 		user => (dispatch(receiveCurrentUser(user))),
