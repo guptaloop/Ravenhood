@@ -1,6 +1,6 @@
 import { RECEIVE_HOLDINGS } from '../../actions/holding_actions';
 
-const holdingsReducer = (state = {}, action) => {
+const holdingsReducer = (state = [], action) => {
 	Object.freeze(state);
 
 	switch (action.type) {

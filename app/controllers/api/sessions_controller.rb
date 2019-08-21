@@ -29,13 +29,16 @@ class Api::SessionsController < ApplicationController
 
   def gold
     @user = User.find_by(id: params[:user_id])
+    @gold = (params[:gold]).to_i
 
-    if @user
-      @gold = @user.gold - (params[:gold]).to_i
-      @user.update(gold: @gold)
+    if @user.gold > @gold
+      @newGold = @user.gold - @gold
+      @user.update(gold: @newGold)
       render "api/users/show"
+      return
     else
-      render json: 'no user was found :('
+      render json: ["Not enough gold available"], status: 404
+      return
     end   
   end
 

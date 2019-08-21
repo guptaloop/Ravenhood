@@ -26,6 +26,5 @@ export const updateGold = (user_id, gold) => (
 	$.ajax({
 		url: `/api/session/${user_id}?gold=${gold}`,
 		method: 'PATCH',
-		// data: { user }
 	})
 );

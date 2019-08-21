@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis } from 'recharts';
 import { genPrices } from '../../util/custom_utils';
 
 
-export const WatchlistChart = () => {
+export const Watchlist_PortfolioChart = () => {
 	const prices = genPrices([20, (Math.random()*1000).toFixed(2)]);
 	const curPrice = prices.slice(-1)[0].price;
 	const basePrice = prices[0].price;

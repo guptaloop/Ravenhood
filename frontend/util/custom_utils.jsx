@@ -1,4 +1,4 @@
-// custom PriceChart utils
+// custom util for StockPriceChart and Watchlist Chart
 export const genPrices = (arr) => {
 	// arr = [chartPeriod, mktPrice] =>  [250, 360.43]
 	const validPeriods = [20, 100, 500, 2500];
@@ -26,6 +26,34 @@ export const genPrices = (arr) => {
 	return prices;
 };
 
+// custom PortfolioChart util
+export const genValues = (arr) => {
+	// arr = [chartPeriod, mktPrice] =>  [250, 360.43]
+	const validPeriods = [1, 5, 10, 20];
+	let year = 300;
+	let period = arr[0];
+	let prices = [];
+	
+	while (period > 0 && validPeriods.includes(arr[0])) {
+	
+		if (year === 300) {
+			let priceObj = { date: year, price: arr[1] };
+			prices.unshift(priceObj);
+		} else {
+			let priceObj = {
+				date: year,
+				price: parseFloat((((Math.random() + 0.005) * 1000)).toFixed(2))
+			};
+			prices.unshift(priceObj);
+		}
+
+		if (arr[0] === 1) { period -= 0.05; year -= 0.05; }
+		else if (arr[0] === 5) { period -= 0.25; year -= 0.25; }
+		else if (arr[0] === 10) { period -= 1.25; year -= 1.25; }
+		else if (arr[0] === 20) { period -= 2.5; year -= 2.5; }
+	}
+	return prices;
+};
 
 // custom NewsFeed utils
 export const formatDate = (str) => {

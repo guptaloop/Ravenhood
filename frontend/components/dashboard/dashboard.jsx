@@ -1,30 +1,36 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import PortfolioChart from './portfolio_chart';
 import NewsFeedContainer from '../stock_show/news_feed_container';
-import Watchlist from './watchlist';
-
+import Watchlist_Portfolio from './watchlist_portfolio';
 
 class Dashboard extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
-	componentDidMount() {
+	componentWillMount() {
+		this.props.fetchHoldings(this.props.currentUser);
 		this.props.fetchWatchlist(this.props.currentUser);
 	}
 
 	render() {
+
 		return (
 			<div className="dashboard">
 				<NavBarContainer />
 
 				<div className="dashboard-main">
 					<div className="dashboard-left">
-						<div>PORTFOLIO VALUE CHART</div>
+						{/* <div>PORTFOLIO VALUE CHART</div> */}
+						<PortfolioChart holdings={this.props.holdings} />
 						<NewsFeedContainer />
 					</div>
 					<div className="dashboard-right">
-						<Watchlist watchlist={this.props.watchlist}/>
+						<Watchlist_Portfolio 
+							watchlist={this.props.watchlist}
+							holdings={this.props.holdings} 
+						/>
 					</div>
 				</div>
 			</div>

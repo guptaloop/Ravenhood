@@ -8,7 +8,7 @@ import { updateGold } from '../../actions/session_actions';
 
 
 const mSP = (state) => ({
-	currentUser: state.entities.currentUser,
+	currentUser: state.session.currentUserId,
 	watchlist: state.entities.watchlist,
 	holdings: state.entities.holdings,
 	errors: state.errors.sessionErrors,

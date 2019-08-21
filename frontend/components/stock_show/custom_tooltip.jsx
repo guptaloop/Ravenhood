@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CustomTooltip = (
-	{ active, payload, label, coordinate, basePrice, mktPrice }) => {
+	{ active, payload, label, coordinate, basePrice, mktPrice=1000 }) => {
 	
 	let priceDiff, pctDiff, year;
 
