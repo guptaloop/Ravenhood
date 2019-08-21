@@ -10,7 +10,7 @@ export default class StockOrderForm extends React.Component {
 	}
 
 	componentWillMount() {
-		const userId = (Object.keys(this.props.currentUser))[0];
+		const userId = this.props.userId;
 		this.props.fetchHoldings(userId);
 	}
 
@@ -70,12 +70,13 @@ export default class StockOrderForm extends React.Component {
 
 	render() {
 		let watchlistId;
-		const symbol = this.props.stock.symbol;
-		const watchlist = this.props.watchlist;
-		const userId = (Object.keys(this.props.currentUser))[0];
 		const orderType = this.state.orderType;
-		const gold = userId ? this.props.currentUser[userId].gold : "Log in to see";
+		const userId = this.props.userId;
+		const user = this.props.currentUser[userId];
+		const gold = user ? user.gold : "Log in to see";
+		const symbol = this.props.stock.symbol;
 		const mktPrice = this.props.stock.mktPrice;
+		const watchlist = this.props.watchlist;
 
 		// grabs the unique id to delete a 'stock_watch' from the db
 		watchlist.forEach(function(el){

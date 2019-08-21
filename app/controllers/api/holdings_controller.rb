@@ -15,11 +15,15 @@ class Api::HoldingsController < ApplicationController
 		@holding = Holding.new(
 			user_id: params[:user_id], symbol: params[:symbol],
 			shares: params[:shares], price: params[:price]	)
+		
+		@gold = @user.gold.to_i - (params[:shares] * params[:price])
 
-		if @holding.save
+		if @gold < 0
+			render json: ["Not enough gold available"], status: :unprocessable_entity
+		elsif @gold >= 0
+			@holding.save!
+			update_gold(params[:user_id], @gold)
 			render :show
-		else
-			render json: "something went very, very wrong"
 		end
 	end
 
@@ -50,18 +54,14 @@ class Api::HoldingsController < ApplicationController
 
 	private
 
-	def gold
-    @user = User.find_by(id: params[:user_id])
-    @gold = (params[:gold]).to_i
+	def update_gold(user_id, gold)
+    @user = User.find_by(id: user_id)
 
-    if @user.gold > @gold
-      @newGold = @user.gold - @gold
-      @user.update(gold: @newGold)
-      render "api/users/show"
-      return
+    if @user
+      @user.update(gold: gold)
+      render :show
     else
-      render json: ["Not enough gold available"], status: 404
-      return
+      render json: {}, status: :unprocessable_entity
     end   
   end
 
