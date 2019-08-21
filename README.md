@@ -16,5 +16,7 @@
 * the cursor over a watchlist item doesn't stay as 'pointer'
 
 ## 3. Refactor
+* rethink your store/state shape -- see commit ac61644 from 8/21/19 
+--- shouldn't need to dispatch multiple actions every time a user makes a trade
 * CSS - repetitive, a lot of code -- use vars?
 * refactor Component structure - price charts
