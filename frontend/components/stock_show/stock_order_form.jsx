@@ -14,6 +14,10 @@ export default class StockOrderForm extends React.Component {
 		this.props.fetchHoldings(userId);
 	}
 
+	// componentDidMount() {
+	// 	this.props.receiveErrors([]);
+	// }
+
 	componentWillUpdate(nextProps) {
 		// refactor how state stores gold
 		if (nextProps.holdings !== this.props.holdings) { 
@@ -25,7 +29,9 @@ export default class StockOrderForm extends React.Component {
 		return(e) => { this.setState({ [type]: parseInt(e.target.value) });	};
 	}
 
-	getValue(mktPrice) { return (mktPrice * this.state.shares).toFixed(2); }
+	getValue(mktPrice) { 
+		return ('$' + (mktPrice * this.state.shares).toLocaleString()); 
+	}
 
 	sharesAvailable(holdings) {
 		const ownedStocks = holdings.map(holding => holding.symbol);
@@ -65,14 +71,16 @@ export default class StockOrderForm extends React.Component {
 	}
 
 	// renderErrors() {
-	// 	return (
-	// 		<ul>
-	// 			{this.props.errors.map((error, i) => (
-	// 				<li className="error-li" key={`error-${i}`}>
-	// 					<img src={window.images.sess_err_icon} className="sess-err-logo" /> {error}
-	// 				</li>))}
-	// 		</ul>
-	// 	);
+	// 	console.log('ya');
+	// 	console.log(this.props.errors);
+		// return (
+		// 	<ul>
+		// 		{this.props.errors.map((error, i) => (
+		// 			<li className="error-li" key={`error-${i}`}>
+		// 				<img src={window.images.sess_err_icon} className="sess-err-logo" /> {error}
+		// 			</li>))}
+		// 	</ul>
+		// );
 	// }
 
 	render() {
@@ -127,7 +135,7 @@ export default class StockOrderForm extends React.Component {
 					</div>
 					<div className="row">
 						<label className="row-price">Market Price</label>
-						<output className="row-output">{mktPrice}</output>
+						<output className="row-output">{`$${mktPrice}`}</output>
 					</div>
 					<div className="price-border"></div>
 					<div className="row">

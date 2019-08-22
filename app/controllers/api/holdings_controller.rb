@@ -57,7 +57,7 @@ class Api::HoldingsController < ApplicationController
 		@gold = @holding.shares.to_i * @holding.price.to_i
 		
 		if !@holding
-			render json: {}, status: :not_found
+			render json: ['holding does not exist'], status: :unprocessable_entity
 		elsif @holding && @user
 			@holding.delete
 			update_gold(@user.id, @gold)
