@@ -38,10 +38,9 @@ export const removeFromWatchlist = (watchlist_id, user_id) => (
 	})
 );
 
-// export const fetchAllStocks = () => (
-// 	$.ajax({
-// 		url: '/api/stocks/:symbol',
-// 		method: 'GET',
-// 		data: { stocks }
-// 	})
-// )
+export const fetchAllStocks = () => (
+	$.ajax({
+		url: '/api/stocks',
+		method: 'GET',
+	})
+);

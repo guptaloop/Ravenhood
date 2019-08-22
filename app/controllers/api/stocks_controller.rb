@@ -1,8 +1,4 @@
 class Api::StocksController < ApplicationController
-
-	def index
-    @stocks = Stock.all
-  end
 	
   def show
     @stock = Stock.find_by(symbol: params[:symbol].upcase)
@@ -12,5 +8,9 @@ class Api::StocksController < ApplicationController
       render json: {}, status: :not_found
     end
   end
-	
+  
+	def index
+    @stocks = Stock.all
+  end
+
 end

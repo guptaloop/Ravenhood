@@ -21,6 +21,7 @@
 
 
 class Stock < ApplicationRecord
-	## no validations needed at model level, all data for this table will be seeded from seeds.rb and confirmed via db constraints.
+	validates :name, :symbol, presence: true
+  validates :symbol, uniqueness: true
 
 end
