@@ -8,26 +8,21 @@ export const searchStocks = (state, query) => {
 	query = query.toLowerCase();
 	let res = [];
 	let formattedIndex = formatIndex(state.entities.stockIndex);
-	console.log(formattedIndex);
+	const stocks = Object.keys(formattedIndex).sort();
 
-
-	const stocks = Object.values(state.entities.stockIndex).map(
-		stock => stock.symbol).sort();
-	
 	if (query.length < 5) {
-		res = res.concat(search(5 - res.length, stocks, state, stock => stock.symbol.toLowerCase().startsWith(query)));
+		res = res.concat(search(5 - res.length, stocks, formattedIndex, stock => stock.symbol.toLowerCase().startsWith(query)));
 		if (res.length === 5) return res;
 	}
 	
-	return res.concat(search(5 - res.length, stocks, state, stock => stock.name.toLowerCase().includes(query)));
+	return res.concat(search(5 - res.length, stocks, formattedIndex, stock => stock.name.toLowerCase().includes(query)));
 };
 
-const search = (limit, stocks, state, cb) => {
+const search = (limit, stocks, formattedIndex, cb) => {
 	const res = [];
 	
 	for (let i = 0; i < stocks.length; i++) {
-		// 		stock = state.entities.search[stocks[i]];
-		const stock = state.entities.stockIndex[stocks[i]];
+		const stock = formattedIndex[stocks[i]];
 		if (cb(stock)) {	res.push(stock);	}
 		if (res.length === limit) {	return res;	}
 	}
