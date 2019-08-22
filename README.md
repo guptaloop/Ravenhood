@@ -2,7 +2,8 @@
 
 ## 0. Production README
 
-## can't display error messages for trades - it's hitting the right controller method and response, but no action is dispatched after
+## can't display error messages for trades
+* it's hitting the right controller method and response, but no action is dispatched after
 
 ## 1. CSS / Styling
 * get the DIN PRO font

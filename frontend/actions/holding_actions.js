@@ -1,5 +1,5 @@
 import * as HoldingApiUtil from '../util/holding_api_util';
-import { receiveErrors } from "../util/session_api_util";
+import { receiveErrors } from "../actions/session_actions";
 
 export const RECEIVE_HOLDINGS = "RECEIVE_HOLDINGS";
 

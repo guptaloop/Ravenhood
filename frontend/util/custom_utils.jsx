@@ -36,7 +36,6 @@ export const genValues = (arr) => {
 	let year = 300;
 	let period = arr[0];
 	let prices = [];
-	let multiplier = arr[1] / getRandomNum();
 	
 	while (period > 0 && validPeriods.includes(arr[0])) {
 	
@@ -45,8 +44,8 @@ export const genValues = (arr) => {
 			prices.unshift(priceObj);
 		} else {
 			let priceObj = {
-				date: year,
-				price: (parseFloat(getRandomNum().toFixed(2))) * multiplier
+				date: Math.floor(year),
+				price: (parseFloat(getRandomNum() * 100)).toFixed(2) 
 			};
 			prices.unshift(priceObj);
 		}
