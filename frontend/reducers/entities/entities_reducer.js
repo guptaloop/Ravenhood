@@ -5,6 +5,7 @@ import searchReducer from './search_reducer';
 import newsVideosReducer from './news_videos_reducer';
 import watchlistReducer from './watchlist_reducer';
 import holdingsReducer from './holdings_reducer';
+import stockIndexReducer from './stock_index_reducer';
 
 const entitiesReducer = combineReducers({
 	currentUser: currentUserReducer,
@@ -13,6 +14,7 @@ const entitiesReducer = combineReducers({
 	newsVideos: newsVideosReducer,
 	watchlist: watchlistReducer,
 	holdings: holdingsReducer,
+	stockIndex: stockIndexReducer,
 	
 });
 

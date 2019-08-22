@@ -1,5 +1,5 @@
 import React from 'react';
-//import result item
+import ResultItem from "./result";
 
 class SearchBar extends React.Component {
 	constructor(props) {
@@ -10,6 +10,7 @@ class SearchBar extends React.Component {
 	}
 
 	componentWillMount() {
+		this.props.fetchStocks();
 		document.addEventListener('mousedown', this.handleClick, false);
 	}
 
@@ -48,7 +49,7 @@ class SearchBar extends React.Component {
 
 	handleChange(e) {
 		this.setState({ 
-			search: e.target.value, results: this.props.searchStocks(e.target.value) 
+			search: e.target.value, results: [this.props.searchStocks(e.target.value)] 
 		});
 	}
 
