@@ -29,8 +29,8 @@ ActiveRecord::Base.transaction do
 		mkt_price: 1848.42,
 		youtube_query: 'house lannister'
 	})
-	free_stock = Stock.create({
-		symbol: "FREE",
+	wild_stock = Stock.create({
+		symbol: "WILD",
 		name: "Free Folk, Inc.",
 		about: "Free Folk, Inc. was born out of a misunderstanding. Their business continues to shrink due to increasingly fierce competition and geographical conditions.",
 		ceo: "Mance Rayder",

@@ -15,7 +15,9 @@ export const searchStocks = (state, query) => {
 		if (res.length === 5) return res;
 	}
 	
-	return res.concat(search(5 - res.length, stocks, formattedIndex, stock => stock.name.toLowerCase().includes(query)));
+	let results = res.concat(search(5 - res.length, stocks, formattedIndex, stock => stock.name.toLowerCase().includes(query)));
+
+	return results;
 };
 
 const search = (limit, stocks, formattedIndex, cb) => {

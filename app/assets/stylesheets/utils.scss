@@ -1,0 +1,34 @@
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.display{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
+.long{
+  max-height: 1000px;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-apart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}

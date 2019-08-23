@@ -57,7 +57,7 @@
   max-height: 36px;
   overflow: hidden;
   border-radius: 4px;
-  transition: border-color 150ms, box-shadow 150ms, ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: border-color 150ms, box-shadow 150ms, ease-out, --webkit-box-shadow 150ms ease-out;
 }
 
 .search-container.long{
@@ -69,11 +69,11 @@
   max-height: 500px;
 }
 
-#search-results{
+.search-results{
   position: relative;
   top: -1px;
   width: 481px;
-  background: white;
+  background: green;
   height: auto;
   z-index: 5;
   h3{
