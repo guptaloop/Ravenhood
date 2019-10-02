@@ -15,11 +15,11 @@ class Api::HoldingsController < ApplicationController
 		@holding = Holding.new(
 			user_id: params[:user_id], symbol: params[:symbol],
 			shares: params[:shares], price: params[:price]	)
-		
 		@gold = @user.gold.to_i - (params[:shares].to_i * params[:price].to_i)
 
 		if @gold < 0
 			render json: ["Not enough gold available"], status: :unprocessable_entity
+			return
 		elsif @gold >= 0
 			@holding.save!
 			update_gold(@user.id, @gold)
@@ -36,6 +36,7 @@ class Api::HoldingsController < ApplicationController
 		
 		if @paramsShares < 0 && @totalShares < 0
 			render json: ["Not enough shares"], status: :unprocessable_entity
+			return
 		elsif @paramsShares < 0 && @totalShares > 0
 			@holding.update(shares: @totalShares)
 			@holding.save!
@@ -43,6 +44,7 @@ class Api::HoldingsController < ApplicationController
 			render :show
 		elsif @paramsShares > 0 && @gold < 0
 			render json: ["Not enough gold available"], status: :unprocessable_entity
+			return
 		elsif @paramsShares > 0 && @gold > 0
 			@holding.update(shares: @totalShares)
 			@holding.save!
@@ -58,6 +60,7 @@ class Api::HoldingsController < ApplicationController
 		
 		if !@holding
 			render json: ['holding does not exist'], status: :unprocessable_entity
+			return
 		elsif @holding && @user
 			@holding.delete
 			update_gold(@user.id, @gold)
