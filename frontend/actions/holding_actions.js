@@ -20,8 +20,8 @@ export const fetchHoldings = (user_id) => dispatch => (
 
 export const updateHolding = (holding_id, user_id, shares) => dispatch => (
 	HoldingApiUtil.updateHolding(holding_id, user_id, shares)
-		.then(holdings => dispatch(receiveHoldings(holdings))),
-			({responseJSON}) => console.log(responseJSON)
+		.then(holdings => dispatch(receiveHoldings(holdings)))
+			// ({responseJSON}) => console.log(responseJSON)
 		// .catch(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 

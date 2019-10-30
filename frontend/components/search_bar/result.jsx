@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({ stocks }) => {
-	console.log(stocks);
+	// console.log(stocks);
 	return (
 		<div>
 			{stocks.map(stock => 

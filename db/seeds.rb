@@ -156,7 +156,7 @@ ActiveRecord::Base.transaction do
 	})
 	demo_watchlist_2 = StockWatch.create({
 		user_id: 1,
-		symbol: 'FREE'
+		symbol: 'WILD'
 	})
 	demo_watchlist_3 = StockWatch.create({
 		user_id: 1,
