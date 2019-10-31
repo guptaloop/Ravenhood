@@ -16,10 +16,8 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
-
 /node_modules
 /yarn-error.log
-
 /public/assets
 .byebug_history
 
@@ -29,3 +27,6 @@
 #ignore node modules 
 node_modules
 bundle.js*
+
+#ignore personal notes
+backlog.md
