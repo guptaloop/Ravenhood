@@ -4,27 +4,29 @@ Ravenhood is a full-stack Game of Throne-themed of popular stock trading site Ro
 [Live Link](https://ravenhood.herokuapp.com/#/)
 
 ## Technologies
- * Frontend - **React/Redux**
+ * Frontend - **JavaScript**, **React/Redux**, **SCSS**
  * Backend - **Ruby on Rails**, **PostreSQL**
- * [Recharts](http://recharts.org/en-US) - To interactively visualize stock price fluctuation
- * [News API](https://newsapi.org/docs/endpoints/top-headlines) - To provide curated articles for relevant stock
+ * [Recharts](http://recharts.org/en-US) - To interactively visualize stock price and portfolio value history
+ * [YouTube API](https://developers.google.com/youtube/v3/docs/videos) - To provide related content for each company
 
  ## Features
   * Secure user authentication using *Bcrypt*
   * Portfolio chart communicating performance of stocks owned
-  * Search that covers 6564 stocks from the New York Stock Exchange and NASDAQ
-  * Transaction system that ensures proper buying power / share ownership 
-  * News Index that provides the latest stock related news
-  * Watchlists allow users to keep track of interested stocks  
-  * Sidebar lists all stocks in portfolio and watchlist upfront
+  * Search & seed data that includes the Great Houses re-imagined as corporations
+  * Transaction system that allows users to seamlessly buy / sell shares
+  * YouTube API that provides relevant videos for research
+  * Watchlists allow users to keep track of interesting companies  
+  * Sidebar lists all stocks in portfolio and watchlist
 
   ### Dashboard & Portfolio
-  Upon login, users are greeted with a dashboard hosting information including portfolio performance, stocks owned, stocks watched, and a news feed of recent events. 
+  Upon login, users are greeted with a dashboard hosting information including portfolio performance, stocks owned, stocks watched, and a video feed of relevant YouTube links. 
 
+<!-- REPLACE -->
   <p align="center">
     <img src="./assets/GreenArrowSplashStandard.gif" align="center">
   </p>
 
+<!-- REPLACE -->
   ### Stock Show
   Several external API queries are made to pull the requisite stock data. Non-dependent API requests are made in parallel via `Promise.all`
 
@@ -106,6 +108,7 @@ Ravenhood is a full-stack Game of Throne-themed of popular stock trading site Ro
   }
   ```
   ### Transaction System
+	<!-- REPLACE with your backend logic -->
   The transaction system has a series of validation checks in the backend to ensure only proper transactions are carried through. A series of errors inform the users how to modify their transaction to be valid.
 
   ```rb
