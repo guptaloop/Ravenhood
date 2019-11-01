@@ -5,10 +5,10 @@ Users can create accounts, and invest in their favorite companies in both Essos 
 [Live Link](https://ravenhood.herokuapp.com/#/)
 
 ## Technologies
- * Frontend - **JavaScript**, **React/Redux**, **SCSS**
+ * Frontend - **React/Redux**
  * Backend - **Ruby on Rails**, **PostreSQL**
- * [Recharts](http://recharts.org/en-US) - To interactively visualize stock price and portfolio value history
- * [YouTube API](https://developers.google.com/youtube/v3/docs/videos) - To provide related content for each company
+ * [Recharts](http://recharts.org/en-US) - To interactively visualize stock price fluctuation
+ * [News API](https://newsapi.org/docs/endpoints/top-headlines) - To provide curated articles for relevant stock
 
  ## Features
   * Secure user authentication using *Bcrypt*
