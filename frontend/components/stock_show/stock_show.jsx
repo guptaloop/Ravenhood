@@ -23,17 +23,17 @@ export default class StockShowPage extends React.Component {
 
 		const display = !currStock ? <LoadingBar /> : (
 			<>
-			<NavBarContainer />
-			<div className="stock-show-main-div">
-				<div className="stock-show-left-column">
-					<StockPriceChart stock={currStock} />
-					<StockInfo stock={currStock} />
-					<NewsFeedContainer stock={currStock} />
+				<NavBarContainer />
+				<div className="stock-show-main-div">
+					<div className="stock-show-left-column">
+						<StockPriceChart stock={currStock} />
+						<StockInfo stock={currStock} />
+						<NewsFeedContainer stock={currStock} />
+					</div>
+					<div className="stock-show-right-column">
+						<StockOrderFormContainer stock={currStock}/>
+					</div>
 				</div>
-				<div className="stock-show-right-column">
-					<StockOrderFormContainer stock={currStock}/>
-				</div>
-			</div>
 			</>
 		);
 		
