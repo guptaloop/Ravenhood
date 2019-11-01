@@ -22,7 +22,6 @@ class Dashboard extends React.Component {
 
 				<div className="dashboard-main">
 					<div className="dashboard-left">
-						{/* <div>PORTFOLIO VALUE CHART</div> */}
 						<PortfolioChart holdings={this.props.holdings} />
 						<NewsFeedContainer />
 					</div>

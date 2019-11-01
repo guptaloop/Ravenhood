@@ -7,16 +7,14 @@ import SearchBarContainer from '../search_bar/search_bar_container';
 const NavBar = ({ currentUserId, logout }) => {
 	
 	const display = currentUserId ? (
-		<nav className="nav-bar-1">			
-			<div className="nav-bar-2">
-				<img className="raven-logo" src={window.images.raven_logo} />
-				<SearchBarContainer />
-				<div className="nav-bar-right">
-					<Link className="nav-demo-link" to="/dashboard">Home</Link>
-					<button className="nav-demo-link" onClick={logout}>Log Out</button>
-				</div>
+		<div className="nav-bar-1">			
+			<img className="raven-logo" src={window.images.raven_logo} />
+			<SearchBarContainer />
+			<div className="nav-bar-right">
+				<Link className="nav-demo-link" to="/dashboard">Home</Link>
+				<button className="nav-demo-link" onClick={logout}>Log Out</button>
 			</div>
-		</nav>
+		</div>
 	) : (
 		<nav className="nav-bar-2">
 			<div className="nav-bar-left">
@@ -32,9 +30,9 @@ const NavBar = ({ currentUserId, logout }) => {
 	);
 
 	return (
-		<div className="nav-bar-1">
+		<>
 			{display}
-		</div>
+		</>
 	);
 };
 
