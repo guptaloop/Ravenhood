@@ -1,6 +1,5 @@
-.nav-bar-1 {
+.nav-logged-in {
 	height: 56px;
-	// width: 100vw;
 	display: flex;
 	align-items: center;
 	margin-top: 20px;
@@ -23,20 +22,23 @@
 		}
 }
 
-.nav-bar-2 {
+.nav-splash {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 100%;
-	
+	margin-top: 20px;
+	height: 56px;
+	img {
+		height: 45px;
+		width: 30px;
+		margin-right: 10px;
+	}
 }
 
 		.nav-bar-left {
 			display: flex;
 			align-items: center;
-			width: 100px;
 		}
-
 				.nav-home-link {
 					color: rgb(0, 0, 0);
 					fill: rgb(0, 0, 0);
@@ -45,7 +47,6 @@
 					letter-spacing: -0.5px;
 					margin-left: 8px;
 				}
-
 				.nav-home-link:hover {
 					color: rgb(33, 206, 153);
 				}
