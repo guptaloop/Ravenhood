@@ -1,12 +1,16 @@
+.navbar{
+	position: fixed;
+	top: 0;
+  width: 100%;
+  // z-index: 1;
+}
+
 .nav-logged-in {
 	height: 56px;
 	display: flex;
 	align-items: center;
 	margin-top: 20px;
 	margin-bottom: 55px;
-	position: fixed;
-	top: 0;
-	
 	img {
 		height: 45px;
 		width: 30px;

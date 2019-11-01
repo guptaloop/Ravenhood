@@ -17,10 +17,12 @@ class Dashboard extends React.Component {
 	render() {
 
 		return (
-			<div className="dashboard">
-				<NavBarContainer />
+			<>
+				<div className="navbar">
+					<NavBarContainer />
+				</div>
 
-				<div className="dashboard-main">
+				<div className="dashboard">
 					<div className="dashboard-left">
 						<PortfolioChart holdings={this.props.holdings} />
 						<NewsFeedContainer />
@@ -29,10 +31,10 @@ class Dashboard extends React.Component {
 						<Watchlist_Portfolio 
 							watchlist={this.props.watchlist}
 							holdings={this.props.holdings} 
-						/>
+							/>
 					</div>
 				</div>
-			</div>
+			</>
 		)
 	}
 }

@@ -10,7 +10,7 @@ import Splash from './splash/splash_container';
 const App = props => {
 	const RootComponent = props.currentUser ? Dashboard : Splash;
 	return (
-	<div>
+	<>
 		<Switch>
 			<AuthRoute exact path="/signup" component={SignUpPage} />
 			<AuthRoute exact path="/login" component={LoginPage} />
@@ -18,7 +18,7 @@ const App = props => {
 			<Route exact path="/" component={RootComponent} />
 			<Redirect to="/" />
 		</Switch>
-	</div>
+	</>
 	)
 };
 
