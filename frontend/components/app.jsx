@@ -5,7 +5,7 @@ import SignUpPage from './session/signup_container';
 import LoginPage from './session/login_container';
 import Dashboard from './dashboard/dashboard_container';
 import StockShow from './stock_show/stock_show_container';
-import Splash from './splash/splash';
+import Splash from './splash/splash_container';
 
 const App = props => {
 	const RootComponent = props.currentUser ? Dashboard : Splash;

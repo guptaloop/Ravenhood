@@ -18,7 +18,7 @@ class NavBar extends React.Component {
 	}
 
 	render() {
-		const display = this.props.currentUserId ? (
+		const displayNav = this.props.currentUserId ? (
 			<div className="nav-bar-1">
 				<img className="raven-logo" src={window.images.raven_logo} />
 				<SearchBarContainer />
@@ -42,23 +42,10 @@ class NavBar extends React.Component {
 			);
 		return (
 			<>
-				{display}
+				{displayNav}
 			</>
 		);
 	}
-
-
 }
 
 export default NavBar;
-
-// // functional component -- do I need state or lifecycle methods?
-// const NavBar = ({ currentUserId, logout, login }) => {
-	
-	
-
-// 	return (
-	
-// 	);
-// };
-
