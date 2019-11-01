@@ -20,12 +20,12 @@ class NavBar extends React.Component {
 	render() {
 		const displayNav = this.props.currentUserId ? (
 			<div className="nav-bar-1">
-				<img className="raven-logo" src={window.images.raven_logo} />
+				<img src={window.images.raven_logo} />
 				<SearchBarContainer />
-				<div className="nav-bar-right">
+				<span className="nav-bar-right">
 					<Link className="nav-demo-link" to="/dashboard">Home</Link>
 					<button className="nav-demo-link" onClick={this.props.logout}>Log Out</button>
-				</div>
+				</span>
 			</div>
 		) : (
 				<nav className="nav-bar-2">

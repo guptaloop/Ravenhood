@@ -1,20 +1,26 @@
 .nav-bar-1 {
 	height: 56px;
-	width: 87vw;
+	// width: 100vw;
 	display: flex;
-	flex-direction: row;
-	justify-items: center;
-	align-content: space-around;
+	align-items: center;
 	margin-top: 20px;
 	margin-bottom: 55px;
 	position: fixed;
 	top: 0;
-}
-
-.raven-logo {
-	height: 45px;
-	width: 30px;
-	margin: 0px 150px 0px 370px;
+	
+	img {
+		height: 45px;
+		width: 30px;
+		margin: 0px 100px 0px 182px;
+	}
+	span {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-direction: row;
+			width: 160px;
+			margin-left: 275px;
+		}
 }
 
 .nav-bar-2 {
@@ -49,8 +55,8 @@
 			align-items: center;
 			justify-content: flex-end;
 			flex-direction: row;
-			width: 300px;
-			margin-left: 100px;
+			width: 400px;
+			// margin-left: 100px;
 		}
 
 				.nav-link {
