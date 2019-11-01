@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
 					<NavBarContainer />
 				</div>
 
-				<div className="dashboard">
+				<main className="dashboard">
 					<div className="dashboard-left">
 						<PortfolioChart holdings={this.props.holdings} />
 						<NewsFeedContainer />
@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
 							holdings={this.props.holdings} 
 							/>
 					</div>
-				</div>
+				</main>
 			</>
 		)
 	}

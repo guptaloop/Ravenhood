@@ -3,7 +3,6 @@
 	justify-items: flex-start;
 	height: 100vh;
 	width: 100vw;
-	position: relative;
 	margin-top: 100px;
 }
 
@@ -11,6 +10,8 @@
 	display: flex;
 	flex-direction: column;
 	margin-left: 180px;
+	height: 100%;
+	position: relative;
 }
 
 .dashboard-right {
