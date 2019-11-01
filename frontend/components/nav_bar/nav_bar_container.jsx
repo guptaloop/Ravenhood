@@ -1,8 +1,7 @@
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
-
-import { logout } from '../../actions/session_actions';
+import { login, logout } from '../../actions/session_actions';
 
 
 const mSP = state => ({
@@ -11,6 +10,7 @@ const mSP = state => ({
 });
 
 const mDP = dispatch => ({
+	login: user => dispatch(login(user)),
 	logout: () => dispatch(logout())
 });
 

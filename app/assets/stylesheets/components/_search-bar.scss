@@ -55,7 +55,7 @@
   position: absolute;
   flex-direction: column;
   max-height: 36px;
-  overflow: hidden;
+  // overflow: hidden;
   border-radius: 4px;
   transition: border-color 150ms, box-shadow 150ms, ease-out, --webkit-box-shadow 150ms ease-out;
 }
