@@ -14,10 +14,6 @@ export default class StockOrderForm extends React.Component {
 		this.props.fetchHoldings(userId);
 	}
 
-	// componentDidMount() {
-	// 	this.props.receiveErrors([]);
-	// }
-
 	componentWillUpdate(nextProps) {
 		// refactor how state stores gold
 		if (nextProps.holdings !== this.props.holdings) { 

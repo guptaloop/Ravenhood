@@ -1,11 +1,10 @@
 .navbar{
-	position: fixed;
 	top: 0;
   width: 100%;
-  // z-index: 1;
 }
 
 .nav-logged-in {
+	z-index: 1;
 	height: 56px;
 	display: flex;
 	align-items: center;
@@ -61,7 +60,6 @@
 			justify-content: flex-end;
 			flex-direction: row;
 			width: 400px;
-			// margin-left: 100px;
 		}
 
 				.nav-link {
@@ -78,15 +76,15 @@
 					color: rgb(33, 206, 153);
 				}
 
-/// specifically for the nav when signed in
+// / specifically for the nav when signed in
 
-		.search-bar {
-			display: flex;
-			border: lightgrey;
-			width: 478px;
-			height: 36px;
-			background: whitesmoke
-		}
+// 		.search-bar {
+// 			display: flex;
+// 			border: lightgrey;
+// 			width: 478px;
+// 			height: 36px;
+// 			background: whitesmoke
+// 		}
 
 		.nav-demo-link {
 			color: rgb(0, 0, 0);

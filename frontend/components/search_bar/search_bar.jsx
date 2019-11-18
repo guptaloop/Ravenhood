@@ -67,8 +67,12 @@ class SearchBar extends React.Component {
 						<h3>Stocks</h3>
 						<div className="flex">
 							<ul>
+								{/* {this.state.results.map(result => 
+									<ResultItem key={result.symbol} stock={result} />
+								)} */}
 								{this.state.results.map(stock =>
-									<Link key={stock.symbol} className="search-item" 
+									<Link key={stock.symbol} 
+												className="search-item" 
 												to={`/stocks/${stock.symbol}`}>
 										<div>{stock.symbol}</div>
 										<div>{stock.name}</div>

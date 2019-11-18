@@ -18,10 +18,6 @@ export default class StockShowPage extends React.Component {
 		this.props.fetchStock(symbol);
 	}
 
-	// componentWillReceiveProps(prevProps) {
-	// 	if 
-	// }
-
 	render() {
 		const currStock = this.props.stock;
 
