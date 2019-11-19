@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+    <title>Ravenhood</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
+    <script src="https://kit.fontawesome.com/2d9f232f16.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       window.youtubeAPIkey = 
         "<%= Rails.application.credentials.youtube[:api_key] %>"

@@ -3,7 +3,8 @@
 	justify-content: center;
 	align-content: center;
 	margin-top: 60px;
-	height: 100vh;
+	margin-bottom: 60px;
+	// height: 100vh;
 	width: 100vw;
 }
 
@@ -11,6 +12,8 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			margin-top: 65px;
+			margin-right: 25px;
 			height: 80%;
 			width: 35%;
 		}
@@ -43,6 +46,7 @@
 		.splash-right {
 			display: flex;
 			justify-content: flex-end;
+			margin-left: 25px;
 		}
 
 				.throne-img {

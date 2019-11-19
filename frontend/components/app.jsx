@@ -6,6 +6,7 @@ import LoginPage from './session/login_container';
 import Dashboard from './dashboard/dashboard_container';
 import StockShow from './stock_show/stock_show_container';
 import Splash from './splash/splash_container';
+import Footer from './footer';
 
 const App = props => {
 	const RootComponent = props.currentUser ? Dashboard : Splash;
@@ -18,6 +19,9 @@ const App = props => {
 			<Route exact path="/" component={RootComponent} />
 			<Redirect to="/" />
 		</Switch>
+		<footer>
+			<Footer />
+		</footer>
 	</>
 	)
 };
