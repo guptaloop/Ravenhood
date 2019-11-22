@@ -6,7 +6,6 @@ import { login, logout } from '../../actions/session_actions';
 
 const mSP = state => ({
 	currentUserId: state.session.currentUserId,
-	// currentUsers: state.entities.users
 });
 
 const mDP = dispatch => ({

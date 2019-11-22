@@ -50,7 +50,6 @@ export default class PortfolioChart extends React.Component {
 
 		return (
 			<div className="price-chart-div">
-				{/* <header className="chart-company">{stock.name}</header> */}
 				<div>{valueChart}</div>
 				<div id="chart-buttons">
 					{['1Y', '5Y', '10Y', '25Y', '50Y'].map(period => (

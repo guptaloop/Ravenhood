@@ -27,7 +27,6 @@ class Splash extends React.Component {
 						<h1 className="splash-title">Invest for Power</h1>
 						<span className="splash-body">Claim the iron throne by investing in the Realm's most prosperous companies.
 					<br />It's as easy as sending a raven.</span>
-						{/* <Link className="signup-button" to="/signup">Sign Up</Link> */}
 						<button className="signup-button" onClick={this.handleDemoLogin}>Demo</button>
 						<div className="spacing-div"></div>
 					</div>

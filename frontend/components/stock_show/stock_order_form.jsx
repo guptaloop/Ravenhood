@@ -91,7 +91,9 @@ export default class StockOrderForm extends React.Component {
 
 		// grabs the unique id to delete a 'stock_watch' from the db
 		watchlist.forEach(function(el){
-			if (el.symbol === symbol) { watchlistId = el.id; }
+			if (el.symbol === symbol) { 
+				watchlistId = el.id;
+			}
 		});
 		// creates an array of all the symbols on a user's watchlist
 		const watchlistSymbols = watchlist.map(obj => obj.symbol);
