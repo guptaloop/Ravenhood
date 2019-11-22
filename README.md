@@ -37,9 +37,9 @@ This turned out to be the most challenging feature of the project. It touched ev
 ```JS
   stock_order_form.jsx
 
-	handleOrder(user_id, symbol, shares, price) {
-		let index, holding_id;
-		const ownedStocks = this.props.holdings.map(holding => holding.symbol);
+  handleOrder(user_id, symbol, shares, price) {
+    let index, holding_id;
+    const ownedStocks = this.props.holdings.map(holding => holding.symbol);
 		const type = this.state.orderType;
 		const userOwnsStock = ownedStocks.includes(symbol);
 	
