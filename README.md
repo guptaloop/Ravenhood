@@ -40,27 +40,30 @@ This turned out to be the most challenging feature of the project. It touched ev
   handleOrder(user_id, symbol, shares, price) {
     let index, holding_id;
     const ownedStocks = this.props.holdings.map(holding => holding.symbol);
-		const type = this.state.orderType;
-		const userOwnsStock = ownedStocks.includes(symbol);
+    const type = this.state.orderType;
+
+    const userOwnsStock = ownedStocks.includes(symbol);
 	
-		if (userOwnsStock) {
-			index = ownedStocks.indexOf(symbol);
-			holding_id = this.props.holdings[index].id;
-		}
 
-		if (type === 'Sell') {
-			const sellShares = (shares * -1);
-			shares === this.props.holdings[index].shares ?
-				this.props.destroyHolding(holding_id, user_id)
-				:	this.props.updateHolding(holding_id, user_id, sellShares);
-			this.setState({ shares: "0" });
-		}
+    if (userOwnsStock) {
+      index = ownedStocks.indexOf(symbol);
+      holding_id = this.props.holdings[index].id;
+    }
 
-		if (type === 'Buy') {
-			userOwnsStock ?	
-				this.props.updateHolding(holding_id, user_id, shares)
-				:	this.props.buyStock(user_id, symbol, shares, price);
-			this.setState({ shares: "0" });
-		}
+
+    if (type === 'Sell') {
+      const sellShares = (shares * -1);
+      shares === this.props.holdings[index].shares ?
+        this.props.destroyHolding(holding_id, user_id)
+	:  this.props.updateHolding(holding_id, user_id, sellShares);
+	this.setState({ shares: "0" });
+    }
+
+    if (type === 'Buy') {
+      userOwnsStock ?	
+        this.props.updateHolding(holding_id, user_id, shares)
+	:  this.props.buyStock(user_id, symbol, shares, price);
+	this.setState({ shares: "0" });
+    }
   }
 ```
