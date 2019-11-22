@@ -22,3 +22,8 @@ Users can create accounts, and invest in their favorite companies in both Essos 
   ### Dashboard & Portfolio
   Upon login, users are greeted with a dashboard hosting information including portfolio valuation, stocks owned, stocks watched, and a video feed of relevant YouTube content.
 
+
+  <p align="center">
+    <img src="./assets/Ravenhood.gif" align="center">
+  </p>
+
