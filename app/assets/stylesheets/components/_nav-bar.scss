@@ -1,19 +1,19 @@
 .navbar{
 	top: 0;
-  width: 100%;
+	width: 100%;
 }
 
 .nav-logged-in {
 	z-index: 1;
 	height: 56px;
 	display: flex;
+	justify-content: space-evenly;
 	align-items: center;
 	margin-top: 20px;
 	margin-bottom: 55px;
 	img {
 		height: 45px;
 		width: 30px;
-		margin: 0px 100px 0px 182px;
 	}
 	span {
 			display: flex;
@@ -21,7 +21,6 @@
 			justify-content: flex-end;
 			flex-direction: row;
 			width: 160px;
-			margin-left: 275px;
 		}
 }
 
