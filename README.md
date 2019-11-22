@@ -33,7 +33,7 @@ The main feature of Ravenhood (a stock trading app) is a seamless trading system
 
 This turned out to be the most challenging feature of the project. It touched every piece of the stack and required handling for several different trade scenarios, with even more data points to manage. I decided to first figure out if the user owns the stock they are trying to trade, then handle the Sell or Buy accordingly. Sells and Buys have 2 further scenarios each and the right set of data needed to be routed to the controller to check if the trade could be made, update the database accordingly. Upon a successful trade, the shares owned will update without a page refresh, leading to a smooth experience for the user.
 
-
+ 
 ```JS
   stock_order_form.jsx
 
