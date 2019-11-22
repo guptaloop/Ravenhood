@@ -24,6 +24,6 @@ Users can create accounts, and invest in their favorite companies in both Essos 
 
 
   <p align="center">
-    <img src="./assets/Ravenhood.gif" align="center">
+    <img src="./app/images/assets/Ravenhood.gif" align="center">
   </p>
 
