@@ -11,7 +11,7 @@
     "currency-symbol": "^1.0.6",
     "emotion": "^10.0.14",
     "history": "^4.9.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "logger": "0.0.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
